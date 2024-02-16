@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
-import MenuSuperior from '../comun/menusuperior.jsx'
-import SliderHome from '../home/slider.jsx'
-import AreasTrabajo from '../home/areastrabajo.jsx'
-import Servicios from '../home/servicios.jsx'
-import Proyectos from '../home/proyectos.jsx'
-import Preguntanos from '../home/preguntanos.jsx'
-import Imaginacion from '../home/imaginacion.jsx'
-import Clientes from '../home/clientes.jsx'
+import MenuSuperior from '../comun/menusuperior'
+import Principal from './principal.jsx'
+import Servicios from './servicios.jsx'
+import Equipo from './equipo.jsx'
+import Estadisticas from './estadisticas.jsx'
 
-export default function Home ({proporcional}){
+export default function SobreNosotros ({proporcional}){
 
     const [position, setPosition] = useState(0)
 
@@ -25,16 +22,13 @@ export default function Home ({proporcional}){
                     <MenuSuperior proporcional={proporcional} position={position}/>
                 </div>
                 <div className='position-absolute top-0 start-0' style={{width: '100%', height: 900 / proporcional, zIndex: 9}}>
-                    <SliderHome proporcional={proporcional}/>
+                    <Principal proporcional={proporcional}/>
                 </div>
             </div>
             <div style={{width: '100%', height: 'auto'}}>
-                <AreasTrabajo proporcional={proporcional}/>
                 <Servicios proporcional={proporcional}/>
-                <Proyectos proporcional={proporcional}/>
-                <Preguntanos proporcional={proporcional}/>
-                <Imaginacion proporcional={proporcional}/>
-                <Clientes proporcional={proporcional}/>
+                <Equipo proporcional={proporcional}/>
+                <Estadisticas proporcional={proporcional}/>
             </div>
         </div>
     )

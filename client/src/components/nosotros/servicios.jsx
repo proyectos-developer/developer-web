@@ -17,7 +17,7 @@ export default function Servicios ({proporcional}){
                     <div style={{width: '100%', height: 100 / proporcional, marginBottom: 20 / proporcional}}>
                         <p style={{fontSize: 35 / proporcional, lineHeight:  `${50 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(22, 36, 65)',
                             fontWeight: 800}}>
-                            Nuevas aplicaciones - Ideas Frescas Para Ti
+                            Medios publicitarios
                         </p>
                     </div>
                     <div style={{width: '100%', height: 80 / proporcional, marginBottom: 32 / proporcional}}>
@@ -65,7 +65,7 @@ export default function Servicios ({proporcional}){
                     <div style={{width: '100%', height: 100 / proporcional, marginBottom: 20 / proporcional}}>
                         <p style={{fontSize: 35 / proporcional, lineHeight:  `${50 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(22, 36, 65)',
                             fontWeight: 800}}>
-                            Revista tecnológica - Tendencias
+                            Eleva tus prácticas de diseño
                         </p>
                     </div>
                     <div style={{width: '100%', height: 80 / proporcional, marginBottom: 32 / proporcional}}>

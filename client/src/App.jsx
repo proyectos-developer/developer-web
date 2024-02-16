@@ -11,6 +11,10 @@ import Home from './components/home/panel.jsx'
 import HomeTablet from './components/home/paneltablet.jsx'
 import HomeCell from './components/home/panelcell.jsx'
 
+import SobreNosotros from './components/nosotros/panel.jsx'
+import SobreNosotrosTablet from './components/nosotros/paneltablet.jsx'
+import SobreNosotrosCell from './components/nosotros/panelcell.jsx'
+
 export default function App (){
   const [width, setWidth] = useState(window.outerWidth)
 
@@ -36,6 +40,11 @@ export default function App (){
             <Route path='' element={width < 500 ? <HomeCell proporcional={499 / width}/> :
                                     width < 991 ? <HomeTablet proporcional={991 / width}/> :
                                                   <Home proporcional={1920/ width}/>}/>
+
+
+            <Route path='sobre-nosotros' element={width < 500 ? <SobreNosotrosCell proporcional={499 / width}/> :
+                                                  width < 991 ? <SobreNosotrosTablet proporcional={991 / width}/> :
+                                                                <SobreNosotros proporcional={1920/ width}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

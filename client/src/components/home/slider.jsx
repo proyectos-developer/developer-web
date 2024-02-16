@@ -35,7 +35,7 @@ export default function SliderHome ({proporcional}){
                                     <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
                                         color: 'white', background: '#172bde', marginRight: 20 / proporcional}}>Ver más</button>
                                     <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
-                                        color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}>Contactárnos</button>
+                                        color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}>Contáctanos</button>
                                 </div>
                             </div>
                         </div>
