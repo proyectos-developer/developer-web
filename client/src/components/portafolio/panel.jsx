@@ -1,13 +1,7 @@
-import React, { useState } from 'react'
-
+import React from 'react'
 import MenuSuperior from '../comun/menusuperior'
-import Principal from './principal.jsx'
-import Servicios from './servicios.jsx'
-import Equipo from './equipo.jsx'
-import Estadisticas from './estadisticas.jsx'
-import MaravillosoProducto from './maravillosoproducto.jsx'
 
-export default function SobreNosotros ({proporcional}){
+export default function NuestroPortafolio ({proporcional}){
 
     const [position, setPosition] = useState(0)
 
@@ -23,14 +17,7 @@ export default function SobreNosotros ({proporcional}){
                     <MenuSuperior proporcional={proporcional} position={position}/>
                 </div>
                 <div className='position-absolute top-0 start-0' style={{width: '100%', height: 900 / proporcional, zIndex: 9}}>
-                    <Principal proporcional={proporcional}/>
                 </div>
-            </div>
-            <div style={{width: '100%', height: 'auto'}}>
-                <Servicios proporcional={proporcional}/>
-                <Equipo proporcional={proporcional}/>
-                <Estadisticas proporcional={proporcional}/>
-                <MaravillosoProducto proporcional={proporcional}/>
             </div>
         </div>
     )

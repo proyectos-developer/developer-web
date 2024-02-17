@@ -2,19 +2,19 @@ import React, { useState } from 'react'
 
 import MenuSuperior from '../comun/menusuperior'
 import Principal from './principal.jsx'
-import Servicios from './servicios.jsx'
-import Equipo from './equipo.jsx'
-import Estadisticas from './estadisticas.jsx'
-import MaravillosoProducto from './maravillosoproducto.jsx'
+import AreasTrabajo from './areastrabajo.jsx'
+import Agencia from './agencia.jsx'
+import FormaTrabajo from './formatrabajo.jsx'
+import Proyectos from './proyectos.jsx'
 
-export default function SobreNosotros ({proporcional}){
+export default function NuestrosServicios ({proporcional}){
 
     const [position, setPosition] = useState(0)
 
     window.onscroll = () => {
         setPosition(window.scrollY)
     }
-    
+
     return (
         <div style={{width: '100%', height: 'auto'}}>
             <div className='position-relative' style={{width: '100%', height: 900 / proporcional}}>
@@ -27,10 +27,10 @@ export default function SobreNosotros ({proporcional}){
                 </div>
             </div>
             <div style={{width: '100%', height: 'auto'}}>
-                <Servicios proporcional={proporcional}/>
-                <Equipo proporcional={proporcional}/>
-                <Estadisticas proporcional={proporcional}/>
-                <MaravillosoProducto proporcional={proporcional}/>
+                <AreasTrabajo proporcional={proporcional}/>
+                <Agencia proporcional={proporcional}/>
+                <FormaTrabajo proporcional={proporcional}/>
+                <Proyectos proporcional={proporcional}/>
             </div>
         </div>
     )
