@@ -12,6 +12,7 @@ const datareducer = (state = initialState, action) => {
             open_screen_search
         }
     }
+    return state
 }
 
 export default datareducer

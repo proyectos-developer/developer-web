@@ -8,12 +8,17 @@ import icono_shop_black from '../../assets/iconos/icono_shop_black_96.png'
 import icono_search_black from '../../assets/iconos/icono_search_black_96.png'
 
 import { useNavigate } from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
+import { set_open_screen_search } from '../../redux/actions/dataactions'
 
 export default function MenuSuperior ({proporcional, position}){
 
     const navigate = useNavigate()
+    const dispatch = useDispatch ()
 
     const [menu_superior, setMenuSuperior] = useState('')
+
+    const {open_screen_search} = useSelector(({data_reducer}) => data_reducer)
 
     return (
         <div style={{width: '100%', height: 100 / proporcional, paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional}}>
@@ -71,7 +76,7 @@ export default function MenuSuperior ({proporcional, position}){
                     <img src={position > 800 / proporcional ? icono_search_black : icono_search_white} 
                             style={{width: 22 / proporcional, height: 22 / proporcional, marginRight: 10 / proporcional, margin: 5 / proporcional, cursor: 'pointer'}}
                             onMouseOver={() => setMenuSuperior('mi-cuenta')} onMouseLeave={() => setMenuSuperior('')}
-                            onClick={() => navigate ('/mi-cuenta)')}/>
+                            onClick={() => dispatch (set_open_screen_search(!open_screen_search))}/>
                     <img src={position > 800 / proporcional ? icono_user_black : icono_user_white} 
                             style={{width: 22 / proporcional, height: 22 / proporcional, marginRight: 10 / proporcional, margin: 5 / proporcional, cursor: 'pointer'}} 
                             onMouseOver={() => setMenuSuperior('mi-cuenta')} onMouseLeave={() => setMenuSuperior('')}

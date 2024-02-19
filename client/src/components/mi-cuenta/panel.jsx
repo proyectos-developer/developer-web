@@ -29,6 +29,9 @@ export default function MiCuenta ({proporcional}){
                 <div style={{width: '45%', height: 'auto'}}>
                     <LoginUser proporcional={proporcional}/>
                 </div>
+                <div className='d-flex justify-content-center' style={{width: '10%', height: 'auto'}}>
+                    <div style={{width: 2 / proporcional, height: 'auto', background: '#dbe4eb'}}/>
+                </div>
                 <div style={{width: '45%', height: 'auto'}}>
                     <RegisterUser proporcional={proporcional}/>
                 </div>
