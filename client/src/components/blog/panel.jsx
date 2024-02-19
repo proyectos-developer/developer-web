@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 
 import MenuSuperior from '../comun/menusuperior'
-import Principal from './principal'
-import Proyectos from './proyectos.jsx'
+import Principal from './principal.jsx'
+import BlogInformatico from './bloginformatico.jsx'
 
-export default function NuestroPortafolio ({proporcional}){
+export default function Blog ({proporcional}){
 
     const [position, setPosition] = useState(0)
 
     window.onscroll = () => {
         setPosition(window.scrollY)
     }
-    
-    return (
+
+    return(
         <div style={{width: '100%', height: 'auto'}}>
             <div className='position-relative' style={{width: '100%', height: 900 / proporcional}}>
                 <div className={`position-fixed top-0 start-0 ${position > 800 / proporcional ? 'shadow' : ''}`} style={{width: '100%', height: 100 / proporcional, zIndex: 99999,
@@ -24,7 +24,7 @@ export default function NuestroPortafolio ({proporcional}){
                 </div>
             </div>
             <div style={{width: '100%', height: 'auto'}}>
-                <Proyectos proporcional={proporcional}/>
+                <BlogInformatico proporcional={proporcional}/>
             </div>
         </div>
     )

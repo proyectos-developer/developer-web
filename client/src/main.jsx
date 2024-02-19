@@ -6,13 +6,16 @@ import './styles.css'
 import { Provider } from 'react-redux'
 import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit'
 
+import datareducer from './redux/reducers/datareducer.js'
+
 const store = configureStore ({
-  reducer: ({
-
-  }),
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-
-  })
+    reducer: ({
+      data_reducer: datareducer
+    }),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+      immutableCheck: false,
+      serializableCheck: false
+    })
 })
 
 ReactDOM.createRoot(document.getElementById('root')).render(

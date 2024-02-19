@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 
 import MenuSuperior from '../comun/menusuperior'
-import Principal from './principal'
-import Proyectos from './proyectos.jsx'
+import Principal from './principal.jsx'
+import LoginUser from './loginuser.jsx'
+import RegisterUser from './registeruser.jsx'
 
-export default function NuestroPortafolio ({proporcional}){
+export default function MiCuenta ({proporcional}){
 
     const [position, setPosition] = useState(0)
 
     window.onscroll = () => {
         setPosition(window.scrollY)
     }
-    
+
     return (
         <div style={{width: '100%', height: 'auto'}}>
             <div className='position-relative' style={{width: '100%', height: 900 / proporcional}}>
@@ -23,8 +24,14 @@ export default function NuestroPortafolio ({proporcional}){
                     <Principal proporcional={proporcional}/>
                 </div>
             </div>
-            <div style={{width: '100%', height: 'auto'}}>
-                <Proyectos proporcional={proporcional}/>
+            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', paddingLeft: 300 / proporcional, paddingRight: 300 / proporcional,
+                    paddingTop: 150 / proporcional, paddingBottom: 150 / proporcional}}>
+                <div style={{width: '45%', height: 'auto'}}>
+                    <LoginUser proporcional={proporcional}/>
+                </div>
+                <div style={{width: '45%', height: 'auto'}}>
+                    <RegisterUser proporcional={proporcional}/>
+                </div>
             </div>
         </div>
     )

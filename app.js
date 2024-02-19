@@ -77,6 +77,21 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build', 'index'));
 });
 
+app.use(express.static(path.resolve(__dirname, './client/build/sobre-nosotros')));
+app.get('/sobre-nosotros', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/sobre-nosotros', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/nuestros-servicios')));
+app.get('/nuestros-servicios', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/nuestros-servicios', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/nuestro-portafolio')));
+app.get('/nuestro-portafolio', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/nuestro-portafolio', 'index'));
+});
+
 //Iniciar el servidor
 app.listen (app.get('port'), () => {
     console.log ('Server en puerto ', app.get ('port'))

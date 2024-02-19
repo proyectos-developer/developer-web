@@ -23,6 +23,18 @@ import NuestroPortafolio from './components/portafolio/panel.jsx'
 import NuestroPortafolioTablet from './components/portafolio/paneltablet.jsx'
 import NuestroPortafolioCell from './components/portafolio/panelcell.jsx'
 
+import Contactanos from './components/contactanos/panel.jsx'
+import ContactanosTablet from './components/contactanos/paneltablet.jsx'
+import ContactanosCell from './components/contactanos/panelcell.jsx'
+
+import Blog from './components/blog/panel.jsx'
+import BlogTablet from './components/blog/paneltablet.jsx'
+import BlogCell from './components/blog/panelcell.jsx'
+
+import MiCuenta from './components/mi-cuenta/panel.jsx'
+import MiCuentaTablet from './components/mi-cuenta/paneltablet.jsx'
+import MiCuentaCell from './components/mi-cuenta/panelcell.jsx'
+
 export default function App (){
   const [width, setWidth] = useState(window.outerWidth)
 
@@ -57,10 +69,20 @@ export default function App (){
                                                       width < 991 ? <NuestrosServiciosTablet proporcional={991 / width}/> :
                                                                     <NuestrosServicios proporcional={1920/ width}/>}/>
 
-
             <Route path='nuestro-portafolio' element={width < 500 ? <NuestroPortafolioCell proporcional={499 / width}/> :
                                                       width < 991 ? <NuestroPortafolioTablet proporcional={991 / width}/> :
                                                                     <NuestroPortafolio proporcional={1920/ width}/>}/>
+
+            <Route path='blog' element={width < 500 ? <BlogCell proporcional={499 / width}/> :
+                                        width < 991 ? <BlogTablet proporcional={991 / width}/> :
+                                                      <Blog proporcional={1920/ width}/>}/>
+
+            <Route path='contactanos' element={width < 500 ? <ContactanosCell proporcional={499 / width}/> :
+                                               width < 991 ? <ContactanosTablet proporcional={991 / width}/> :
+                                                             <Contactanos proporcional={1920/ width}/>}/>
+            <Route path='mi-cuenta' element={width < 500 ? <MiCuentaCell proporcional={499 / width}/> :
+                                             width < 991 ? <MiCuentaTablet proporcional={991 / width}/> :
+                                                           <MiCuenta proporcional={1920/ width}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
