@@ -5,7 +5,7 @@ export default function Proyectos ({proporcional}){
     const [proyecto_seleccion, setProyectoSeleccion] = useState('') 
 
     return (
-        <div style={{width: '100%', height: 500 / proporcional}}>
+        <div style={{width: '100%', height: 'auto'}}>
             <div className='d-flex' style={{width: '100%', height: 500 / proporcional}}>
                 <div className='position-relative' style={{width: '25%', height: '500%', cursor: 'pointer'}}
                 onMouseOver={() => setProyectoSeleccion ('proyecto_uno')} onMouseLeave={() => setProyectoSeleccion('')}>

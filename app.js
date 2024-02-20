@@ -92,6 +92,31 @@ app.get('/nuestro-portafolio', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/nuestro-portafolio', 'index'));
 });
 
+app.use(express.static(path.resolve(__dirname, './client/build/nuestro-blog')));
+app.get('/nuestro-blog', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/nuestro-blog', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/contactanos')));
+app.get('/contactanos', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/contactanos', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/mi-cuenta')));
+app.get('/mi-cuenta', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/mi-cuenta', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/tienda')));
+app.get('/tienda', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/tienda', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/producto')));
+app.get('/producto/:producto/:sku', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/producto', 'index'));
+});
+
 //Iniciar el servidor
 app.listen (app.get('port'), () => {
     console.log ('Server en puerto ', app.get ('port'))

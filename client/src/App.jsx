@@ -39,6 +39,14 @@ import NuestraTienda from './components/tienda/panel.jsx'
 import NuestraTiendaTablet from './components/tienda/paneltablet.jsx'
 import NuestraTiendaCell from './components/tienda/panelcell.jsx'
 
+import DetallesProducto from './components/producto/panel.jsx'
+import DetallesProductoTablet from './components/producto/paneltablet.jsx'
+import DetallesProductoCell from './components/producto/panelcell.jsx'
+
+import CarritoCompras from './components/carrito/panel.jsx'
+import CarritoComprasTablet from './components/carrito/paneltablet.jsx'
+import CarritoComprasCell from './components/carrito/panelcell.jsx'
+
 export default function App (){
   const [width, setWidth] = useState(window.outerWidth)
 
@@ -77,9 +85,9 @@ export default function App (){
                                                       width < 991 ? <NuestroPortafolioTablet proporcional={991 / width}/> :
                                                                     <NuestroPortafolio proporcional={1920/ width}/>}/>
 
-            <Route path='blog' element={width < 500 ? <BlogCell proporcional={499 / width}/> :
-                                        width < 991 ? <BlogTablet proporcional={991 / width}/> :
-                                                      <Blog proporcional={1920/ width}/>}/>
+            <Route path='nuestro-blog' element={width < 500 ? <BlogCell proporcional={499 / width}/> :
+                                                width < 991 ? <BlogTablet proporcional={991 / width}/> :
+                                                              <Blog proporcional={1920/ width}/>}/>
 
             <Route path='contactanos' element={width < 500 ? <ContactanosCell proporcional={499 / width}/> :
                                                width < 991 ? <ContactanosTablet proporcional={991 / width}/> :
@@ -89,10 +97,17 @@ export default function App (){
                                              width < 991 ? <MiCuentaTablet proporcional={991 / width}/> :
                                                            <MiCuenta proporcional={1920/ width}/>}/>
 
-                                                             
-            <Route path='tienda' element={width < 500 ? <NuestraTiendaCell proporcional={499 / width}/> :
-                                          width < 991 ? <NuestraTiendaTablet proporcional={991 / width}/> :
-                                                        <NuestraTienda proporcional={1920/ width}/>}/>
+            <Route path='nuestra-tienda' element={width < 500 ? <NuestraTiendaCell proporcional={499 / width}/> :
+                                                  width < 991 ? <NuestraTiendaTablet proporcional={991 / width}/> :
+                                                                <NuestraTienda proporcional={1920/ width}/>}/>
+
+            <Route path='producto/:producto/:sku' element={width < 500 ? <DetallesProductoCell proporcional={499 / width}/> :
+                                                           width < 991 ? <DetallesProductoTablet proporcional={991 / width}/> :
+                                                                         <DetallesProducto proporcional={1920/ width}/>}/>
+
+            <Route path='carrito-compras' element={width < 500 ? <CarritoComprasCell proporcional={499 / width}/> :
+                                                   width < 991 ? <CarritoComprasTablet proporcional={991 / width}/> :
+                                                                 <CarritoCompras proporcional={1920/ width}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
