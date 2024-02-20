@@ -35,6 +35,10 @@ import MiCuenta from './components/mi-cuenta/panel.jsx'
 import MiCuentaTablet from './components/mi-cuenta/paneltablet.jsx'
 import MiCuentaCell from './components/mi-cuenta/panelcell.jsx'
 
+import NuestraTienda from './components/tienda/panel.jsx'
+import NuestraTiendaTablet from './components/tienda/paneltablet.jsx'
+import NuestraTiendaCell from './components/tienda/panelcell.jsx'
+
 export default function App (){
   const [width, setWidth] = useState(window.outerWidth)
 
@@ -80,9 +84,15 @@ export default function App (){
             <Route path='contactanos' element={width < 500 ? <ContactanosCell proporcional={499 / width}/> :
                                                width < 991 ? <ContactanosTablet proporcional={991 / width}/> :
                                                              <Contactanos proporcional={1920/ width}/>}/>
+
             <Route path='mi-cuenta' element={width < 500 ? <MiCuentaCell proporcional={499 / width}/> :
                                              width < 991 ? <MiCuentaTablet proporcional={991 / width}/> :
                                                            <MiCuenta proporcional={1920/ width}/>}/>
+
+                                                             
+            <Route path='tienda' element={width < 500 ? <NuestraTiendaCell proporcional={499 / width}/> :
+                                          width < 991 ? <NuestraTiendaTablet proporcional={991 / width}/> :
+                                                        <NuestraTienda proporcional={1920/ width}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

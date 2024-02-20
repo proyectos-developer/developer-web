@@ -65,6 +65,13 @@ export default function MenuSuperior ({proporcional, position}){
                         </p>
                     </div>
                     <div style={{width: '10%', height: 32  / proporcional, cursor: 'pointer'}}
+                        onMouseOver={() => setMenuSuperior('tienda')} onMouseLeave={() => setMenuSuperior('')} onClick={() => navigate ('/tienda')}>
+                        <p style={{fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, marginBottom: 0, fontWeight: 700, fontFamily: 'Montserrat, sans-serif',
+                                    color: position > 800 / proporcional ? 'black' : 'white', textAlign: 'center'}}>
+                            Tienda
+                        </p>
+                    </div>
+                    <div style={{width: '10%', height: 32  / proporcional, cursor: 'pointer'}}
                         onMouseOver={() => setMenuSuperior('contacto')} onMouseLeave={() => setMenuSuperior('')} onClick={() => navigate ('/contactanos')}>
                         <p style={{fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, marginBottom: 0, fontWeight: 700, fontFamily: 'Montserrat, sans-serif',
                                     color: position > 800 / proporcional ? 'black' : 'white', textAlign: 'center'}}>
