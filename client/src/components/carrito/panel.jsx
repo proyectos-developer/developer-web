@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import MenuSuperior from '../comun/menusuperior'
 import Principal from './principal.jsx'
+import ListaProductos from './lista.jsx'
 
 export default function CarritoCompras ({proporcional}){
 
@@ -23,7 +24,7 @@ export default function CarritoCompras ({proporcional}){
                 </div>
             </div>
             <div style={{width: '100%', height: 'auto'}}>
-
+                <ListaProductos proporcional={proporcional}/>
             </div>
         </div>
     )

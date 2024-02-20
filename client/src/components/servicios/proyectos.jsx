@@ -7,7 +7,7 @@ export default function Proyectos ({proporcional}){
     return (
         <div style={{width: '100%', height: 'auto'}}>
             <div className='d-flex' style={{width: '100%', height: 500 / proporcional}}>
-                <div className='position-relative' style={{width: '25%', height: '500%', cursor: 'pointer'}}
+                <div className='position-relative' style={{width: '25%', height: 'auto', cursor: 'pointer'}}
                 onMouseOver={() => setProyectoSeleccion ('proyecto_uno')} onMouseLeave={() => setProyectoSeleccion('')}>
                     <div style={{width: '100%', height: 500 / proporcional, background: 'rgba(219, 228, 235, 0.8)'}}/>
                     {
@@ -31,7 +31,7 @@ export default function Proyectos ({proporcional}){
                         ) : null
                     }
                 </div>
-                <div className='position-relative' style={{width: '25%', height: '500%', cursor: 'pointer'}}
+                <div className='position-relative' style={{width: '25%', height: 'auto', cursor: 'pointer'}}
                 onMouseOver={() => setProyectoSeleccion ('proyecto_dos')} onMouseLeave={() => setProyectoSeleccion('')}>
                     <div style={{width: '100%', height: 500 / proporcional, background: 'rgba(219, 228, 235, 0.8)'}}/>
                     {
@@ -55,7 +55,7 @@ export default function Proyectos ({proporcional}){
                         ) : null
                     }
                 </div>
-                <div className='position-relative' style={{width: '25%', height: '500%', cursor: 'pointer'}}
+                <div className='position-relative' style={{width: '25%', height: 'auto', cursor: 'pointer'}}
                 onMouseOver={() => setProyectoSeleccion ('proyecto_tres')} onMouseLeave={() => setProyectoSeleccion('')}>
                     <div style={{width: '100%', height: 500 / proporcional, background: 'rgba(219, 228, 235, 0.8)'}}/>
                     {
@@ -79,7 +79,7 @@ export default function Proyectos ({proporcional}){
                         ) : null
                     }
                 </div>
-                <div className='position-relative' style={{width: '25%', height: '500%', cursor: 'pointer'}}
+                <div className='position-relative' style={{width: '25%', height: 'auto', cursor: 'pointer'}}
                 onMouseOver={() => setProyectoSeleccion ('proyecto_cuatro')} onMouseLeave={() => setProyectoSeleccion('')}>
                     <div style={{width: '100%', height: 500 / proporcional, background: 'rgba(219, 228, 235, 0.8)'}}/>
                     {
