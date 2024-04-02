@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 import MenuSuperior from '../comun/menusuperior'
 import Principal from './principal.jsx'
-import Servicios from './servicios.jsx'
+import MisionVision from './misionvision.jsx'
+import Valores from './valores.jsx'
 import Equipo from './equipo.jsx'
-import Estadisticas from './estadisticas.jsx'
 import MaravillosoProducto from './maravillosoproducto.jsx'
 
 export default function SobreNosotros ({proporcional}){
@@ -27,9 +27,9 @@ export default function SobreNosotros ({proporcional}){
                 </div>
             </div>
             <div style={{width: '100%', height: 'auto'}}>
-                <Servicios proporcional={proporcional}/>
+                <MisionVision proporcional={proporcional}/>
+                <Valores proporcional={proporcional}/>
                 <Equipo proporcional={proporcional}/>
-                <Estadisticas proporcional={proporcional}/>
                 <MaravillosoProducto proporcional={proporcional}/>
             </div>
         </div>

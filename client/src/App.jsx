@@ -101,7 +101,7 @@ export default function App (){
                                                   width < 991 ? <NuestraTiendaTablet proporcional={991 / width}/> :
                                                                 <NuestraTienda proporcional={1920/ width}/>}/>
 
-            <Route path='producto/:producto/:sku' element={width < 500 ? <DetallesProductoCell proporcional={499 / width}/> :
+            <Route path='producto/:producjto/:sku' element={width < 500 ? <DetallesProductoCell proporcional={499 / width}/> :
                                                            width < 991 ? <DetallesProductoTablet proporcional={991 / width}/> :
                                                                          <DetallesProducto proporcional={1920/ width}/>}/>
 

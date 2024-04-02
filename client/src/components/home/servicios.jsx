@@ -15,15 +15,15 @@ export default function Servicios ({proporcional}){
                         </p>
                     </div>
                     <div style={{width: '100%', height: 100 / proporcional, marginBottom: 20 / proporcional}}>
-                        <p style={{fontSize: 35 / proporcional, lineHeight:  `${50 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(22, 36, 65)',
+                        <p style={{fontSize: 26 / proporcional, lineHeight:  `${30 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(22, 36, 65)',
                             fontWeight: 800}}>
-                            Nuevas aplicaciones - Ideas Frescas Para Ti
+                            "Creación de soluciones digitales: aplicaciones móviles, web y e-commerce"
                         </p>
                     </div>
-                    <div style={{width: '100%', height: 80 / proporcional, marginBottom: 32 / proporcional}}>
+                    <div style={{width: '100%', height: 'auto', marginBottom: 32 / proporcional}}>
                         <p style={{fontSize: 18 / proporcional, lineHeight:  `${26 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(136, 136, 136)',
                             fontWeight: 400}}>
-                            Lore ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy nibhie euismod tincidut utlaoreet dolore.
+                            Somos tu socio tecnológico para llevar tus ideas al mundo digital. en Developer Ideas nos especializamos en el desarrollo de aplicaciones móviles, sitios web y plataformas de comercio electrónico, brindando soluciones personalizadas que impulsan el crecimiento de tu negocio.
                         </p>
                     </div>
                     <button className='btn' style={{width: 170 / proporcional, height: 60 / proporcional, background: '#172bde', color: 'white', fontSize: 20 / proporcional,
@@ -35,19 +35,19 @@ export default function Servicios ({proporcional}){
                         <div style={{width: 50 / proporcional, height: 3 / proporcional, background: '#2d572c', marginTop: 13.5 / proporcional, marginBottom: 13.5 / proporcional,
                             marginRight: 10 / proporcional}}/>
                         <p style={{fontSize: 12 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 0, color: '#2d572c', fontWeight:800, fontFamily: 'Montserrat, sans-serif'}}>
-                            Páginas web
+                            Marketing digital
                         </p>
                     </div>
                     <div style={{width: '100%', height: 100 / proporcional, marginBottom: 20 / proporcional}}>
-                        <p style={{fontSize: 35 / proporcional, lineHeight:  `${50 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(22, 36, 65)',
+                        <p style={{fontSize: 26 / proporcional, lineHeight:  `${30 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(22, 36, 65)',
                             fontWeight: 800}}>
-                            Encuentro de bootcamp para pasantes 2024
+                            "Potencia tu presencia Online: Soluciones de marketing digital para empresas."
                         </p>
                     </div>
-                    <div style={{width: '100%', height: 80 / proporcional, marginBottom: 32 / proporcional}}>
+                    <div style={{width: '100%', height: 'auto', marginBottom: 32 / proporcional}}>
                         <p style={{fontSize: 18 / proporcional, lineHeight:  `${26 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(136, 136, 136)',
                             fontWeight: 400}}>
-                            Lore ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy nibhie euismod tincidut utlaoreet dolore.
+                            En la era digital, la visibilidad online es clave para el éxito de cualquier empresa tecnológica. En Developer Ideas, ofrecemos soluciones de marketing digital a medida para impulsar tu presencia en la web y alcanzar tus objetivos comerciales.
                         </p>
                     </div>
                     <button className='btn' style={{width: 170 / proporcional, height: 60 / proporcional, background: '#172bde', color: 'white', fontSize: 20 / proporcional,
@@ -59,19 +59,19 @@ export default function Servicios ({proporcional}){
                         <div style={{width: 50 / proporcional, height: 3 / proporcional, background: '#2d572c', marginTop: 13.5 / proporcional, marginBottom: 13.5 / proporcional,
                             marginRight: 10 / proporcional}}/>
                         <p style={{fontSize: 12 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 0, color: '#2d572c', fontWeight:800, fontFamily: 'Montserrat, sans-serif'}}>
-                            Media
+                            Soporte técnico
                         </p>
                     </div>
                     <div style={{width: '100%', height: 100 / proporcional, marginBottom: 20 / proporcional}}>
-                        <p style={{fontSize: 35 / proporcional, lineHeight:  `${50 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(22, 36, 65)',
+                        <p style={{fontSize: 26 / proporcional, lineHeight:  `${30 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(22, 36, 65)',
                             fontWeight: 800}}>
-                            Revista tecnológica - Tendencias
+                            Respaldo tecnológico a tu alcance: servicos de soporte técnico especializado.
                         </p>
                     </div>
-                    <div style={{width: '100%', height: 80 / proporcional, marginBottom: 32 / proporcional}}>
+                    <div style={{width: '100%', height: 'auto', marginBottom: 32 / proporcional}}>
                         <p style={{fontSize: 18 / proporcional, lineHeight:  `${26 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(136, 136, 136)',
                             fontWeight: 400}}>
-                            Lore ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy nibhie euismod tincidut utlaoreet dolore.
+                            En el cambiante mundo tecnológico acutla, contar con un sólido respaldo técnico es fundamental para mantener el funcionamiento fluido de tu empresa. En Developer Ideas, ofrecemos servicios de soporte técnico especializado diseñados para resolver tus problemas tecnológicos de manera rápida y efectiva.
                         </p>
                     </div>
                     <button className='btn' style={{width: 170 / proporcional, height: 60 / proporcional, background: '#172bde', color: 'white', fontSize: 20 / proporcional,

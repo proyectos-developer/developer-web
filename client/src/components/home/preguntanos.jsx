@@ -25,10 +25,10 @@ export default function Preguntanos ({proporcional}){
                             </p>
                             <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, fontWeight: 400, fontFamily: 'Hind, sans-serif', marginBottom: 0,
                                 color: 'white', marginBottom: 32 / proporcional}}>
-                                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. <br/> Nulla consequat massa quis enim. Donnec pode justo, fringilla vel,<br/> aliquet nec, vulputate eget, arcu.
+                                ¿Cuál es tu pregunta sobre soluciones tecnológicas? Por favor, descríbela para que pueda brindarte la mejor respuesta posible.
                             </p>
                             <button className='border-0 rounded' style={{width: 180 / proporcional, height: 60 / proporcional, background: 'white', fontSize: 18 / proporcional,
-                                color: '#dbe4eb', fontWeight: 800}}>Ver más</button>
+                                color: 'rgb(23, 43, 222)', fontWeight: 800}}>Ver más</button>
                         </div>
                     </div>
                 </div>
