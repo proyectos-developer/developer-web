@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 
 import MenuSuperiorTablet from '../comun/menusuperiortablet.jsx'
 import SliderHomeTablet from '../home/slidertablet.jsx'
-import AreasTrabajo from '../home/areastrabajo.jsx'
-import Servicios from '../home/servicios.jsx'
-import Proyectos from '../home/proyectos.jsx'
-import Preguntanos from '../home/preguntanos.jsx'
-import Imaginacion from '../home/imaginacion.jsx'
-import Clientes from '../home/clientes.jsx'
+import AreasTrabajoTablet from '../home/areastrabajotablet.jsx'
+import ServiciosTablet from '../home/serviciostablet.jsx'
+import ProyectosTablet from '../home/proyectostablet.jsx'
+import PreguntanosTablet from '../home/preguntanostablet.jsx'
+import ImaginacionTablet from '../home/imaginaciontablet.jsx'
+import ClientesTablet from '../home/clientestablet.jsx'
 
 export default function HomeTablet ({proporcional}){
 
@@ -29,12 +29,12 @@ export default function HomeTablet ({proporcional}){
                 </div>
             </div>
             <div style={{width: '100%', height: 'auto'}}>
-                <AreasTrabajo proporcional={proporcional}/>
-                <Servicios proporcional={proporcional}/>
-                <Proyectos proporcional={proporcional}/>
-                <Preguntanos proporcional={proporcional}/>
-                <Imaginacion proporcional={proporcional}/>
-                <Clientes proporcional={proporcional}/>
+                <AreasTrabajoTablet proporcional={proporcional}/>
+                <ServiciosTablet proporcional={proporcional}/>
+                <ProyectosTablet proporcional={proporcional}/>
+                <PreguntanosTablet proporcional={proporcional}/>
+                <ImaginacionTablet proporcional={proporcional}/>
+                <ClientesTablet proporcional={proporcional}/>
             </div>
         </div>
     )

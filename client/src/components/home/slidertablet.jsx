@@ -1,10 +1,10 @@
 import React from 'react'
 
-import image_00 from '../../assets/images/home_slider_image_00_991.png'
-import image_01 from '../../assets/images/home_slider_image_01_991.png'
-import image_02 from '../../assets/images/home_slider_image_02_991.png'
-import image_03 from '../../assets/images/home_slider_image_03_991.png'
-import image_04 from '../../assets/images/home_slider_image_04_991.png'
+import image_00 from '../../assets/images/home_slider_00_991.png'
+import image_01 from '../../assets/images/home_slider_01_991.png'
+import image_02 from '../../assets/images/home_slider_02_991.png'
+import image_03 from '../../assets/images/home_slider_03_991.png'
+import image_04 from '../../assets/images/home_slider_04_991.png'
 
 export default function SliderHomeTablet ({proporcional}){
 

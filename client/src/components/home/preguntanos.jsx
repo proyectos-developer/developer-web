@@ -1,7 +1,7 @@
 import React from 'react'
 
-import home_contact from '../../assets/images/home_contact_us.png'
-import home_question from '../../assets/images/home_pregunta.png'
+import home_contact from '../../assets/images/home_contact_us_600.jpg'
+import home_question from '../../assets/images/home_fondo_contact_1920.png'
 
 export default function Preguntanos ({proporcional}){
     return (
