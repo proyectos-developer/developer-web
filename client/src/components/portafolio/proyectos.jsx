@@ -1,255 +1,137 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
+import {useDispatch, useSelector} from 'react-redux'
+
+import {proyectosdata} from '../../redux/slice/proyectosdata.js'
+import {proyectosConstants} from '../../uri/proyectos-constants.js'
+
+import CardProyecto from './cards/proyecto.jsx'
 
 export default function Proyectos ({proporcional}){
 
-    const [seleccion_proyecto, setSeleccionProyecto] = useState('')
+    const dispatch = useDispatch()
+
+    const [lista_proyectos, setListaProyectos] = useState([])
+    const [proyectos, setProyectos] = useState([])
+
+    const {get_proyectos} = useSelector(({proyectos_data}) => proyectos_data)
+
+    useEffect (() => {
+        dispatch(proyectosdata(proyectosConstants(0, 0, false).get_proyectos))
+    }, [])
+
+    useEffect (() => {
+        if (get_proyectos && get_proyectos.success === true && get_proyectos.proyectos){
+            let data = get_proyectos.proyectos.length
+            let lista = []
+            let cuenta = data / 4 < 1 ? 1 : data % 4 !== 0 ? (data / 4) + 1 : data / 4
+            for (let count = 0; count < cuenta; count ++){
+                lista.push ({num: `${count + 1}`})
+            }
+            setProyectos (get_proyectos.proyectos)
+            setListaProyectos (lista)
+        }
+    }, [get_proyectos])
+
+    const [seleccion_menu, setSeleccionMenu] = useState('todo')
 
     return (
-        <div style={{width: '100%', height: 'auto'}}>
-            <div style={{width: '100%', height: 'auto', paddingLeft: 300 / proporcional, paddingRight: 300 / proporcional, paddingTop: 125 / proporcional, paddingBottom: 125 / proporcional}}>
-                <div className='d-flex justify-content-center' style={{width: '100%', height: 36 / proporcional, marginBottom: 24 / proporcional}}>
-                    <div style={{width: 130 / proporcional, height: 26 / proporcional, marginBottom: 10 / proporcional}}>
-                        <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0, fontWeight: 800, color: '#2d572c',
-                            textAlign: 'center'}}>
-                            Mostrar todo
+        <div style={{width: '100%', height: 'auto', paddingTop: 120 / proporcional, paddingBottom: 120 / proporcional, paddingLeft: 350 / proporcional, paddingRight: 350 / proporcional}}>
+            <div style={{width: '100%', height: 'auto'}}>
+                <div className='d-flex justify-content-center' style={{width: '100%', height: 36 / proporcional, marginBottom: 25 / proporcional}}>
+                    <div style={{width: '25%', height: 28 / proporcional}}>
+                        <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 5 / proporcional, 
+                            fontWeight: seleccion_menu === 'todo' ? 700 : 500,
+                             color: seleccion_menu === 'todo' ? '#2d572c': 'rgb(136, 136, 136, 136)',
+                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(0, 0, false).get_proyectos)); setSeleccionMenu('todo')}}>
+                            Todo
                         </p>
+                        {
+                            seleccion_menu === 'todo' ? (
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <div style={{width: '20%', height: 2 / proporcional, background: '#2d572c'}}/>
+                                </div>
+                            ) : null
+                        }
                     </div>
-                    <div style={{width: 130 / proporcional, height: 26 / proporcional, marginBottom: 10 / proporcional}}>
-                        <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0, fontWeight: 400, color: 'rgb(136, 136, 136, 136)',
-                            textAlign: 'center'}}>
-                            Creativo
+                    <div style={{width: '25%', height: 28 / proporcional}}>
+                        <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 5 / proporcional,  
+                            fontWeight: seleccion_menu === 'web' ? 700 : 500,
+                             color: seleccion_menu === 'web' ? '#2d572c': 'rgb(136, 136, 136, 136)',
+                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(2, 0, false).get_proyectos)); setSeleccionMenu('web')}}>
+                            Web
                         </p>
+                        {
+                            seleccion_menu === 'web' ? (
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <div style={{width: '20%', height: 2 / proporcional, background: '#2d572c'}}/>
+                                </div>
+                            ) : null
+                        }
                     </div>
-                    <div style={{width: 130 / proporcional, height: 26 / proporcional, marginBottom: 10 / proporcional}}>
-                        <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0, fontWeight: 400, color: 'rgb(136, 136, 136, 136)',
-                            textAlign: 'center'}}>
-                            Características
+                    <div style={{width: '25%', height: 28 / proporcional}}>
+                        <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 5 / proporcional, fontWeight: 800, 
+                            fontWeight: seleccion_menu === 'apps' ? 700 : 500,
+                             color: seleccion_menu === 'apps' ? '#2d572c': 'rgb(136, 136, 136, 136)',
+                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(1, 0, false).get_proyectos)); setSeleccionMenu('apps')}}>
+                            Apps
                         </p>
+                        {
+                            seleccion_menu === 'apps' ? (
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <div style={{width: '20%', height: 2 / proporcional, background: '#2d572c'}}/>
+                                </div>
+                            ) : null
+                        }
                     </div>
-                    <div style={{width: 130 / proporcional, height: 26 / proporcional, marginBottom: 10 / proporcional}}>
-                        <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0, fontWeight: 400, color: 'rgb(136, 136, 136, 136)',
-                            textAlign: 'center'}}>
-                            Diseño gráfico
+                    <div style={{width: '25%', height: 28 / proporcional}}>
+                        <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 5 / proporcional, fontWeight: 800,
+                            fontWeight: seleccion_menu === 'otros' ? 700 : 500,
+                             color: seleccion_menu === 'otros' ? '#2d572c': 'rgb(136, 136, 136, 136)',
+                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(3, 0, false).get_proyectos)); setSeleccionMenu('otros')}}>
+                            Otros
                         </p>
-                    </div>
-                    <div style={{width: 130 / proporcional, height: 26 / proporcional, marginBottom: 10 / proporcional}}>
-                        <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0, fontWeight: 400, color: 'rgb(136, 136, 136, 136)',
-                            textAlign: 'center'}}>
-                            Paquetes
-                        </p>
+                        {
+                            seleccion_menu === 'otros' ? (
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <div style={{width: '20%', height: 2 / proporcional, background: '#2d572c'}}/>
+                                </div>
+                            ) : null
+                        }
                     </div>
                 </div>
-                <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                    <div style={{width: '32%',  height: 520 / proporcional, cursor: 'pointer'}} onMouseOver={() => setSeleccionProyecto ('proyecto_uno')} 
-                        onMouseLeave={() => setSeleccionProyecto('')}>
-                        <div className='position-relative' style={{width: '100%', height:  420 / proporcional, marginBottom: 30 / proporcional, background: '#dbe4eb'}}>
-                            {
-                                seleccion_proyecto === 'proyecto_uno' ? (
-                                    <div className='position-absolute top-0 start-0' style={{width: '100%', height: 420 / proporcional, background: 'rgba(23, 43, 222, 0.6)'}}>
-
-                                    </div>
-                                ) : null
-                            }
-                        </div>
-                        <div style={{width: '100%', height: 70 / proporcional}}>
-                            <p style={{fontSize: 22 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 13 / proporcional, fontWeight: 800, color: 'rgb(22, 36, 65)',
-                                    textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}>
-                                Diseño
-                            </p>
-                            <p style={{fontSize: 14 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 600, color: 'rgb(136, 136, 136)',
-                                    textAlign: 'center', fontFamily: 'Hind, sans-serif'}}>
-                                Branding / Paquete
-                            </p>
-                        </div>
-                    </div>
-                    <div style={{width: '32%',  height: 520 / proporcional, cursor: 'pointer'}} onMouseOver={() => setSeleccionProyecto ('proyecto_dos')} 
-                        onMouseLeave={() => setSeleccionProyecto('')}>
-                        <div className='position-relative' style={{width: '100%', height:  420 / proporcional, marginBottom: 30 / proporcional, background: '#dbe4eb'}}>
-                            {
-                                seleccion_proyecto === 'proyecto_dos' ? (
-                                    <div className='position-absolute top-0 start-0' style={{width: '100%', height: 420 / proporcional, background: 'rgba(23, 43, 222, 0.6)'}}>
-
-                                    </div>
-                                ) : null
-                            }
-                        </div>
-                        <div style={{width: '100%', height: 70 / proporcional}}>
-                            <p style={{fontSize: 22 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 13 / proporcional, fontWeight: 800, color: 'rgb(22, 36, 65)',
-                                    textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}>
-                                Diseño
-                            </p>
-                            <p style={{fontSize: 14 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 600, color: 'rgb(136, 136, 136)',
-                                    textAlign: 'center', fontFamily: 'Hind, sans-serif'}}>
-                                Branding / Característico
-                            </p>
-                        </div>
-                    </div>
-                    <div style={{width: '32%',  height: 520 / proporcional, cursor: 'pointer'}} onMouseOver={() => setSeleccionProyecto ('proyecto_tres')} 
-                        onMouseLeave={() => setSeleccionProyecto('')}>
-                        <div className='position-relative' style={{width: '100%', height:  420 / proporcional, marginBottom: 30 / proporcional, background: '#dbe4eb'}}>
-                            {
-                                seleccion_proyecto === 'proyecto_tres' ? (
-                                    <div className='position-absolute top-0 start-0' style={{width: '100%', height: 420 / proporcional, background: 'rgba(23, 43, 222, 0.6)'}}>
-
-                                    </div>
-                                ) : null
-                            }
-                        </div>
-                        <div style={{width: '100%', height: 70 / proporcional}}>
-                            <p style={{fontSize: 22 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 13 / proporcional, fontWeight: 800, color: 'rgb(22, 36, 65)',
-                                    textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}>
-                                Diseño
-                            </p>
-                            <p style={{fontSize: 14 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 600, color: 'rgb(136, 136, 136)',
-                                    textAlign: 'center', fontFamily: 'Hind, sans-serif'}}>
-                                Branding / Creativo
-                            </p>
-                        </div>
-                    </div>
+                <div className='rounded-pill' style={{width: '100%', height: 2 / proporcional, background: '#ececec', marginBottom: 60 / proporcional}}/>
+                {
+                    lista_proyectos && lista_proyectos.length > 0 ? ( 
+                        lista_proyectos.map ((proyecto, numproy) => {
+                            return (
+                                <div className='d-flex justify-content-between' style={{width: '100%'}}>
+                                {
+                                    proyectos[(4 *  numproy)] ? ( 
+                                        <CardProyecto proyecto={proyectos[(4 *  numproy)]} key={(4 *  numproy)} index={(4 *  numproy)} proporcional={proporcional}/>
+                                    ) : null
+                                }
+                                {
+                                    proyectos[(4 *  numproy) + 1] ? ( 
+                                        <CardProyecto proyecto={proyectos[(4 *  numproy) + 1]} key={(4 *  numproy) + 1} index={(4 *  numproy) + 1} proporcional={proporcional}/>
+                                    ) : null
+                                }
+                                {
+                                    proyectos[(4 *  numproy) + 2] ? ( 
+                                        <CardProyecto proyecto={proyectos[(4 *  numproy) + 2]} key={(4 *  numproy) + 2} index={(4 *  numproy) + 2} proporcional={proporcional}/>
+                                    ) : null
+                                }
+                                {
+                                    proyectos[(4 *  numproy) + 3] ? ( 
+                                        <CardProyecto proyecto={proyectos[(4 *  numproy) + 3]} key={(4 *  numproy) + 3} index={(4 *  numproy) + 3} proporcional={proporcional}/>
+                                    ) : null
+                                }
+                                </div>
+                            )
+                        })
+                    ) : null
+                }
                 </div>
-                <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                    <div style={{width: '32%',  height: 520 / proporcional, cursor: 'pointer'}} onMouseOver={() => setSeleccionProyecto ('proyecto_cuatro')} 
-                        onMouseLeave={() => setSeleccionProyecto('')}>
-                        <div className='position-relative' style={{width: '100%', height:  420 / proporcional, marginBottom: 30 / proporcional, background: '#dbe4eb'}}>
-                            {
-                                seleccion_proyecto === 'proyecto_cuatro' ? (
-                                    <div className='position-absolute top-0 start-0' style={{width: '100%', height: 420 / proporcional, background: 'rgba(23, 43, 222, 0.6)'}}>
-
-                                    </div>
-                                ) : null
-                            }
-                        </div>
-                        <div style={{width: '100%', height: 70 / proporcional}}>
-                            <p style={{fontSize: 22 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 13 / proporcional, fontWeight: 800, color: 'rgb(22, 36, 65)',
-                                    textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}>
-                                Diseño
-                            </p>
-                            <p style={{fontSize: 14 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 600, color: 'rgb(136, 136, 136)',
-                                    textAlign: 'center', fontFamily: 'Hind, sans-serif'}}>
-                                Branding / Paquete
-                            </p>
-                        </div>
-                    </div>
-                    <div style={{width: '32%',  height: 520 / proporcional, cursor: 'pointer'}} onMouseOver={() => setSeleccionProyecto ('proyecto_cinco')} 
-                        onMouseLeave={() => setSeleccionProyecto('')}>
-                        <div className='position-relative' style={{width: '100%', height:  420 / proporcional, marginBottom: 30 / proporcional, background: '#dbe4eb'}}>
-                            {
-                                seleccion_proyecto === 'proyecto_cinco' ? (
-                                    <div className='position-absolute top-0 start-0' style={{width: '100%', height: 420 / proporcional, background: 'rgba(23, 43, 222, 0.6)'}}>
-
-                                    </div>
-                                ) : null
-                            }
-                        </div>
-                        <div style={{width: '100%', height: 70 / proporcional}}>
-                            <p style={{fontSize: 22 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 13 / proporcional, fontWeight: 800, color: 'rgb(22, 36, 65)',
-                                    textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}>
-                                Diseño
-                            </p>
-                            <p style={{fontSize: 14 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 600, color: 'rgb(136, 136, 136)',
-                                    textAlign: 'center', fontFamily: 'Hind, sans-serif'}}>
-                                Branding / Característico
-                            </p>
-                        </div>
-                    </div>
-                    <div style={{width: '32%',  height: 520 / proporcional, cursor: 'pointer'}} onMouseOver={() => setSeleccionProyecto ('proyecto_seis')} 
-                        onMouseLeave={() => setSeleccionProyecto('')}>
-                        <div className='position-relative' style={{width: '100%', height:  420 / proporcional, marginBottom: 30 / proporcional, background: '#dbe4eb'}}>
-                            {
-                                seleccion_proyecto === 'proyecto_seis' ? (
-                                    <div className='position-absolute top-0 start-0' style={{width: '100%', height: 420 / proporcional, background: 'rgba(23, 43, 222, 0.6)'}}>
-
-                                    </div>
-                                ) : null
-                            }
-                        </div>
-                        <div style={{width: '100%', height: 70 / proporcional}}>
-                            <p style={{fontSize: 22 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 13 / proporcional, fontWeight: 800, color: 'rgb(22, 36, 65)',
-                                    textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}>
-                                Diseño
-                            </p>
-                            <p style={{fontSize: 14 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 600, color: 'rgb(136, 136, 136)',
-                                    textAlign: 'center', fontFamily: 'Hind, sans-serif'}}>
-                                Branding / Creativo
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 115 / proporcional}}>
-                    <div style={{width: '32%',  height: 520 / proporcional, cursor: 'pointer'}} onMouseOver={() => setSeleccionProyecto ('proyecto_siete')} 
-                        onMouseLeave={() => setSeleccionProyecto('')}>
-                        <div className='position-relative' style={{width: '100%', height:  420 / proporcional, marginBottom: 30 / proporcional, background: '#dbe4eb'}}>
-                            {
-                                seleccion_proyecto === 'proyecto_siete' ? (
-                                    <div className='position-absolute top-0 start-0' style={{width: '100%', height: 420 / proporcional, background: 'rgba(23, 43, 222, 0.6)'}}>
-
-                                    </div>
-                                ) : null
-                            }
-                        </div>
-                        <div style={{width: '100%', height: 70 / proporcional}}>
-                            <p style={{fontSize: 22 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 13 / proporcional, fontWeight: 800, color: 'rgb(22, 36, 65)',
-                                    textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}>
-                                Diseño
-                            </p>
-                            <p style={{fontSize: 14 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 600, color: 'rgb(136, 136, 136)',
-                                    textAlign: 'center', fontFamily: 'Hind, sans-serif'}}>
-                                Branding / Paquete
-                            </p>
-                        </div>
-                    </div>
-                    <div style={{width: '32%',  height: 520 / proporcional, cursor: 'pointer'}} onMouseOver={() => setSeleccionProyecto ('proyecto_ocho')} 
-                        onMouseLeave={() => setSeleccionProyecto('')}>
-                        <div className='position-relative' style={{width: '100%', height:  420 / proporcional, marginBottom: 30 / proporcional, background: '#dbe4eb'}}>
-                            {
-                                seleccion_proyecto === 'proyecto_ocho' ? (
-                                    <div className='position-absolute top-0 start-0' style={{width: '100%', height: 420 / proporcional, background: 'rgba(23, 43, 222, 0.6)'}}>
-
-                                    </div>
-                                ) : null
-                            }
-                        </div>
-                        <div style={{width: '100%', height: 70 / proporcional}}>
-                            <p style={{fontSize: 22 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 13 / proporcional, fontWeight: 800, color: 'rgb(22, 36, 65)',
-                                    textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}>
-                                Diseño
-                            </p>
-                            <p style={{fontSize: 14 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 600, color: 'rgb(136, 136, 136)',
-                                    textAlign: 'center', fontFamily: 'Hind, sans-serif'}}>
-                                Branding / Característico
-                            </p>
-                        </div>
-                    </div>
-                    <div style={{width: '32%',  height: 520 / proporcional, cursor: 'pointer'}} onMouseOver={() => setSeleccionProyecto ('proyecto_neve')} 
-                        onMouseLeave={() => setSeleccionProyecto('')}>
-                        <div className='position-relative' style={{width: '100%', height:  420 / proporcional, marginBottom: 30 / proporcional, background: '#dbe4eb'}}>
-                            {
-                                seleccion_proyecto === 'proyecto_neve' ? (
-                                    <div className='position-absolute top-0 start-0' style={{width: '100%', height: 420 / proporcional, background: 'rgba(23, 43, 222, 0.6)'}}>
-
-                                    </div>
-                                ) : null
-                            }
-                        </div>
-                        <div style={{width: '100%', height: 70 / proporcional}}>
-                            <p style={{fontSize: 22 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 13 / proporcional, fontWeight: 800, color: 'rgb(22, 36, 65)',
-                                    textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}>
-                                Diseño
-                            </p>
-                            <p style={{fontSize: 14 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 600, color: 'rgb(136, 136, 136)',
-                                    textAlign: 'center', fontFamily: 'Hind, sans-serif'}}>
-                                Branding / Creativo
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className='d-flex justify-content-center' style={{width: '100%', height: 60 / proporcional}}>
-                    <button className='btn' style={{width: 200 / proporcional, height: 60 / proporcional, background: '#172bde', fontSize: 16 / proporcional, 
-                        color: 'white', fontFamily: 'Montserrat, sans-serif', fontWeight: 800}}>
-                        Ver más
-                    </button>
-                </div>
-            </div>
         </div>
     )
 }

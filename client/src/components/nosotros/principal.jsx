@@ -1,6 +1,6 @@
 import React from 'react'
 
-import nosotros_principal from '../../assets/images/nosotros_principal.png'
+import nosotros_principal from '../../assets/images/sobre_nosotros_1920.png'
 
 export default function Principal ({proporcional}){
     return(

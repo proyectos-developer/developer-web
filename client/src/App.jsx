@@ -28,12 +28,16 @@ import ContactanosTablet from './components/contactanos/paneltablet.jsx'
 import ContactanosCell from './components/contactanos/panelcell.jsx'
 
 import Blog from './components/blog/panel.jsx'
-import BlogTablet from './components/blog/paneltablet.jsx'
+import BlogTablet from './components/blog/principaltablet.jsx'
 import BlogCell from './components/blog/panelcell.jsx'
 
-import MiCuenta from './components/mi-cuenta/panel.jsx'
-import MiCuentaTablet from './components/mi-cuenta/paneltablet.jsx'
-import MiCuentaCell from './components/mi-cuenta/panelcell.jsx'
+import MiCuentaLogin from './components/mi-cuenta/login/panel.jsx'
+import MiCuentaLoginTablet from './components/mi-cuenta/login/paneltablet.jsx'
+import MiCuentaLoginCell from './components/mi-cuenta/login/panelcell.jsx'
+
+import MiCuentaRegistro from './components/mi-cuenta/registro/panel.jsx'
+import MiCuentaRegistroTablet from './components/mi-cuenta/registro/paneltablet.jsx'
+import MiCuentaRegistroCell from './components/mi-cuenta/registro/panelcell.jsx'
 
 import NuestraTienda from './components/tienda/panel.jsx'
 import NuestraTiendaTablet from './components/tienda/paneltablet.jsx'
@@ -93,9 +97,13 @@ export default function App (){
                                                width < 991 ? <ContactanosTablet proporcional={991 / width}/> :
                                                              <Contactanos proporcional={1920/ width}/>}/>
 
-            <Route path='mi-cuenta' element={width < 500 ? <MiCuentaCell proporcional={499 / width}/> :
-                                             width < 991 ? <MiCuentaTablet proporcional={991 / width}/> :
-                                                           <MiCuenta proporcional={1920/ width}/>}/>
+            <Route path='mi-cuenta/login' element={width < 500 ? <MiCuentaLoginCell proporcional={499 / width}/> :
+                                                   width < 991 ? <MiCuentaLoginTablet proporcional={991 / width}/> :
+                                                                 <MiCuentaLogin proporcional={1920/ width}/>}/>
+
+            <Route path='mi-cuenta/registro' element={width < 500 ? <MiCuentaRegistroCell proporcional={499 / width}/> :
+                                                      width < 991 ? <MiCuentaRegistroTablet proporcional={991 / width}/> :
+                                                                    <MiCuentaRegistro proporcional={1920/ width}/>}/>
 
             <Route path='nuestra-tienda' element={width < 500 ? <NuestraTiendaCell proporcional={499 / width}/> :
                                                   width < 991 ? <NuestraTiendaTablet proporcional={991 / width}/> :

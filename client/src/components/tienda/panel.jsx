@@ -12,7 +12,7 @@ export default function NuestraTienda ({proporcional}){
         setPosition(window.scrollY)
     }
 
-    return (
+    return(
         <div style={{width: '100%', height: 'auto'}}>
             <div className='position-relative' style={{width: '100%', height: 900 / proporcional}}>
                 <div className={`position-fixed top-0 start-0 ${position > 800 / proporcional ? 'shadow' : ''}`} style={{width: '100%', height: 100 / proporcional, zIndex: 99999,
@@ -23,8 +23,8 @@ export default function NuestraTienda ({proporcional}){
                     <Principal proporcional={proporcional}/>
                 </div>
             </div>
-            <div className='d-flex justify-content-between' style={{}}>
-                <TiendaProductos proporcional={proporcional}/>
+            <div style={{width: '100%', height: 'auto'}}>
+                {/**<TiendaProductos proporcional={proporcional}/>**/}
             </div>
         </div>
     )

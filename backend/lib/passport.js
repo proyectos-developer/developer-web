@@ -10,7 +10,7 @@ passport.use('local.signin', new LocalStrategy ({
     passwordField: 'password',
     passReqToCallback: true
 }, async (req, correo, password, done) => {
-    const rows = await pool.query('SELECT * FROM users WHERE correo = ?', [correo])
+    const rows = await pool.query('SELECT * FROM clientes WHERE correo = ? OR nro_telefono = ?', [correo, correo])
     const session_id = await pool.query ('SELECT * FROM sessions')
     if (rows.length > 0){
         const usuario = rows [0]
@@ -31,22 +31,24 @@ passport.use('local.signup', new LocalStrategy({
     passwordField: 'password',
     passReqToCallback: true
 }, async (req, correo, password, done) => {
-    const { usuario, telefono } = req.body
+    const { usuario, nro_telefono, nombres } = req.body
     const newUser = {
         correo,
         password,
-        usuario
+        usuario,
+        nro_telefono,
+        nombres
     }
-    const rows = await pool.query('SELECT * FROM users WHERE correo = ?', [correo])
+    const rows = await pool.query('SELECT * FROM clientes WHERE correo = ? || nro_telefono = ?', [correo, nro_telefono])
     if (rows.length > 0) {
         done(null, false, { info: 'El correo ya se encuentra registrado' })
     } else {
         newUser.password = await helpers.encryptPassword(password)
-        const result = await pool.query('INSERT INTO users SET ?', [newUser])
+        const result = await pool.query('INSERT INTO clientes SET ?', [newUser])
         const session_id = await pool.query ('SELECT * FROM sessions')
         newUser.id = result.insertId
-        const user = {user: newUser, session_id: session_id[session_id.length - 1].session_id}
-        done(null, newUser)
+        const user = {user: newUser, session_id: session_id.length > 0 ? session_id[session_id.length - 1].session_id : '' }
+        done(null, user, req.flash('success', 'Bienvenido '))
     }
 }))
 

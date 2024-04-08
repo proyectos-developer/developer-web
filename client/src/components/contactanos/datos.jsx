@@ -13,8 +13,7 @@ export default function Datos ({proporcional}){
                     ¿Quiénes somos?
                 </p>
                 <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, fontWeight: 800, color: '#888888', marginBottom: 31 / proporcional, fontFamily: 'Hind, sans, serif'}}>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligual eget dolor. Aenean massa. Cum soccis theme natoque penatibus et parturientmagnis dis montes,
-                        nascetur ridiculus mus. Aliquam lorem ante, dapibus vive feugiat tellus. Phasellus vivera nulla ut metus varius laoreet. Quisqu rutum.
+                    En Developer Ideas, nos apasiona conectar con nuestros clientes y brindarles el soporte personalizado que necesitan. Ya sea que tengas preguntas, comentarios o estés interesado en nuestros servicios, estamos aquí para ayudarte. No dudes en ponerte en contacto con nosotros a través de cualquiera de los siguientes medios:
                 </p>
                 <div className='d-flex' style={{width: '100%', height: 34 / proporcional, marginBottom: 10 / proporcional}}>
                     <img src={icono_location} style={{width: 34 / proporcional, height: 34 / proporcional, marginRight: 10 / proporcional}}/>

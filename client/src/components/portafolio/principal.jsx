@@ -1,6 +1,6 @@
 import React from 'react'
 
-import portafolio_principal from '../../assets/images/portafolio_principal.png'
+import portafolio_principal from '../../assets/images/nuestro_portafolio_1920.png'
 
 export default function Principal ({proporcional}){
     return(
@@ -15,8 +15,7 @@ export default function Principal ({proporcional}){
                     </p>
                     <p style={{fontSize: 22 / proporcional, lineHeight: `${26 / proporcional}px`, fontWeight: 400, fontFamily: 'Hind', marginBottom: 30 / proporcional,
                             textAlign: 'center', color: 'white'}}>
-                        Lorem ipsum proin gravida velit auctor aliquet. Aenean sollicitu din, lorem auci elit consequat ligula
-                        ipsutis niuis sed odio sit amet a sit amet dis parturient montes.
+                        "Portafolio de Soluciones Tecnológicas Web: Impulsando tu Presencia Digital"
                     </p>
                 </div>
             </div>

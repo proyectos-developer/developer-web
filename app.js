@@ -54,18 +54,18 @@ app.use((req, res, next) => {
 })
  
 //Rutas
-/**app.use(require('./backend/routes/index.js'));
+app.use(require('./backend/routes/index.js'));
 app.use(require('./backend/routes/authentication.js'))
 
-//app.use(require('./backend/routes/sms.js'))
-app.use(require('./backend/routes/carros.js'))
-app.use(require('./backend/routes/tokens.js'))
-app.use(require('./backend/routes/conductores.js'))
-app.use(require('./backend/routes/viajeros.js'))
-app.use(require('./backend/routes/viajes.js'))
-app.use(require('./backend/routes/cupones.js'))
-app.use(require('./backend/routes/calificaciones.js'))
-app.use(require('./backend/routes/compartir.js'))**/
+app.use(require('./backend/routes/proyectos.js'))
+app.use(require('./backend/routes/correo.js'))
+//app.use(require('./backend/routes/tokens.js'))
+//app.use(require('./backend/routes/conductores.js'))
+//app.use(require('./backend/routes/viajeros.js'))
+//app.use(require('./backend/routes/viajes.js'))
+//app.use(require('./backend/routes/cupones.js'))
+//app.use(require('./backend/routes/calificaciones.js'))
+//app.use(require('./backend/routes/compartir.js'))**/
 
 app.use(express.static(path.resolve(__dirname, './backend/views')));
 app.get ('/api', (req, res) => {

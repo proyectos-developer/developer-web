@@ -4,7 +4,6 @@ import MenuSuperior from '../comun/menusuperior'
 import Principal from './principal.jsx'
 import Datos from './datos.jsx'
 import Formulario from './formulario.jsx'
-import Mapa from './map.jsx'
 
 export default function Contactanos ({proporcional}){
 
@@ -17,8 +16,8 @@ export default function Contactanos ({proporcional}){
     return (
         <div style={{width: '100%', height: 'auto'}}>
             <div className='position-relative' style={{width: '100%', height: 900 / proporcional}}>
-                <div className={`position-fixed top-0 start-0 ${position > 800 / proporcional ? 'shadow' : ''}`} style={{width: '100%', height: 100 / proporcional, zIndex: 99999,
-                        background: position > 800 / proporcional ? 'white' : 'transparent'}}>
+                <div className={`position-fixed top-0 start-0 ${position > 900 / proporcional ? 'shadow' : ''}`} style={{width: '100%', height: 'auto', zIndex: 99999,
+                        background: position > 900 / proporcional ? 'white' : 'transparent'}}>
                     <MenuSuperior proporcional={proporcional} position={position}/>
                 </div>
                 <div className='position-absolute top-0 start-0' style={{width: '100%', height: 900 / proporcional, zIndex: 9}}>
@@ -34,7 +33,6 @@ export default function Contactanos ({proporcional}){
                     <Formulario proporcional={proporcional}/>
                 </div>
             </div>
-            <Mapa proporcional={proporcional}/>
         </div>
     )
 }

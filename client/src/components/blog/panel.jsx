@@ -24,7 +24,7 @@ export default function Blog ({proporcional}){
                 </div>
             </div>
             <div style={{width: '100%', height: 'auto'}}>
-                <BlogInformatico proporcional={proporcional}/>
+                {/**<BlogInformatico proporcional={proporcional}/>**/}
             </div>
         </div>
     )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import contacto_principal from '../../assets/images/contacto_principal.png'
+import contacto_principal from '../../assets/images/image_contactanos_1920.png'
 
 export default function Principal ({proporcional}){
     return(
@@ -15,8 +15,7 @@ export default function Principal ({proporcional}){
                     </p>
                     <p style={{fontSize: 22 / proporcional, lineHeight: `${26 / proporcional}px`, fontWeight: 400, fontFamily: 'Hind', marginBottom: 30 / proporcional,
                             textAlign: 'start', color: 'white'}}>
-                        Lorem ipsum proin gravida velit auctor aliquet. Aenean sollicitu din, lorem auci elit consequat ligula
-                        ipsutis niuis sed odio sit amet a sit amet dis parturient montes.
+                        Te invitamos a completar el formulario de contacto a continuación. Un miembro de nuestro equipo se pondrá en contacto contigo lo antes posible para atender tus consultas y proporcionarte la información que necesitas.
                     </p>
                 </div>
             </div>

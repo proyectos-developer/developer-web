@@ -1,6 +1,6 @@
 import React from 'react'
 
-import blog_principal from '../../assets/images/blog_principal.png'
+import blog_principal from '../../assets/images/image_blog_1920.png'
 
 export default function Principal ({proporcional}){
     return(
@@ -11,12 +11,11 @@ export default function Principal ({proporcional}){
                 <div className='position-absolute start-50 top-50 translate-middle' style={{width: 800 / proporcional, height: 'auto'}}>
                     <p style={{fontSize: 90 / proporcional, lineHeight: `${107 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
                             textAlign: 'center', color: 'white'}}>
-                        Nuestro blog tecnológico
+                        Blog en Construcción
                     </p>
-                    <p style={{fontSize: 22 / proporcional, lineHeight: `${26 / proporcional}px`, fontWeight: 400, fontFamily: 'Hind', marginBottom: 30 / proporcional,
+                    <p style={{fontSize: 26 / proporcional, lineHeight: `${30 / proporcional}px`, fontWeight: 500, fontFamily: 'Hind', marginBottom: 30 / proporcional,
                             textAlign: 'center', color: 'white'}}>
-                        Lorem ipsum proin gravida velit auctor aliquet. Aenean sollicitu din, lorem auci elit consequat ligula
-                        ipsutis niuis sed odio sit amet a sit amet dis parturient montes.
+                        ¡Estamos emocionados de anunciar que estamos trabajando en nuestro nuevo blog! En Web Soluciones Tecnológicas, creemos en compartir conocimientos y brindar recursos útiles a nuestra comunidad. Por eso, estamos construyendo un espacio en línea donde podrás encontrar artículos, guías, consejos y noticias relacionadas con la tecnología, el diseño web, el marketing digital y mucho más.
                     </p>
                 </div>
             </div>
