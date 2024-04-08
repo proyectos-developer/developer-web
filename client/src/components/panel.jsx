@@ -1,20 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 
 import FooterPrincipal from './comun/footerprincipal.jsx'
+import ModalCargando from './modal/cargando.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 
 import icono_search_white from '../assets/iconos/icono_search_white_96.png'
 import icono_cross_white from '../assets/iconos/icono_cross_white_96.png'
 import icono_up from '../assets/iconos/icono_page_up_96.png'
-import { set_open_screen_search } from '../redux/actions/dataactions.js'
+import { set_authenticated, set_open_screen_search } from '../redux/actions/dataactions.js'
 
 export default function GlobalPanel ({proporcional}){
 
     const dispatch = useDispatch()
 
     const [search, setSearch] = useState('')
-    const {open_screen_search} = useSelector(({data_reducer}) => data_reducer)
+    
+    const begin_data = useSelector(({begin_data}) => begin_data)
+    const {open_screen_search} = useSelector(({begin_data}) => begin_data)
+
+    useEffect(() => {
+        if (window.localStorage.getItem ('session_id')){
+            dispatch(set_authenticated(true))
+        }
+    }, [])
 
     return (
         <div className='position-relative' style={{width: '100%', height: '100%'}}>
@@ -56,6 +65,7 @@ export default function GlobalPanel ({proporcional}){
                     style={{bottom: 36 / proporcional, right: 36 / proporcional, zIndex: 99999}}/>
             </a>
             <Outlet/>
+            <ModalCargando loading={begin_data.loading}/>
             <FooterPrincipal proporcional={proporcional}/>
         </div>
     )

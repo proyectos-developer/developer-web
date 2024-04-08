@@ -2,7 +2,8 @@ import { datatypes } from "../actions/dataactions";
 
 const initialState = {
     open_screen_search: false,
-    open_menu_principal: false
+    open_menu_principal: false,
+    authenticated: false
 }
 
 const datareducer = (state = initialState, action) => {
@@ -17,6 +18,12 @@ const datareducer = (state = initialState, action) => {
         return {
             ... state,
             open_menu_principal
+        }
+    }else  if (action.type === datatypes.SET_AUTHENTICATED){
+        const authenticated = action.authenticated
+        return {
+            ... state,
+            authenticated
         }
     }
     return state

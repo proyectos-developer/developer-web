@@ -41,14 +41,12 @@ router.post('/api/correo/nuevo/password', async (req, res) => {
     const usuarios = await pool.query ('SELECT * FROM clientes JOIN info_clientes ON clientes.usuario = info_clientes.usuario WHERE clientes.correo = ?', [correo])
     if (usuarios.length === 1){
         var mailOptions = {
-            from: '"Grupo COMFISA" <admin@developer-ideas.com>', // sender address
-            to: usuarios[0].correo, // list of receivers
-            subject: 'Olvide mi contraseña Grupo COMFISA',
+            from: '"Developer Ideas" <admin@developer-ideas.com>', // sender address
+            to: correo, // list of receivers
+            subject: 'Olvide mi contraseña Developer Ideas',
             template: 'olvidepassword', // the name of the template file i.e email.handlebars
             context:{
                 usuario: usuarios[0].usuario,
-                nombres: usuarios[0].nombres,
-                apellidos: usuarios[0].apellidos,
                  // replace {{name}} with Adebola
             }
         }

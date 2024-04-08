@@ -20,9 +20,9 @@ export const beginConstants = (data = {}, reset = false, id = 0) => {
             stateType: 'log_out',
             reset: reset
         },
-        forgot_password: {
+        update_password: {
             path: `update/password/${id}`,
-            stateType: 'forgot_password',
+            stateType: 'update_password',
             reset: reset,
             data: data
         },
@@ -41,9 +41,9 @@ export const beginConstants = (data = {}, reset = false, id = 0) => {
             stateType: 'delete_session',
             reset: reset
         },
-        update_password: {
-            path: `update/password/${id}`,
-            stateType: 'update_password',
+        send_link_update_password: {
+            path: `correo/nuevo/password`,
+            stateType: 'send_link_update_password',
             data: data,
             reset: reset
         }

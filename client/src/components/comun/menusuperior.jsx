@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import icono_user_white from '../../assets/iconos/icono_user_white_96.png'
 import icono_shop_white from '../../assets/iconos/icono_shop_white_96.png'
@@ -11,10 +11,13 @@ import icono_dot_white from '../../assets/iconos/icono_dot_white_96.png'
 import icono_dot_green from '../../assets/iconos/icono_dot_green_96.png'
 
 import icono_cross from '../../assets/iconos/icono_cross_black_96.png'
+import icono_logout from '../../assets/iconos/icono_logout_black_96.png'
 
 import { useLocation, useNavigate } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import { set_open_screen_search } from '../../redux/actions/dataactions'
+import { set_authenticated, set_open_screen_search } from '../../redux/actions/dataactions'
+import {begindata} from '../../redux/slice/begindata'
+import { beginConstants } from '../../uri/begin-constants'
 
 export default function MenuSuperior ({proporcional, position}){
 
@@ -23,8 +26,31 @@ export default function MenuSuperior ({proporcional, position}){
     const dispatch = useDispatch ()
 
     const [menu_superior, setMenuSuperior] = useState('')
+    const [menu_perfil, setMenuPerfil] = useState(false)
 
-    const {open_screen_search} = useSelector(({data_reducer}) => data_reducer)
+    const {open_screen_search, authenticated} = useSelector(({data_reducer}) => data_reducer)
+    const {log_out} = useSelector (({begin_data}) => begin_data)
+
+    useEffect (() => {
+        if (log_out && log_out.success === true){
+            window.localStorage.removeItem('usuario')
+            window.localStorage.removeItem('session_id')
+            dispatch(set_authenticated(false))
+            dispatch(begindata(beginConstants({}, true, 0).log_out))
+            navigate ('/')
+        }
+    }, [log_out])
+
+    const mi_cuenta = () => {
+        console.log (authenticated)
+        if (authenticated){
+            setMenuPerfil(menu_perfil ? false : true)
+        }else{
+            console.log ('entra')
+            window.scrollTo(0, 0)
+            navigate('/mi-cuenta/login')
+        }
+    }
 
     return (
         <div style={{width: '100%', height: 'auto', paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional}}>
@@ -142,10 +168,29 @@ export default function MenuSuperior ({proporcional, position}){
                             ) : null
                         **/}
                     </div>
-                    <img src={position > 800 / proporcional ? icono_user_black : icono_user_white} 
-                            style={{width: 22 / proporcional, height: 22 / proporcional, margin: 5 / proporcional, cursor: 'pointer'}} 
-                            onMouseOver={() => setMenuSuperior('mi-cuenta')} onMouseLeave={() => setMenuSuperior('')}
-                            onClick={() => {navigate ('/mi-cuenta/login'); window.scrollTo(0, 0)}}/>
+                    <div className='position-relative' 
+                        style={{width: 22 / proporcional, height: 'auto', margin: `${5 / proporcional}px ${20 / proporcional}px ${5 / proporcional}px ${5 / proporcional}px`, cursor: 'pointer'}}
+                        onClick={() => {mi_cuenta()}}>
+                        <img className='position-absolute top-0 start-0' src={position > 800 / proporcional ? icono_user_black : icono_user_white} 
+                                style={{width: 22 / proporcional, height: 22 / proporcional}}/>
+                        {
+                            menu_perfil ? (
+                                <div className='shadow rounded position-absolute' style={{width: 300 / proporcional, height: 'auto', padding: 30 / proporcional, 
+                                    background: 'white', zInde: 9999999, top: 40 / proporcional, left: -250 / proporcional}}
+                                    onClick={() => dispatch(begindata(beginConstants({}, false, 0).log_out))}>
+                                    <div style={{width: 240 / proporcional, height: 'auto'}}>
+                                        <div className='d-flex' style={{width: 240 / proporcional, height: 'auto'}}>
+                                            <img src={icono_logout} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 2 / proporcional, marginRight: 7 / proporcional}}/>
+                                            <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: '#212121', 
+                                                fontFamily: 'Hind, sans-serif', fontWeight: 600}}>
+                                                Cerrar sesión
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : null
+                        }
+                    </div>
                 </div>
             </div>
             <div style={{width: '100%', height: 'auto', paddingTop: 10 / proporcional, paddingBottom: 34 / proporcional}}>

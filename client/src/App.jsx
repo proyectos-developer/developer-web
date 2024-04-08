@@ -35,9 +35,29 @@ import MiCuentaLogin from './components/mi-cuenta/login/panel.jsx'
 import MiCuentaLoginTablet from './components/mi-cuenta/login/paneltablet.jsx'
 import MiCuentaLoginCell from './components/mi-cuenta/login/panelcell.jsx'
 
+import OlvideContraseña from './components/mi-cuenta/olvidepassword/panel.jsx'
+import OlvideContraseñaTablet from './components/mi-cuenta/olvidepassword/paneltablet.jsx'
+import OlvideContraseñaCell from './components/mi-cuenta/olvidepassword/panelcell.jsx'
+
+import RevisarCorreo from './components/mi-cuenta/olvidepassword/revisarcorreopanel.jsx'
+import RevisarCorreoTablet from './components/mi-cuenta/olvidepassword/revisarcorreopaneltablet.jsx'
+import RevisarCorreoCell from './components/mi-cuenta/olvidepassword/revisarcorreopanelcell.jsx'
+
+import CambiarContraseña from './components/mi-cuenta/cambiocontraseña/panel.jsx'
+import CambiarContraseñaTablet from './components/mi-cuenta/cambiocontraseña/paneltablet.jsx'
+import CambiarContraseñaCell from './components/mi-cuenta/cambiocontraseña/panelcell.jsx'
+
+import CambioExitoso from './components/mi-cuenta/cambiocontraseña/exitoso.jsx'
+import CambioExitosoTablet from './components/mi-cuenta/cambiocontraseña/exitosotablet.jsx'
+import CambioExitosoCell from './components/mi-cuenta/cambiocontraseña/exitosocell.jsx'
+
 import MiCuentaRegistro from './components/mi-cuenta/registro/panel.jsx'
 import MiCuentaRegistroTablet from './components/mi-cuenta/registro/paneltablet.jsx'
 import MiCuentaRegistroCell from './components/mi-cuenta/registro/panelcell.jsx'
+
+import RegistroExitoso from './components/mi-cuenta/registro/exitoso.jsx'
+import RegistroExitosoTablet from './components/mi-cuenta/registro/exitosotablet.jsx'
+import RegistroExitosoCell from './components/mi-cuenta/registro/exitosocell.jsx'
 
 import NuestraTienda from './components/tienda/panel.jsx'
 import NuestraTiendaTablet from './components/tienda/paneltablet.jsx'
@@ -101,9 +121,29 @@ export default function App (){
                                                    width < 991 ? <MiCuentaLoginTablet proporcional={991 / width}/> :
                                                                  <MiCuentaLogin proporcional={1920/ width}/>}/>
 
+            <Route path='mi-cuenta/olvide-contraseña' element={width < 500 ? <OlvideContraseñaCell proporcional={499 / width}/> :
+                                                               width < 991 ? <OlvideContraseñaTablet proporcional={991 / width}/> :
+                                                                             <OlvideContraseña proporcional={1920/ width}/>}/>
+
+            <Route path='mi-cuenta/revisar-correo' element={width < 500 ? <RevisarCorreoCell proporcional={499 / width}/> :
+                                                            width < 991 ? <RevisarCorreoTablet proporcional={991 / width}/> :
+                                                                          <RevisarCorreo proporcional={1920/ width}/>}/>
+
+            <Route path='mi-cuenta/cambiar-password/:usuario' element={width < 500 ? <CambiarContraseñaCell proporcional={499 / width}/> :
+                                                                       width < 991 ? <CambiarContraseñaTablet proporcional={991 / width}/> :
+                                                                                     <CambiarContraseña proporcional={1920/ width}/>}/>
+                                                                                     
+            <Route path='mi-cuenta/cambio-password/exitoso/:usuario' element={width < 500 ? <CambioExitosoCell proporcional={499 / width}/> :
+                                                                              width < 991 ? <CambioExitosoTablet proporcional={991 / width}/> :
+                                                                                            <CambioExitoso proporcional={1920/ width}/>}/>
+
             <Route path='mi-cuenta/registro' element={width < 500 ? <MiCuentaRegistroCell proporcional={499 / width}/> :
                                                       width < 991 ? <MiCuentaRegistroTablet proporcional={991 / width}/> :
                                                                     <MiCuentaRegistro proporcional={1920/ width}/>}/>
+
+            <Route path='mi-cuenta/registro/exitoso' element={width < 500 ? <RegistroExitosoCell proporcional={499 / width}/> :
+                                                              width < 991 ? <RegistroExitosoTablet proporcional={991 / width}/> :
+                                                                            <RegistroExitoso proporcional={1920/ width}/>}/>
 
             <Route path='nuestra-tienda' element={width < 500 ? <NuestraTiendaCell proporcional={499 / width}/> :
                                                   width < 991 ? <NuestraTiendaTablet proporcional={991 / width}/> :

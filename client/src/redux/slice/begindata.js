@@ -10,8 +10,8 @@ export const begindata = createAsyncThunk ('', async (params) => {
     switch (stateType){
         case 'login_user':
         case 'register_user':
-        case 'forgot_password':
         case 'update_password':
+        case 'send_link_update_password':
             if (params.reset){ 
                 return {success: null}
             }else{

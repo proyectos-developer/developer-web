@@ -36,15 +36,16 @@ passport.use('local.signup', new LocalStrategy({
         correo,
         password,
         usuario,
-        nro_telefono,
-        nombres
+        nro_telefono
     }
     const rows = await pool.query('SELECT * FROM clientes WHERE correo = ? || nro_telefono = ?', [correo, nro_telefono])
     if (rows.length > 0) {
         done(null, false, { info: 'El correo ya se encuentra registrado' })
     } else {
         newUser.password = await helpers.encryptPassword(password)
-        const result = await pool.query('INSERT INTO clientes SET ?', [newUser])
+        const result = await pool.query('INSERT INTO clientes set ?', [newUser])
+        const newCliente = {correo, usuario, nombres, nro_telefono}
+        await pool.query('INSERT INTO info_clientes set ?', [newCliente])
         const session_id = await pool.query ('SELECT * FROM sessions')
         newUser.id = result.insertId
         const user = {user: newUser, session_id: session_id.length > 0 ? session_id[session_id.length - 1].session_id : '' }

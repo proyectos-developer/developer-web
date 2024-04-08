@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {useDispatch, useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import {begindata} from '../../../redux/slice/begindata.js'
 import {beginConstants} from '../../../uri/begin-constants.js'
+import { set_authenticated } from '../../../redux/actions/dataactions.js'
 
-export default function RegisterUser ({proporcional}){
+export default function RegisterUserTablet ({proporcional}){
 
     const navigate = useNavigate()
     const dispatch = useDispatch ()
@@ -17,11 +18,27 @@ export default function RegisterUser ({proporcional}){
     const [password, setPassword] = useState('')
     const [verificar_password, setVerificarPassword] = useState('')
 
+    const [respuesta, setrRespuesta] = useState('')
+
     const [enombres_apellidos, setENombresApellidos] = useState ('')
     const [enro_telefono, setENroTelefono] = useState ('')
     const [eemail, setEEmail] = useState('')
     const [epassword, setEPassword] = useState('')
     const [everificar_password, setEVerificarPassword] = useState('')
+
+    const {register_user} = useSelector (({begin_data}) => begin_data)
+
+    useEffect (() => {
+        if (register_user && register_user.user && register_user.success === true){
+            window.localStorage.setItem('usuario', register_user.user.user.usuario)
+            window.localStorage.setItem('session_id', register_user.user.session_id)
+            dispatch(set_authenticated (true))
+            dispatch(begindata(beginConstants({}, true, 0).register_user))
+            navigate('/mi-cuenta/registro/exitoso')
+        }else if (register_user && register_user.message && register_user.success === false){
+            setrRespuesta(register_user.message.info)
+        }
+    }, [register_user])
 
     const registrar_datos = () => {
         if (nombres_apellidos === '' || nro_telefono === '' || email === '' || password === '' || verificar_password === '' || password !== verificar_password){
@@ -40,7 +57,8 @@ export default function RegisterUser ({proporcional}){
                 correo: email,
                 password: password,
                 nro_telefono: nro_telefono, 
-                nombres: nombres_apellidos
+                nombres: nombres_apellidos,
+                usuario: email.split ('@')[0].replace('.', '') + '' + nro_telefono 
             }
             dispatch(begindata(beginConstants(data_registro, false, 0).register_user))
         }
@@ -136,6 +154,14 @@ export default function RegisterUser ({proporcional}){
                         id='verificar_password'
                     />
                 </div>
+                {
+                    respuesta !== '' ? (
+                        <p style={{fontSize: 14 / proporcional, lineHeight: `${26 / proporcional}px`, fontWeight: 400, fontFamily: 'Hind, sans-serif', color: 'red',
+                            marginBottom: 10 / proporcional}}>
+                            {respuesta}
+                        </p>
+                    ) : null
+                }
                 <div style={{width: '100%', height: 'auto', cursor: 'pointer'}}>
                     <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 20 / proporcional, color: 'rgb(136, 136, 136)', fontFamily: 'Hind, sans-serif',
                         fontWeight: 400, textAlign: 'end'}}>

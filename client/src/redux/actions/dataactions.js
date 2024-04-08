@@ -1,4 +1,5 @@
 export const datatypes = {
+    SET_AUTHENTICATED:'SET_AUTHENTICATED',
     SET_OPEN_SCREEN_SEARCH: 'SET_OPEN_SCREEN_SEARCH',
     SET_OPEN_MENU_PRINCIPAL: 'SET_OPEN_MENU_PRINCIPAL'
 }
@@ -14,5 +15,12 @@ export const set_open_menu_principal = open_menu_principal => {
     return {
         open_menu_principal,
         type: datatypes.SET_OPEN_MENU_PRINCIPAL
+    }
+}
+
+export const set_authenticated = authenticated => {
+    return {
+        authenticated,
+        type: datatypes.SET_AUTHENTICATED
     }
 }
