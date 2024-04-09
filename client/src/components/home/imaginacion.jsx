@@ -8,7 +8,7 @@ export default function Imaginacion ({proporcional}){
     const [menu_opcion, setMenuOpcion] = useState ('diseñador')
 
     return (    
-        <div style={{width: '100%', height: 700 / proporcional, backgroundImage: `url(${home_fondo})`, backgroundSize: 'cover', backgroundPosition: 'center', 
+        <div style={{width: '100%', height: 700 / proporcional, backgroundImage: `url(${home_fondo})`, backgroundPosition: 'center', 
                 backgroundRepeat: 'no-repeat'}}>
             <div className='d-flex justify-content-between' style={{width: '100%', height: 700 / proporcional, background: 'rgba(189, 189, 189, 0.6)'}}>
                 <div style={{width: '50%', height: 700 / proporcional, paddingTop: 190 / proporcional, paddingBottom: 170 / proporcional, paddingLeft: 260 / proporcional}}>
@@ -74,9 +74,9 @@ export default function Imaginacion ({proporcional}){
                         </div>
                     </div>
                 </div>
-                <div className='' style={{width: '50%', height: 700 / proporcional, paddingTop: 25 / proporcional, paddingBottom: 25 / proporcional}}>
+                <div className='' style={{width: '50%', height: 650 / proporcional, paddingTop: 25 / proporcional, paddingBottom: 25 / proporcional}}>
                     <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
-                        <img src={home_diseño} style={{width: '100%', height: '100%'}}/>
+                        <img src={home_diseño} style={{width: 700 / proporcional, height: '100%'}}/>
                     </div>
                 </div>
             </div>
