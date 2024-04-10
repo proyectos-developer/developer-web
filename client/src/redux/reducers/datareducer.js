@@ -3,7 +3,8 @@ import { datatypes } from "../actions/dataactions";
 const initialState = {
     open_screen_search: false,
     open_menu_principal: false,
-    authenticated: false
+    authenticated: false,
+    message_suscripcion: {}
 }
 
 const datareducer = (state = initialState, action) => {
@@ -24,6 +25,12 @@ const datareducer = (state = initialState, action) => {
         return {
             ... state,
             authenticated
+        }
+    }else  if (action.type === datatypes.SET_MESSAGGE_SUSCRIPCION){
+        const message_suscripcion = action.message_suscripcion
+        return {
+            ... state,
+            message_suscripcion
         }
     }
     return state

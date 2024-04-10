@@ -19,6 +19,21 @@ ALTER TABLE users
 
 DESCRIBE users;
 
+/**Suscripción página**/
+CREATE TABLE suscripcion(
+    id INT(11) NOT NULL,
+    correo VARCHAR (100) NOT NULL,
+    created_at timestamp NOT NULL DEFAULT current_timestamp 
+);
+
+ALTER TABLE suscripcion
+    ADD PRIMARY KEY(id);
+
+ALTER TABLE suscripcion
+    MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
+
+DESCRIBE suscripcion;
+
 /**Tipo Proyecto **/
 CREATE TABLE tipo_proyecto(
     id INT(11) NOT NULL,

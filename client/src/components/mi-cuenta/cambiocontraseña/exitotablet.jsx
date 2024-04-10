@@ -29,7 +29,7 @@ export default function ExitoTablet({proporcional}) {
                 <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
                     <button className='btn rounded' 
                         style={{width: '60%', height: 50 / proporcional, fontSize: 18 / proporcional, background: '#2d572c', color: 'white', fontWeight: 600}}
-                        onClick={() => navigate('/mi-cuenta/login')}>
+                        onClick={() => {navigate('/mi-cuenta/login'); window.scrollTo(0, 0)}}>
                         Iniciar sesión</button>
                 </div>
         </div>

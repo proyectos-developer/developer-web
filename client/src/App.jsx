@@ -19,6 +19,10 @@ import NuestrosServicios from './components/servicios/panel.jsx'
 import NuestrosServiciosTablet from './components/servicios/paneltablet.jsx'
 import NuestrosServiciosCell from './components/servicios/panelcell.jsx'
 
+import DetallesServicio from './components/servicio/detalles.jsx'
+import DetallesServicioTablet from './components/servicio/detallestablet.jsx'
+import DetallesServicioCell from './components/servicio/detallescell.jsx'
+
 import NuestroPortafolio from './components/portafolio/panel.jsx'
 import NuestroPortafolioTablet from './components/portafolio/paneltablet.jsx'
 import NuestroPortafolioCell from './components/portafolio/panelcell.jsx'
@@ -71,6 +75,10 @@ import CarritoCompras from './components/carrito/panel.jsx'
 import CarritoComprasTablet from './components/carrito/paneltablet.jsx'
 import CarritoComprasCell from './components/carrito/panelcell.jsx'
 
+import SuscripcionExitosa from './components/suscripcion/panel.jsx'
+import SuscripcionExitosaTablet from './components/suscripcion/paneltablet.jsx'
+import SuscripcionExitosaCell from './components/suscripcion/panelcell.jsx'
+
 export default function App (){
   const [width, setWidth] = useState(window.outerWidth)
 
@@ -104,6 +112,10 @@ export default function App (){
             <Route path='nuestros-servicios' element={width < 500 ? <NuestrosServiciosCell proporcional={499 / width}/> :
                                                       width < 991 ? <NuestrosServiciosTablet proporcional={991 / width}/> :
                                                                     <NuestrosServicios proporcional={1920/ width}/>}/>
+
+            <Route path='nuestros-servicios/:servicio' element={width < 500 ? <DetallesServicioCell proporcional={499 / width}/> :
+                                                                width < 991 ? <DetallesServicioTablet proporcional={991 / width}/> :
+                                                                              <DetallesServicio proporcional={1920/ width}/>}/>
 
             <Route path='nuestro-portafolio' element={width < 500 ? <NuestroPortafolioCell proporcional={499 / width}/> :
                                                       width < 991 ? <NuestroPortafolioTablet proporcional={991 / width}/> :
@@ -150,12 +162,16 @@ export default function App (){
                                                                 <NuestraTienda proporcional={1920/ width}/>}/>
 
             <Route path='producto/:producjto/:sku' element={width < 500 ? <DetallesProductoCell proporcional={499 / width}/> :
-                                                           width < 991 ? <DetallesProductoTablet proporcional={991 / width}/> :
-                                                                         <DetallesProducto proporcional={1920/ width}/>}/>
+                                                            width < 991 ? <DetallesProductoTablet proporcional={991 / width}/> :
+                                                                          <DetallesProducto proporcional={1920/ width}/>}/>
 
             <Route path='carrito-compras' element={width < 500 ? <CarritoComprasCell proporcional={499 / width}/> :
                                                    width < 991 ? <CarritoComprasTablet proporcional={991 / width}/> :
                                                                  <CarritoCompras proporcional={1920/ width}/>}/>
+                                                                 
+            <Route path='suscripcion' element={width < 500 ? <SuscripcionExitosaCell proporcional={499 / width}/> :
+                                               width < 991 ? <SuscripcionExitosaTablet proporcional={991 / width}/> :
+                                                             <SuscripcionExitosa proporcional={1920/ width}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

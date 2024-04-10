@@ -46,6 +46,12 @@ export const beginConstants = (data = {}, reset = false, id = 0) => {
             stateType: 'send_link_update_password',
             data: data,
             reset: reset
+        },
+        send_suscripcion: {
+            path: `suscripcion/cliente`,
+            stateType: 'send_suscripcion',
+            data: data,
+            reset: reset
         }
     }
 }

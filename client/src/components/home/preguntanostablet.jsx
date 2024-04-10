@@ -1,9 +1,14 @@
 import React from 'react'
 
+import {useNavigate} from 'react-router-dom'
+
 import home_contact from '../../assets/images/home_contact_us_600.jpg'
 import home_fondo_contact from '../../assets/images/home_fondo_contact_991.png'
 
 export default function PreguntanosTablet ({proporcional}){
+
+    const navigate = useNavigate()
+
     return (
         <div style={{width: '100%', height: 1000 / proporcional, backgroundImage: `url(${home_fondo_contact})`,
                 backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
@@ -25,7 +30,8 @@ export default function PreguntanosTablet ({proporcional}){
                             </p>
                             <div className='d-flex justify-content-center' style={{width: '100%', height: 60 / proporcional}}>
                                 <button className='border-0 rounded' style={{width: 180 / proporcional, height: 60 / proporcional, background: 'white', fontSize: 18 / proporcional,
-                                    color: 'rgb(23, 43, 222)', fontWeight: 800}}>Ver más</button>
+                                    color: 'rgb(23, 43, 222)', fontWeight: 800}}
+                                    onClick={() => {navigate('/contactanos'); window.scrollTo(0, 0)}}>Ver más</button>
                             </div>
                         </div>
                     </div>

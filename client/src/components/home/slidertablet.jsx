@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {useNavigate} from 'react-router-dom'
+
 import image_00 from '../../assets/images/home_slider_00_991.png'
 import image_01 from '../../assets/images/home_slider_01_991.png'
 import image_02 from '../../assets/images/home_slider_02_991.png'
@@ -7,6 +9,8 @@ import image_03 from '../../assets/images/home_slider_03_991.png'
 import image_04 from '../../assets/images/home_slider_04_991.png'
 
 export default function SliderHomeTablet ({proporcional}){
+
+    const navigate = useNavigate()
 
     return (
         <div style={{width: '100%', height: 800 / proporcional}}>
@@ -35,9 +39,11 @@ export default function SliderHomeTablet ({proporcional}){
                                     </p>
                                     <div className='d-flex justify-content-center' style={{width: '100%', height: 60 / proporcional}}>
                                         <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
-                                            color: 'white', background: '#172bde', marginRight: 20 / proporcional}}>Ver más</button>
+                                            color: 'white', background: '#172bde', marginRight: 20 / proporcional}}
+                                            onClick={() => {navigate ('/sobre-nosotros'); window.scrollTo(0, 0)}}>Ver más</button>
                                         <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
-                                            color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}>Contáctanos</button>
+                                            color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}
+                                            onClick={() => {navigate ('/contactanos'); window.scrollTo(0, 0)}}>Contáctanos</button>
                                     </div>
                                 </div>
                             </div>
@@ -59,9 +65,11 @@ export default function SliderHomeTablet ({proporcional}){
                                     </p>
                                     <div className='d-flex justify-content-center' style={{width: '100%', height: 60 / proporcional}}>
                                         <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
-                                            color: 'white', background: '#172bde', marginRight: 20 / proporcional}}>Ver más</button>
+                                            color: 'white', background: '#172bde', marginRight: 20 / proporcional}}
+                                            onClick={() => {navigate ('/sobre-nosotros'); window.scrollTo(0, 0)}}>Ver más</button>
                                         <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
-                                            color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}>Contáctanos</button>
+                                            color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}
+                                            onClick={() => {navigate ('/contactanos'); window.scrollTo(0, 0)}}>Contáctanos</button>
                                     </div>
                                 </div>
                             </div>
@@ -83,9 +91,11 @@ export default function SliderHomeTablet ({proporcional}){
                                     </p>
                                     <div className='d-flex justify-content-center' style={{width: '100%', height: 60 / proporcional}}>
                                         <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
-                                            color: 'white', background: '#172bde', marginRight: 20 / proporcional}}>Ver más</button>
+                                            color: 'white', background: '#172bde', marginRight: 20 / proporcional}}
+                                            onClick={() => {navigate ('/sobre-nosotros'); window.scrollTo(0, 0)}}>Ver más</button>
                                         <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
-                                            color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}>Contáctanos</button>
+                                            color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}
+                                            onClick={() => {navigate ('/contactanos'); window.scrollTo(0, 0)}}>Contáctanos</button>
                                     </div>
                                 </div>
                             </div>
@@ -107,9 +117,11 @@ export default function SliderHomeTablet ({proporcional}){
                                     </p>
                                     <div className='d-flex justify-content-center' style={{width: '100%', height: 60 / proporcional}}>
                                         <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
-                                            color: 'white', background: '#172bde', marginRight: 20 / proporcional}}>Ver más</button>
+                                            color: 'white', background: '#172bde', marginRight: 20 / proporcional}}
+                                            onClick={() => {navigate ('/sobre-nosotros'); window.scrollTo(0, 0)}}>Ver más</button>
                                         <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
-                                            color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}>Contáctanos</button>
+                                            color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}
+                                            onClick={() => {navigate ('/contactanos'); window.scrollTo(0, 0)}}>Contáctanos</button>
                                     </div>
                                 </div>
                             </div>
@@ -131,9 +143,11 @@ export default function SliderHomeTablet ({proporcional}){
                                     </p>
                                     <div className='d-flex justify-content-center' style={{width: '100%', height: 60 / proporcional}}>
                                         <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
-                                            color: 'white', background: '#172bde', marginRight: 20 / proporcional}}>Ver más</button>
+                                            color: 'white', background: '#172bde', marginRight: 20 / proporcional}}
+                                            onClick={() => {navigate ('/sobre-nosotros'); window.scrollTo(0, 0)}}>Ver más</button>
                                         <button className='btn' style={{width: 180 / proporcional, height: 60 / proporcional, fontSize: 20 / proporcional, fontWeight: 400,
-                                            color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}>Contáctanos</button>
+                                            color: '#172bde', background: 'white', marginLeft: 20 / proporcional}}
+                                            onClick={() => {navigate ('/contactanos'); window.scrollTo(0, 0)}}>Contáctanos</button>
                                     </div>
                                 </div>
                             </div>

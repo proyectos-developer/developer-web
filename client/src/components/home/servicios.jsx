@@ -1,13 +1,17 @@
 import React from 'react'
 
+import {useNavigate} from 'react-router-dom'
+
 export default function Servicios ({proporcional}){
+
+    const navigate = useNavigate()
     
     return (
         <div style={{width: '100%', height: 'auto'}}>
             <div className='d-flex' style={{width: '100%', height: 'auto'}}>
                 <div style={{width: '33.33%', height: 'auto', background: 'rgba(219, 228, 235, 0.8)', paddingTop: 160 / proporcional, paddingBottom: 140 / proporcional, 
                         paddingLeft: 140 / proporcional, paddingRight: 100 / proporcional}}>
-                    <div className='d-flex' style={{width: '100%', height: 30 / proporcional, marginBottom: 14 / proporcional}}>
+                    <div className='d-flex' style={{width: '100%', height: 'auto', marginBottom: 14 / proporcional}}>
                         <div style={{width: 50 / proporcional, height: 3 / proporcional, background: '#2d572c', marginTop: 13.5 / proporcional, marginBottom: 13.5 / proporcional,
                             marginRight: 10 / proporcional}}/>
                         <p style={{fontSize: 12 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 0, color: '#2d572c', fontWeight:800, fontFamily: 'Montserrat, sans-serif'}}>
@@ -27,11 +31,12 @@ export default function Servicios ({proporcional}){
                         </p>
                     </div>
                     <button className='btn' style={{width: 170 / proporcional, height: 60 / proporcional, background: '#172bde', color: 'white', fontSize: 20 / proporcional,
-                        fontWeight: 800, fontFamily: 'Montserrat, sans-serif'}}>Ver más</button>
+                        fontWeight: 800, fontFamily: 'Montserrat, sans-serif'}}
+                        onClick={() => {navigate('/nuestros-servicios'); window.scrollTo(0, 0)}}>Ver más</button>
                 </div>
                 <div style={{width: '33.33%', height: 'auto', background: 'rgba(219, 228, 235, 0.4)', paddingTop: 160 / proporcional, paddingBo: 170 / proporcional, 
                         paddingLeft: 140 / proporcional, paddingRight: 100 / proporcional}}>
-                    <div className='d-flex' style={{width: '100%', height: 30 / proporcional, marginBottom: 14 / proporcional}}>
+                    <div className='d-flex' style={{width: '100%', height: 'auto', marginBottom: 14 / proporcional}}>
                         <div style={{width: 50 / proporcional, height: 3 / proporcional, background: '#2d572c', marginTop: 13.5 / proporcional, marginBottom: 13.5 / proporcional,
                             marginRight: 10 / proporcional}}/>
                         <p style={{fontSize: 12 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 0, color: '#2d572c', fontWeight:800, fontFamily: 'Montserrat, sans-serif'}}>
@@ -51,11 +56,12 @@ export default function Servicios ({proporcional}){
                         </p>
                     </div>
                     <button className='btn' style={{width: 170 / proporcional, height: 60 / proporcional, background: '#172bde', color: 'white', fontSize: 20 / proporcional,
-                        fontWeight: 800, fontFamily: 'Montserrat, sans-serif'}}>Ver más</button>
+                        fontWeight: 800, fontFamily: 'Montserrat, sans-serif'}}
+                        onClick={() => {navigate('/nuestros-servicios/marketing-digital'); window.scrollTo(0, 0)}}>Ver más</button>
                 </div>
                 <div style={{width: '33.33%', height: 'auto', background: 'rgba(219, 228, 235, 0.8)', paddingTop: 160 / proporcional, paddingBo: 170 / proporcional, 
                         paddingLeft: 140 / proporcional, paddingRight: 100 / proporcional}}>
-                    <div className='d-flex' style={{width: '100%', height: 30 / proporcional, marginBottom: 14 / proporcional}}>
+                    <div className='d-flex' style={{width: '100%', height: 'auto', marginBottom: 14 / proporcional}}>
                         <div style={{width: 50 / proporcional, height: 3 / proporcional, background: '#2d572c', marginTop: 13.5 / proporcional, marginBottom: 13.5 / proporcional,
                             marginRight: 10 / proporcional}}/>
                         <p style={{fontSize: 12 / proporcional, lineHeight: `${30 / proporcional}px`, marginBottom: 0, color: '#2d572c', fontWeight:800, fontFamily: 'Montserrat, sans-serif'}}>
@@ -75,7 +81,8 @@ export default function Servicios ({proporcional}){
                         </p>
                     </div>
                     <button className='btn' style={{width: 170 / proporcional, height: 60 / proporcional, background: '#172bde', color: 'white', fontSize: 20 / proporcional,
-                        fontWeight: 800, fontFamily: 'Montserrat, sans-serif'}}>Ver más</button>
+                        fontWeight: 800, fontFamily: 'Montserrat, sans-serif'}}
+                        onClick={() => {navigate('/nuestros-servicios/soporte-tecnico'); window.scrollTo(0, 0)}}>Ver más</button>
                 </div>
             </div>
         </div>

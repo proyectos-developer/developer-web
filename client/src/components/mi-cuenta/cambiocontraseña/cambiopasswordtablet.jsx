@@ -28,6 +28,7 @@ export default function CambioPasswordTablet ({proporcional}){
             dispatch(begindata(beginConstants({}, true, 0).update_password))
             setMensaje('')
             navigate(`/mi-cuenta/cambio-password/exitoso/${update_password.user.usuario}`)
+            window.scrollTo(0, 0)
         }else if (update_password && update_password.message === '0'){
             setMensaje('La nueva contraseña no puede ser la misma a la antigua')
         }else if (update_password && update_password.error){

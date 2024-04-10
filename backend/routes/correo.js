@@ -127,4 +127,48 @@ router.post('/api/correo/mensaje/web', async (req, res) => {
     });        
 })
 
+router.post('/api/correo/suscriptor', async (req, res) => {
+    const { correo } = req.body
+
+    try {
+        const suscripcion = await pool.query ('Select * from suscripcion where correo = ?', [correo])
+
+        if (suscripcion.length > 0){
+            return res.json ({
+                message: '1',
+                success: true
+            })
+
+        }else{
+            var mailOptions = {
+                from: '"Developer Ideas" <admin@developer-ideas.com>', // sender address
+                to: correo, // list of receivers
+                subject: 'Se a agregado a la lista de suscripción',
+                template: 'suscripcion', // the name of the template file i.e email.handlebars
+                context:{
+                 // replace {{name}} with Adebola
+            }
+            }
+    
+        // trigger the sending of the E-mail
+            transporter.sendMail(mailOptions, function(error, info){
+                if(error){
+                    return res.json ({
+                        message: 'error: ' + error,
+                        success: false
+                    })
+                }
+            
+                return res.json ({
+                    sucess: true,
+                    message: info
+                })
+            }); 
+            
+        }
+    } catch (error) {
+        
+    }       
+})
+
 module.exports = router

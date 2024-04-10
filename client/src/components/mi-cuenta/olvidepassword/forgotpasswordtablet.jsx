@@ -24,6 +24,7 @@ export default function ForgotPasswordTablet ({proporcional}){
             dispatch(begindata(beginConstants({}, true, 0).send_link_update_password))
             setRespuesta('')
             navigate('/mi-cuenta/revisar-correo')
+            window.scrollTo(0, 0)
         }else if (send_link_update_password && send_link_update_password.message === '1'){
             setRespuesta('Correo ingresado incorrecto')
         }

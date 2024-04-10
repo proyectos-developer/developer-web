@@ -29,6 +29,7 @@ export default function MenuSuperiorCell ({proporcional, position}){
 
     const [menu_superior, setMenuSuperior] = useState('')
     const [menu_perfil, setMenuPerfil] = useState(false)
+    const [menu_servicios, setMenuServicios] = useState(false)
 
     const {open_screen_search, authenticated, open_menu_principal} = useSelector(({data_reducer}) => data_reducer)
     const {log_out} = useSelector (({begin_data}) => begin_data)
@@ -187,8 +188,8 @@ export default function MenuSuperiorCell ({proporcional, position}){
                                 <div className='shadow rounded position-absolute' style={{width: 300 / proporcional, height: 'auto', padding: 30 / proporcional, 
                                     background: 'white', zInde: 9999999, top: 40 / proporcional, left: -250 / proporcional}}
                                     onClick={() => dispatch(begindata(beginConstants({}, false, 0).log_out))}>
-                                    <div style={{width: 240 / proporcional, height: 'auto'}}>
-                                        <div className='d-flex' style={{width: 240 / proporcional, height: 'auto'}}>
+                                    <div style={{width: '100%', height: 'auto'}}>
+                                        <div className='d-flex' style={{width: '100%', height: 'auto'}}>
                                             <img src={icono_logout} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 2 / proporcional, marginRight: 7 / proporcional}}/>
                                             <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: '#212121', 
                                                 fontFamily: 'Hind, sans-serif', fontWeight: 600}}>
@@ -207,7 +208,8 @@ export default function MenuSuperiorCell ({proporcional, position}){
                     <div className='position-absolute' style={{width: 400 / proporcional, height: '100%', top: 104 / proporcional, zIndex: 999999, right: 0}}>
                         <div className='' style={{width: '100%', height: 'auto', background: position > 600 ? 'rgba(23, 43, 222, 0.6)' : 'rgba(23, 43, 222, 0.6)', padding: 20 / proporcional}}>
                             <div className='d-flex justify-content-end' style={{width: '100%', height: 48  / proporcional, cursor: 'pointer'}}
-                                onMouseOver={() => setMenuSuperior('inicio')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/'); window.scrollTo(0, 0);
+                                onMouseOver={() => setMenuSuperior('inicio')} onMouseLeave={() => setMenuSuperior('')} 
+                                onClick={() => {navigate ('/'); window.scrollTo(0, 0);
                                     dispatch(set_open_menu_principal(false))}}>
                                 {
                                     location.pathname.split('/')[1] === '' ? (
@@ -233,8 +235,8 @@ export default function MenuSuperiorCell ({proporcional, position}){
                                 </p>
                             </div>
                             <div className='d-flex justify-content-end' style={{width: '100%', height: 48  / proporcional, cursor: 'pointer'}}
-                                onMouseOver={() => setMenuSuperior('servicios')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/nuestros-servicios'); window.scrollTo(0, 0);
-                                    dispatch(set_open_menu_principal(false))}}>
+                                onMouseOver={() => setMenuSuperior('servicios')} onMouseLeave={() => setMenuSuperior('')} 
+                                onClick={() => {setMenuServicios(!menu_servicios)}}>
                                 {
                                     location.pathname.split('/')[1] === 'nuestros-servicios' ? (
                                         <img src={position > 600 ? icono_dot_green : icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 4}}/>
@@ -245,6 +247,85 @@ export default function MenuSuperiorCell ({proporcional, position}){
                                     Servicios
                                 </p>
                             </div>
+                            {
+                                menu_servicios ? (
+                                    <div className='' style={{width: '100%', height: 'auto', padding: 10 / proporcional}}>
+                                        <div style={{width: '100%', height: 'auto'}}>
+                                            <div className='d-flex justify-content-end' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}
+                                                onClick={() =>{ navigate('/nuestros-servicios'); window.scrollTo (0, 0)}}>
+                                                <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: 'white', 
+                                                    fontFamily: 'Hind, sans-serif', fontWeight: 500}}>
+                                                    Todos los servicios
+                                                </p>
+                                            </div>
+                                            <div style={{width: '100%', height: 1 / proporcional, background: '#efefef', marginBottom: 10 / proporcional}}/>
+                                            <div className='d-flex justify-content-end' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}
+                                                onClick={() =>{ navigate('/nuestros-servicios/consultoria-digital'); window.scrollTo (0, 0)}}>
+                                                <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: 'white', 
+                                                    fontFamily: 'Hind, sans-serif', fontWeight: 500}}>
+                                                    Consultoría digital
+                                                </p>
+                                            </div>
+                                            <div style={{width: '100%', height: 1 / proporcional, background: '#efefef', marginBottom: 10 / proporcional}}/>
+                                            <div className='d-flex justify-content-end' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}
+                                                onClick={() => {navigate('/nuestros-servicios/desarrollo-web'); window.scrollTo (0, 0)}}>
+                                                <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: 'white', 
+                                                    fontFamily: 'Hind, sans-serif', fontWeight: 500}}>
+                                                    Páginas web
+                                                </p>
+                                            </div>
+                                            <div style={{width: '100%', height: 1 / proporcional, background: '#efefef', marginBottom: 10 / proporcional}}/>
+                                            <div className='d-flex justify-content-end' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}
+                                                onClick={() => {navigate('/nuestros-servicios/desarollo-ecommerce'); window.scrollTo (0, 0)}}>
+                                                <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: 'white', 
+                                                    fontFamily: 'Hind, sans-serif', fontWeight: 500}}>
+                                                    Desarrollo e-commerce
+                                                </p>
+                                            </div>
+                                            <div style={{width: '100%', height: 1 / proporcional, background: '#efefef', marginBottom: 10 / proporcional}}/>
+                                            <div className='d-flex justify-content-end' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}
+                                                onClick={() => {navigate('/nuestros-servicios/aplicacion-movil'); window.scrollTo (0, 0)}}>
+                                                <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: 'white', 
+                                                    fontFamily: 'Hind, sans-serif', fontWeight: 500}}>
+                                                    Desarrollo aplicaciones móviles
+                                                </p>
+                                            </div>
+                                            <div style={{width: '100%', height: 1 / proporcional, background: '#efefef', marginBottom: 10 / proporcional}}/>
+                                            <div className='d-flex justify-content-end' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}
+                                                onClick={() => {navigate('/nuestros-servicios/desarrollo-software'); window.scrollTo (0, 0)}}>
+                                                <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: 'white', 
+                                                    fontFamily: 'Hind, sans-serif', fontWeight: 500}}>
+                                                    Desarrollo software
+                                                </p>
+                                            </div>
+                                            <div style={{width: '100%', height: 1 / proporcional, background: '#efefef', marginBottom: 10 / proporcional}}/>
+                                            <div className='d-flex justify-content-end' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}
+                                                onClick={() => {navigate('/nuestros-servicios/marketing-digital'); window.scrollTo (0, 0)}}>
+                                                <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: 'white', 
+                                                    fontFamily: 'Hind, sans-serif', fontWeight: 500}}>
+                                                    Marketing digital 
+                                                </p>
+                                            </div>
+                                            <div style={{width: '100%', height: 1 / proporcional, background: '#efefef', marginBottom: 10 / proporcional}}/>
+                                            <div className='d-flex justify-content-end' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}
+                                                onClick={() => {navigate('/nuestros-servicios/soporte-tecnico'); window.scrollTo (0, 0)}}>
+                                                <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: 'white', 
+                                                    fontFamily: 'Hind, sans-serif', fontWeight: 500}}>
+                                                    Soporte técnico
+                                                </p>
+                                            </div>
+                                            <div style={{width: '100%', height: 1 / proporcional, background: '#efefef', marginBottom: 10 / proporcional}}/>
+                                            <div className='d-flex justify-content-end' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}
+                                                onClick={() => {navigate('/nuestros-servicios/servicios-nube'); window.scrollTo (0, 0)}}>
+                                                <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: 'white', 
+                                                    fontFamily: 'Hind, sans-serif', fontWeight: 500}}>
+                                                    Servicios en la nube (Cloud services)
+                                                </p>
+                                            </div>
+                        1            </div>
+                                    </div>
+                                ) : null
+                            }
                             <div className='d-flex justify-content-end' style={{width: '100%', height: 48  / proporcional, cursor: 'pointer'}}
                                 onMouseOver={() => setMenuSuperior('portafolio')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/nuestro-portafolio'); window.scrollTo(0, 0);
                                     dispatch(set_open_menu_principal(false))}}>

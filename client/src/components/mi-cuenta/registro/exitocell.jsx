@@ -28,7 +28,7 @@ export default function ExitoCell({proporcional}) {
                 <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
                     <button className='btn rounded' 
                         style={{width: '90%', height: 50 / proporcional, fontSize: 18 / proporcional, background: '#2d572c', color: 'white', fontWeight: 600}}
-                            onClick={() => navigate('/')}>
+                        onClick={() => {navigate('/'); window.scrollTo(0, 0)}}>
                         Página principal</button>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import {useNavigate} from 'react-router-dom'
+
 import servicios_software from '../../assets/images/servicios_software_280.png'
 import servicios_web from '../../assets/images/servicios_web_280.png'
 import servicios_moviles from '../../assets/images/servicios_moviles_280.png'
@@ -10,6 +12,8 @@ import servicios_marketing from '../../assets/images/servicios_marketing_280.png
 import servicios_cloud from '../../assets/images/servicios_cloud_280.png'
 
 export default function AreasTrabajoTablet ({proporcional}){
+
+    const navigate = useNavigate()
 
     const [seleccion_servicio, setSeleccionServicio] = useState ('')
 
@@ -49,6 +53,12 @@ export default function AreasTrabajoTablet ({proporcional}){
                                                 color: 'white'}}>
                                             Desde la auditoría de tu presencia en línea hasta la creación de una estrategia digital integral, nos esforzamos por ofrecer recomendaciones claras y prácticas que te ayuden a alcanzar tus metas comerciales. Utilizamos las últimas tecnologías y mejores prácticas en consultoría digital para garantizar que estés bien posicionado para competir en el mercado digital actual.
                                         </p>
+                                        <div style={{width: '100%', height: 'auto'}}>
+                                            <button className='btn border-0' style={{width: '30%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                onClick={() => {navigate ('/nuestros-servicios/consultoria-digital'); window.scrollTo(0, 0)}}>Ver más</button>
+                                            <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
+                                        </div>  
                                     </div>  
                                 </div>  
                             </div>  
@@ -83,10 +93,16 @@ export default function AreasTrabajoTablet ({proporcional}){
                                                 color: 'white'}}>
                                             Nos enorgullece ofrecer un enfoque centrado en el cliente en todo lo que hacemos. Trabajamos en estrecha colaboración contigo para comprender tus necesidades y objetivos comerciales, y desarrollar una estrategia de desarrollo web que se alinee perfectamente con tus metas y valores.
                                         </p>
-                                        <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 400,
+                                        <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 20 / proporcional, fontWeight: 400,
                                                 color: 'white'}}>
                                             Desde el diseño visual hasta la funcionalidad del sitio, nos esforzamos por ofrecer una experiencia de usuario excepcional en cada paso del camino. Utilizamos las últimas tecnologías y prácticas de desarrollo web para garantizar que tu sitio no solo sea atractivo y fácil de usar, sino también rápido, seguro y optimizado para SEO.<br/>
                                         </p>
+                                        <div style={{width: '100%', height: 'auto'}}>
+                                            <button className='btn border-0' style={{width: '30%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                onClick={() => {navigate ('/nuestros-servicios/desarrollo-web'); window.scrollTo(0, 0)}}>Ver más</button>
+                                            <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
+                                        </div>  
                                 </div>  
                                 </div>  
                             </div>  
@@ -127,6 +143,12 @@ export default function AreasTrabajoTablet ({proporcional}){
                                                 color: 'white'}}>
                                             Nos enorgullece ofrecer soluciones personalizadas que se adapten perfectamente a las necesidades y objetivos únicos de tu negocio. Trabajamos en estrecha colaboración contigo para entender tus productos, tu mercado objetivo y tus metas comerciales, y desarrollamos una estrategia de comercio electrónico que te ayude a alcanzar el éxito.
                                         </p>
+                                        <div style={{width: '100%', height: 'auto'}}>
+                                            <button className='btn border-0' style={{width: '30%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                onClick={() => {navigate ('/nuestros-servicios/desarrollo-ecommerce'); window.scrollTo(0, 0)}}>Ver más</button>
+                                            <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
+                                        </div>
                                     </div>  
                                 </div>  
                             </div>  
@@ -165,6 +187,12 @@ export default function AreasTrabajoTablet ({proporcional}){
                                                 color: 'white'}}>
                                             Nos enorgullece ofrecer soluciones personalizadas que se adapten perfectamente a las necesidades y objetivos únicos de tu negocio. Trabajamos en estrecha colaboración contigo para entender tus productos, tu mercado objetivo y tus metas comerciales, y desarrollamos una estrategia de desarrollo de aplicaciones móviles que te ayude a alcanzar el éxito.
                                         </p>
+                                        <div style={{width: '100%', height: 'auto'}}>
+                                            <button className='btn border-0' style={{width: '30%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                onClick={() => {navigate ('/nuestros-servicios/aplicacion-movil'); window.scrollTo(0, 0)}}>Ver más</button>
+                                            <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
+                                        </div> 
                                     </div>  
                                 </div>  
                             </div>  
@@ -205,6 +233,12 @@ export default function AreasTrabajoTablet ({proporcional}){
                                                 color: 'white'}}>
                                             Desde la arquitectura del software hasta la funcionalidad del producto final, nos esforzamos por ofrecer una experiencia de usuario excepcional en cada paso del proceso de uso del software. Utilizamos las últimas tecnologías y prácticas de desarrollo de software para garantizar que tu software sea fácil de usar, seguro y compatible con una amplia gama de dispositivos y sistemas operativos.
                                         </p>
+                                        <div style={{width: '100%', height: 'auto'}}>
+                                            <button className='btn border-0' style={{width: '30%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                onClick={() => {navigate ('/nuestros-servicios/desarrollo-software'); window.scrollTo(0, 0)}}>Ver más</button>
+                                            <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
+                                        </div> 
                                     </div>  
                                 </div>  
                             </div>  
@@ -243,6 +277,12 @@ export default function AreasTrabajoTablet ({proporcional}){
                                                 color: 'white'}}>
                                             Desde la optimización de motores de búsqueda hasta la publicidad en redes sociales y más allá, nos esforzamos por ofrecer una estrategia de marketing integral que te ayude a destacarte en el competitivo panorama digital. Utilizamos las últimas tecnologías y mejores prácticas de marketing digital para garantizar que tu mensaje llegue a las personas adecuadas en el momento adecuado.
                                         </p>
+                                        <div style={{width: '100%', height: 'auto'}}>
+                                            <button className='btn border-0' style={{width: '30%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                onClick={() => {navigate ('/nuestros-servicios/marketing-digital'); window.scrollTo(0, 0)}}>Ver más</button>
+                                            <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
+                                        </div> 
                                     </div>  
                                 </div>  
                             </div>  
@@ -283,6 +323,12 @@ export default function AreasTrabajoTablet ({proporcional}){
                                                 color: 'white'}}>
                                             Desde la resolución de problemas técnicos cotidianos hasta la implementación de soluciones de seguridad avanzadas, nos esforzamos por ofrecer un servicio excepcional en cada interacción. Nuestro objetivo es ofrecerte la tranquilidad y la seguridad que necesitas para poder concentrarte en lo que mejor sabes hacer: hacer crecer tu negocio.
                                         </p>
+                                        <div style={{width: '100%', height: 'auto'}}>
+                                            <button className='btn border-0' style={{width: '30%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                onClick={() => {navigate ('/nuestros-servicios/soporte-tecnico'); window.scrollTo(0, 0)}}>Ver más</button>
+                                            <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
+                                        </div> 
                                     </div>  
                                 </div>  
                             </div>  
@@ -321,6 +367,12 @@ export default function AreasTrabajoTablet ({proporcional}){
                                                 color: 'white'}}>
                                             Desde la consultoría inicial hasta la implementación y el soporte continuo, nos esforzamos por ofrecer un servicio excepcional en cada interacción. Nuestro objetivo es ofrecerte la tranquilidad y la seguridad que necesitas para poder concentrarte en lo que mejor sabes hacer: hacer crecer tu negocio.
                                         </p>
+                                        <div style={{width: '100%', height: 'auto'}}>
+                                            <button className='btn border-0' style={{width: '30%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                onClick={() => {navigate ('/nuestros-servicios/servicios-nube'); window.scrollTo(0, 0)}}>Ver más</button>
+                                            <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
+                                        </div>
                                     </div>  
                                 </div>  
                             </div>  

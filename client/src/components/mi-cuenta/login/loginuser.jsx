@@ -32,6 +32,7 @@ export default function LoginUser ({proporcional}){
             dispatch(set_authenticated (true))
             dispatch(begindata(beginConstants({}, true, 0).login_user))
             navigate('/')
+            window.scrollTo(0, 0)
         }else if (login_user && login_user.message && login_user.success === false){
             setrRespuesta(login_user.message.info)
         }
@@ -103,7 +104,7 @@ export default function LoginUser ({proporcional}){
                 <div style={{width: '100%', height: 'auto', cursor: 'pointer'}}>
                     <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 20 / proporcional, color: 'rgb(136, 136, 136)', fontFamily: 'Hind, sans-serif',
                         fontWeight: 400, textAlign: 'end'}}
-                        onClick={() => navigate('/mi-cuenta/olvide-contraseña')}>
+                        onClick={() => {navigate('/mi-cuenta/olvide-contraseña'); window.scrollTo(0, 0)}}>
                         ¿Olvidaste tu contraseña?
                     </p>
                 </div>
@@ -117,7 +118,7 @@ export default function LoginUser ({proporcional}){
                     <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 0, color: 'rgb(136, 136, 136)', fontFamily: 'Hind, sans-serif',
                         fontWeight: 400, textAlign: 'center'}}>
                         ¿No tienes un cuenta? <span style={{fontSize: 20 / proporcional, textDecoration: 'underline', cursor: 'pointer'}}
-                        onClick={() => navigate('/mi-cuenta/registro')}>Regístrate aquí</span>
+                        onClick={() => {navigate('/mi-cuenta/registro'); window.scrollTo(0, 0)}}>Regístrate aquí</span>
                     </p>
                 </div>
             </div>

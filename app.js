@@ -59,6 +59,7 @@ app.use(require('./backend/routes/authentication.js'))
 
 app.use(require('./backend/routes/proyectos.js'))
 app.use(require('./backend/routes/correo.js'))
+app.use(require('./backend/routes/clientes.js'))
 //app.use(require('./backend/routes/tokens.js'))
 //app.use(require('./backend/routes/conductores.js'))
 //app.use(require('./backend/routes/viajeros.js'))
@@ -87,6 +88,11 @@ app.get('/nuestros-servicios', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/nuestros-servicios', 'index'));
 });
 
+app.use(express.static(path.resolve(__dirname, './client/build/nuestros-servicios')));
+app.get('/nuestros-servicios/:servicios', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/nuestros-servicios', 'index'));
+});
+
 app.use(express.static(path.resolve(__dirname, './client/build/nuestro-portafolio')));
 app.get('/nuestro-portafolio', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/nuestro-portafolio', 'index'));
@@ -102,19 +108,59 @@ app.get('/contactanos', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/contactanos', 'index'));
 });
 
-app.use(express.static(path.resolve(__dirname, './client/build/mi-cuenta')));
-app.get('/mi-cuenta', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/build/mi-cuenta', 'index'));
+app.use(express.static(path.resolve(__dirname, './client/build/mi-cuenta/login')));
+app.get('/mi-cuenta/login', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/mi-cuenta/login', 'index'));
 });
 
-app.use(express.static(path.resolve(__dirname, './client/build/tienda')));
-app.get('/tienda', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/build/tienda', 'index'));
+app.use(express.static(path.resolve(__dirname, './client/build/mi-cuenta/olvide-contraseña')));
+app.get('/mi-cuenta/olvide-contraseña', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/mi-cuenta/olvide-contraseña', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/mi-cuenta/cambiar-password')));
+app.get('/mi-cuenta/cambiar-password/:usuario', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/mi-cuenta/cambiar-password', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/mi-cuenta/revisar-correo')));
+app.get('/mi-cuenta/revisar-correo', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/mi-cuenta/revisar-correo', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/cambio-password/exitoso')));
+app.get('/cambio-password/exitoso/:usuario/:usuario', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/cambio-password/exitoso', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/mi-cuenta/registro')));
+app.get('/mi-cuenta/registro', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/mi-cuenta/registro', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/mi-cuenta/registro/exitoso')));
+app.get('/mi-cuenta/registro/exitoso', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/mi-cuenta/registro/exitoso', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/nuestra-tienda')));
+app.get('/nuestra-tienda', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/nuestra-tienda', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/carrito-compras')));
+app.get('/producto/carrito-compras', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/carrito-compras', 'index'));
 });
 
 app.use(express.static(path.resolve(__dirname, './client/build/producto')));
-app.get('/producto/:producto/:sku', (req, res) => {
+app.get('/producto/producto/:producto/:sku', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/producto', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/suscripcion')));
+app.get('/producto/suscripcion', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/suscripcion', 'index'));
 });
 
 //Iniciar el servidor

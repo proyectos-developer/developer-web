@@ -35,6 +35,7 @@ export default function RegisterUserTablet ({proporcional}){
             dispatch(set_authenticated (true))
             dispatch(begindata(beginConstants({}, true, 0).register_user))
             navigate('/mi-cuenta/registro/exitoso')
+            window.scrollTo(0, 0)
         }else if (register_user && register_user.message && register_user.success === false){
             setrRespuesta(register_user.message.info)
         }
@@ -166,7 +167,7 @@ export default function RegisterUserTablet ({proporcional}){
                     <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 20 / proporcional, color: 'rgb(136, 136, 136)', fontFamily: 'Hind, sans-serif',
                         fontWeight: 400, textAlign: 'end'}}>
                         ¿Ya tienes un cuenta? <span style={{fontSize: 20 / proporcional, textDecoration: 'underline', cursor: 'pointer'}}
-                        onClick={() => navigate('/mi-cuenta/login')}>ingresa aquí</span>
+                        onClick={() => {navigate('/mi-cuenta/login'); window.scrollTo(0, 0)}}>ingresa aquí</span>
                     </p>
                 </div>
                     <div className='d-flex justify-content-center' style={{width: '100%', height: 56 / proporcional}}>

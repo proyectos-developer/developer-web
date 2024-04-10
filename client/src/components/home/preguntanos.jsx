@@ -1,9 +1,14 @@
 import React from 'react'
 
+import {useNavigate} from 'react-router-dom'
+
 import home_contact from '../../assets/images/home_contact_us_600.jpg'
 import home_question from '../../assets/images/home_fondo_contact_1920.png'
 
 export default function Preguntanos ({proporcional}){
+
+    const navigate = useNavigate()
+
     return (
         <div style={{width: '100%', height: 600 / proporcional, backgroundImage: `url(${home_question})`,
                 backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
@@ -28,7 +33,8 @@ export default function Preguntanos ({proporcional}){
                                 ¿Cuál es tu pregunta sobre soluciones tecnológicas? Por favor, descríbela para que pueda brindarte la mejor respuesta posible.
                             </p>
                             <button className='border-0 rounded' style={{width: 180 / proporcional, height: 60 / proporcional, background: 'white', fontSize: 18 / proporcional,
-                                color: 'rgb(23, 43, 222)', fontWeight: 800}}>Ver más</button>
+                                color: 'rgb(23, 43, 222)', fontWeight: 800}}
+                                onClick={() => {navigate('/contactanos'); window.scrollTo(0, 0)}}>Ver más</button>
                         </div>
                     </div>
                 </div>

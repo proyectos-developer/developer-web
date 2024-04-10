@@ -12,6 +12,7 @@ export const begindata = createAsyncThunk ('', async (params) => {
         case 'register_user':
         case 'update_password':
         case 'send_link_update_password':
+        case 'send_suscripcion': 
             if (params.reset){ 
                 return {success: null}
             }else{
