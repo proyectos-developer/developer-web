@@ -163,6 +163,16 @@ app.get('/producto/suscripcion', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/suscripcion', 'index'));
 });
 
+app.use(express.static(path.resolve(__dirname, './client/build/cotizacion')));
+app.get('/producto/cotizacion', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/cotizacion', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/cotizacion')));
+app.get('/producto/cotizacion/:servicio', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/cotizacion', 'index'));
+});
+
 //Iniciar el servidor
 app.listen (app.get('port'), () => {
     console.log ('Server en puerto ', app.get ('port'))

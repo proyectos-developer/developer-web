@@ -79,6 +79,14 @@ import SuscripcionExitosa from './components/suscripcion/panel.jsx'
 import SuscripcionExitosaTablet from './components/suscripcion/paneltablet.jsx'
 import SuscripcionExitosaCell from './components/suscripcion/panelcell.jsx'
 
+import OpcionesCotizacion from './components/cotizacion/panel.jsx'
+import OpcionesCotizacionTablet from './components/cotizacion/paneltablet.jsx'
+import OpcionesCotizacionCell from './components/cotizacion/panelcell.jsx'
+
+import FormularioCotizacion from './components/cotizacion/formulario/panel.jsx'
+import FormularioCotizacionTablet from './components/cotizacion/formulario/paneltablet.jsx'
+import FormularioCotizacionCell from './components/cotizacion/formulario/panelcell.jsx'
+
 export default function App (){
   const [width, setWidth] = useState(window.outerWidth)
 
@@ -172,6 +180,14 @@ export default function App (){
             <Route path='suscripcion' element={width < 500 ? <SuscripcionExitosaCell proporcional={499 / width}/> :
                                                width < 991 ? <SuscripcionExitosaTablet proporcional={991 / width}/> :
                                                              <SuscripcionExitosa proporcional={1920/ width}/>}/>
+                                                                 
+            <Route path='cotizacion' element={width < 500 ? <OpcionesCotizacionCell proporcional={499 / width}/> :
+                                              width < 991 ? <OpcionesCotizacionTablet proporcional={991 / width}/> :
+                                                            <OpcionesCotizacion proporcional={1920/ width}/>}/>
+
+            <Route path='cotizacion/:servicio' element={width < 500 ? <FormularioCotizacionCell proporcional={499 / width}/> :
+                                                        width < 991 ? <FormularioCotizacionTablet proporcional={991 / width}/> :
+                                                                      <FormularioCotizacion proporcional={1920/ width}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

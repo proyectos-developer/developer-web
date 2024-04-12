@@ -2,20 +2,17 @@ import React, { useState } from 'react'
 
 import MenuSuperior from '../comun/menusuperior'
 import Principal from './principal.jsx'
-import MisionVision from './misionvision.jsx'
-import Valores from './valores.jsx'
-import Equipo from './equipo.jsx'
-import MaravillosoProducto from './maravillosoproducto.jsx'
+import Opciones from './opciones.jsx'
 
-export default function SobreNosotros ({proporcional}){
+export default function OpcionesCotizacion ({proporcional}){
 
     const [position, setPosition] = useState(0)
 
     window.onscroll = () => {
         setPosition(window.scrollY)
     }
-    
-    return (
+
+    return(
         <div style={{width: '100%', height: 'auto'}}>
             <div className='position-relative' style={{width: '100%', height: 900 / proporcional}}>
                 <div className={`position-fixed top-0 start-0 ${position > 800 / proporcional ? 'shadow' : ''}`} style={{width: '100%', height: 'auto', zIndex: 99999,
@@ -27,11 +24,10 @@ export default function SobreNosotros ({proporcional}){
                 </div>
             </div>
             <div style={{width: '100%', height: 'auto'}}>
-                <MisionVision proporcional={proporcional}/>
-                <Valores proporcional={proporcional}/>
-                <Equipo proporcional={proporcional}/>
-                <MaravillosoProducto proporcional={proporcional}/>
+                <Opciones proporcional={proporcional}/>
             </div>
         </div>
     )
 }
+
+{/** */}
