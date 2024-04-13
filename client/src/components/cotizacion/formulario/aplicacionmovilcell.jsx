@@ -15,13 +15,13 @@ import image_app_social from '../../../assets/images/image_app_social_600.png'
 import image_app_deportes from '../../../assets/images/image_app_deportes_600.png'
 import image_app_otro from '../../../assets/images/image_app_otro_600.png'
 
-export default function AplicacionMovilTablet({proporcional}) {
+export default function AplicacionMoviCell({proporcional}) {
 
     const navigate = useNavigate()
 
     const [tipo_aplicacion, setTipoAplicacion] = useState('')
     const [seleccion_tipo_aplicacion, setSeleccionTipoAplicacion] = useState('')
-
+    
     const [pantalla_login, setPantallaLogin] = useState(false)
     const [pantalla_registro, setPantallaRegistro] = useState(false)
     const [pantalla_presentacion, setPantallaPresentacion] = useState(false)
@@ -315,7 +315,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     </p>
                                 </div>      
                             </div>
-                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                                 <div className='d-flex' style={{width: '90%', height: 24 / proporcional, cursor: 'pointer'}}
                                     onClick={() => setPantallaRegistro(!pantalla_registro)}>    
                                     <img src={pantalla_registro ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
@@ -339,7 +339,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     </p>
                                 </div>         
                             </div>
-                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                                 <div className='d-flex' style={{width: '90%', height: 24 / proporcional, cursor: 'pointer'}}
                                     onClick={() => setPantallaProductos(!pantalla_productos)}>    
                                     <img src={pantalla_productos ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
@@ -363,7 +363,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     </p>
                                 </div>      
                             </div>
-                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>   
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>   
                                 <div className='d-flex' style={{width: '90%', height: 24 / proporcional, cursor: 'pointer'}}
                                     onClick={() => setPantallaPago(!pantalla_pago)}>    
                                     <img src={pantalla_pago ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
@@ -387,7 +387,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     </p>
                                 </div>     
                             </div>
-                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>                        
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>                        
                                 <div className='d-flex' style={{width: '90%', height: 24 / proporcional, cursor: 'pointer'}}
                                     onClick={() => setPantallaLocalizacion(!pantalla_localizacion)}>    
                                     <img src={pantalla_localizacion ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
@@ -411,7 +411,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     </p>
                                 </div>     
                             </div>
-                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                                 <div className='d-flex' style={{width: '90%', height: 24 / proporcional, cursor: 'pointer'}}
                                     onClick={() => setPantallaComentarios(!pantalla_comentarios)}>    
                                     <img src={pantalla_comentarios ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
@@ -435,7 +435,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     </p>
                                 </div>      
                             </div>
-                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}> 
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}> 
                                 <div className='d-flex' style={{width: '90%', height: 24 / proporcional, cursor: 'pointer'}}
                                     onClick={() => setPantallaChat(!pantalla_chat)}>    
                                     <img src={pantalla_chat ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
@@ -459,7 +459,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     </p>
                                 </div>       
                             </div>
-                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                                 <div className='d-flex' style={{width: '90%', height: 24 / proporcional, cursor: 'pointer'}}
                                     onClick={() => setPantallaAnuncios(!pantalla_anuncios)}>    
                                     <img src={pantalla_anuncios ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
@@ -483,7 +483,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     </p>
                                 </div>      
                             </div>
-                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                                 <div className='d-flex' style={{width: '90%', height: 24 / proporcional, cursor: 'pointer'}}
                                     onClick={() => setPantallaCalendario(!pantalla_calendario)}>    
                                     <img src={pantalla_calendario ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
@@ -507,7 +507,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     </p>
                                 </div>     
                             </div>
-                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>   
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>   
                                 <div className='d-flex' style={{width: '90%', height: 24 / proporcional, cursor: 'pointer'}}
                                     onClick={() => setPantallaInformativa(!pantalla_informativa)}>    
                                     <img src={pantalla_informativa ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
@@ -531,7 +531,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     </p>
                                 </div>      
                             </div>
-                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                                 <div className='d-flex' style={{width: '90%', height: 24 / proporcional, cursor: 'pointer'}}
                                     onClick={() => setPantallaOtro(!pantalla_otro)}>    
                                     <img src={pantalla_otro ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,

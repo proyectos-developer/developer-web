@@ -5,11 +5,18 @@ import { useNavigate } from 'react-router-dom'
 import icono_box from '../../../assets/iconos/icono_box_96.png'
 import icono_check_box from '../../../assets/iconos/icono_check_box_96.png'
 
+import image_cotizacion_web from '../../../assets/images/image_cotizacion_web_600.png'
+import image_cotizacion_landing from '../../../assets/images/image_cotizacion_landing_600.png'
+import image_cotizacion_web_empresa from '../../../assets/images/image_cotizacion_web_empresa_600.jpg'
+import image_cotizacion_web_ecommerce from '../../../assets/images/image_cotizacion_web_ecommerce_600.png'
+
 export default function PaginasWebCell({proporcional}) {
 
     const navigate = useNavigate()
 
     const [tipo_pagina_web, setTipoPaginaWeb] = useState('')
+    const [seleccion_tipo_pagina, setSeleccionTipoPagina] = useState('')
+
     const [etipo_pagina_web, setETipoPaginaWeb] = useState('')
 
     const [pestania_nosotros, setPestaniaNosotros] = useState(false)

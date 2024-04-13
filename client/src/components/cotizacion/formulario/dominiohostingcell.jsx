@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import image_dominio from '../../../assets/images/image_cotizacion_dominio_600.png'
 import image_hosting from '../../../assets/images/image_cotizacion_hosting_600.png'
 
-export default function DominioHostingTablet({proporcional}) {
+export default function DominioHostingCell({proporcional}) {
 
     const navigate = useNavigate()
 

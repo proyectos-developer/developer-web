@@ -23,7 +23,7 @@ export default function FormularioCell({proporcional}) {
                     <DominioHostingCell proporcional={proporcional}/>
                 )  : servicio === 'paginas-web' ? (
                     <PaginasWebCell proporcional={proporcional}/>
-                ) : servicio === 'paginas-web' ? (
+                ) : servicio === 'aplicacion-movil' ? (
                     <AplicacionMovilCell proporcional={proporcional}/>
                 ) : servicio === 'marketing-digital' ? (
                     <MarketingDigitalCell proporcional={proporcional}/>

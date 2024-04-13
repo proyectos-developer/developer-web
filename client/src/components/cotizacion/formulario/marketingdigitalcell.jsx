@@ -59,7 +59,7 @@ export default function MarketingDigitalCell({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 200 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -199,7 +199,7 @@ export default function MarketingDigitalCell({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 200 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -208,10 +208,10 @@ export default function MarketingDigitalCell({proporcional}) {
                                 </p>
                             </div>
                         </div>
-                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <div style={{width: '100%', height: 'auto'}}>
                                 <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                    <div style={{width: '49%', height: 50 / proporcional}}>
+                                    <div style={{width: '90%', height: 50 / proporcional}}>
                                         <select
                                             id='tipo'
                                             className='form-select'
@@ -224,7 +224,9 @@ export default function MarketingDigitalCell({proporcional}) {
                                             <option value='Empresa'>Empresa</option>
                                         </select>
                                     </div>
-                                    <div style={{width: '49%', height: 50 / proporcional}}>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                    <div style={{width: '90%', height: 50 / proporcional}}>
                                         <input  
                                             disabled={tipo === '' ? true : false}
                                             className='form-control'
@@ -238,61 +240,65 @@ export default function MarketingDigitalCell({proporcional}) {
                                 </div>
                                 {
                                     tipo !== 'Personal' && tipo !== '' && tipo !== '0' ? (
-                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                            <div style={{width: '49%', height: 50 / proporcional}}>
-                                                {
-                                                    tipo !== 'Otro' ? (
-                                                        <select
-                                                            className='form-select'
-                                                            style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, color: '#212121', fontWeight: 600}}
-                                                            value={rubro}
-                                                            onChange={(event) => {event.target.value !== '0' ? setRubro(event.target.value) : setRubro('')}}>
-                                                            <option value='0'>{rubro === '' ? 'Seleccionar rubro' : rubro}</option>
-                                                            <option value='Tecnología de la información'>Tecnología de la información</option>
-                                                            <option value='Servicios Financieros'>Servicios Financieros</option>
-                                                            <option value='Salud y Bienestar'>Salud y Bienestar</option>
-                                                            <option value='Comercio Minosrista'>Comercio Minosrista</option>
-                                                            <option value='Educación'>'Educación'</option>
-                                                            <option value='Aliminentos y Bebidas'>'Aliminentos y Bebidas'</option>
-                                                            <option value='Servicios Profesionales'>'Servicios Profesionales'</option>
-                                                            <option value='Turismo y Hospitalidad'>'Turismo y Hospitalidad'</option>
-                                                            <option value='Construcción y Bienes'>'Construcción y Bienes'</option>
-                                                            <option value='Medios de comuniación y entretenimiento'>'Medios de comuniación y entretenimiento'</option>
-                                                            <option value='Manufactura'>'Manufactura'</option>
-                                                            <option value='Energía y Medio Ambiente'>'Energía y Medio Ambiente'</option>
-                                                            <option value='Transporte y Logística'>'Transporte y Logística'</option>
-                                                            <option value='Moda y Textiles'>'Moda y Textiles'</option>
-                                                            <option value='Telecomunicaciones'>'Telecomunicaciones'</option>
-                                                            <option value='Otro'>Otro</option>
-                                                        </select>
-                                                    ) : (
-                                                        <input  
-                                                            disabled={rubro === '' ? true : false}
-                                                            className='form-control'
-                                                            value={rubro}
-                                                            onChange={(event) => setRubro(event.target.value)}
-                                                            style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121'}}
-                                                            id='rubro'
-                                                            type='default'
-                                                            placeholder='Rubro'/>
-                                                    )
-                                                }
+                                        <div style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                                <div style={{width: '90%', height: 50 / proporcional}}>
+                                                    {
+                                                        tipo !== 'Otro' ? (
+                                                            <select
+                                                                className='form-select'
+                                                                style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, color: '#212121', fontWeight: 600}}
+                                                                value={rubro}
+                                                                onChange={(event) => {event.target.value !== '0' ? setRubro(event.target.value) : setRubro('')}}>
+                                                                <option value='0'>{rubro === '' ? 'Seleccionar rubro' : rubro}</option>
+                                                                <option value='Tecnología de la información'>Tecnología de la información</option>
+                                                                <option value='Servicios Financieros'>Servicios Financieros</option>
+                                                                <option value='Salud y Bienestar'>Salud y Bienestar</option>
+                                                                <option value='Comercio Minosrista'>Comercio Minosrista</option>
+                                                                <option value='Educación'>'Educación'</option>
+                                                                <option value='Aliminentos y Bebidas'>'Aliminentos y Bebidas'</option>
+                                                                <option value='Servicios Profesionales'>'Servicios Profesionales'</option>
+                                                                <option value='Turismo y Hospitalidad'>'Turismo y Hospitalidad'</option>
+                                                                <option value='Construcción y Bienes'>'Construcción y Bienes'</option>
+                                                                <option value='Medios de comuniación y entretenimiento'>'Medios de comuniación y entretenimiento'</option>
+                                                                <option value='Manufactura'>'Manufactura'</option>
+                                                                <option value='Energía y Medio Ambiente'>'Energía y Medio Ambiente'</option>
+                                                                <option value='Transporte y Logística'>'Transporte y Logística'</option>
+                                                                <option value='Moda y Textiles'>'Moda y Textiles'</option>
+                                                                <option value='Telecomunicaciones'>'Telecomunicaciones'</option>
+                                                                <option value='Otro'>Otro</option>
+                                                            </select>
+                                                        ) : (
+                                                            <input  
+                                                                disabled={rubro === '' ? true : false}
+                                                                className='form-control'
+                                                                value={rubro}
+                                                                onChange={(event) => setRubro(event.target.value)}
+                                                                style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121'}}
+                                                                id='rubro'
+                                                                type='default'
+                                                                placeholder='Rubro'/>
+                                                        )
+                                                    }
+                                                </div>
                                             </div>
-                                            <div style={{width: '49%', height: 50 / proporcional}}>
-                                                <input  
-                                                    className='form-control'
-                                                    value={nro_ruc}
-                                                    onChange={(event) => setNroRuc(event.target.value)}
-                                                    style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121'}}
-                                                    id='nro_ruc'
-                                                    type='number'
-                                                    placeholder='Número de R.U.C'/>
+                                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                                <div style={{width: '90%', height: 50 / proporcional}}>
+                                                    <input  
+                                                        className='form-control'
+                                                        value={nro_ruc}
+                                                        onChange={(event) => setNroRuc(event.target.value)}
+                                                        style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121'}}
+                                                        id='nro_ruc'
+                                                        type='number'
+                                                        placeholder='Número de R.U.C'/>
+                                                </div>
                                             </div>
                                         </div>
                                     ) : null
                                 }
                                 <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                    <div style={{width: '49%', height: 50 / proporcional}}>
+                                    <div style={{width: '90%', height: 50 / proporcional}}>
                                         <input  
                                             disabled={(tipo !== '0' && tipo !== '') ? false : true}
                                             className='form-control'
@@ -303,7 +309,9 @@ export default function MarketingDigitalCell({proporcional}) {
                                             type='number'
                                             placeholder='Número de teléfono'/>
                                     </div>
-                                    <div style={{width: '49%', height: 50 / proporcional}}>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                    <div style={{width: '90%', height: 50 / proporcional}}>
                                         <input  
                                             disabled={(tipo !== '0' && tipo !== '') ? false : true}
                                             className='form-control'
@@ -317,8 +325,8 @@ export default function MarketingDigitalCell({proporcional}) {
                                 </div>
                                 {
                                     tipo !== 'Personal' && tipo !== '' && tipo !== '0' ? (
-                                        <div className='d-flex justify-content-start' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                            <div style={{width: '49%', height: 50 / proporcional}}>
+                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                            <div style={{width: '90%', height: 50 / proporcional}}>
                                                 <input  
                                                     className='form-control'
                                                     value={nombre_contacto}
@@ -332,14 +340,16 @@ export default function MarketingDigitalCell({proporcional}) {
                                     ): null
                     
                                 }
-                                <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional}}>
-                                    <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional, marginBottom: 20 / proporcional}}>
+                                    <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                         background: boton_anterior ? 'white' : 'rgb(23, 43, 222)', color: boton_anterior ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                         onMouseOver={() => setBotonAnterior(true)} onMouseLeave={() => setBotonAnterior(false)}
                                         onClick={() => paso_anterior()}>
                                         Anterior
                                     </button>
-                                    <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional}}>
+                                    <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                         background: boton_finalizar ? 'white' : 'rgb(23, 43, 222)', color: boton_finalizar ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                         onMouseOver={() => setBotonFinalizar(true)} onMouseLeave={() => setBotonFinalizar(false)}
                                         onClick={() => finalizar_pedido()}>
