@@ -6,6 +6,7 @@ import icono_app from '../../assets/iconos/icono_cotizacion_app_96.png'
 import icono_marketing from '../../assets/iconos/icono_cotizacion_marketing_96.png'
 import icono_software from '../../assets/iconos/icono_cotizacion_software_96.png'
 import icono_cloud from '../../assets/iconos/icono_cotizacion_cloud_96.png'
+
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { set_opciones_cotizaciones } from '../../redux/actions/dataactions'

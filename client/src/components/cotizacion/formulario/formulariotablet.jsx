@@ -5,6 +5,8 @@ import DominioHostingTablet from './dominiohostingtablet.jsx'
 import PaginasWebTablet from './paginaswebtablet.jsx'
 import AplicacionMovilTablet from './aplicacionmoviltablet.jsx'
 import MarketingDigitalTablet from './marketingdigitaltablet.jsx'
+import SoftwareTablet from './softwaretablet.jsx'
+import CloudServiceTablet from './cloudservicetablet.jsx'
 
 export default function FormularioTablet({proporcional}) {
 
@@ -27,7 +29,11 @@ export default function FormularioTablet({proporcional}) {
                     <AplicacionMovilTablet proporcional={proporcional}/>
                 ) : servicio === 'marketing-digital' ? (
                     <MarketingDigitalTablet proporcional={proporcional}/>
-                ) : null
+                ) : servicio === 'software' ? (
+                    <SoftwareTablet proporcional={proporcional}/>
+                ) : (
+                    <CloudServiceTablet proporcional={proporcional}/>
+                )
             }
         </div>
     )

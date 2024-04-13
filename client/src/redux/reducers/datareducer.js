@@ -5,7 +5,11 @@ const initialState = {
     open_menu_principal: false,
     authenticated: false,
     message_suscripcion: {},
-    opciones_cotizaciones: {}
+    opciones_cotizaciones: {},
+    cotizacion_domhost: [],
+    cotizacion_web: [],
+    cotizacion_app: [],
+    cotizacion_marketing: []
 }
 
 const datareducer = (state = initialState, action) => {
@@ -38,6 +42,30 @@ const datareducer = (state = initialState, action) => {
         return {
             ... state,
             opciones_cotizaciones
+        }
+    }else  if (action.type === datatypes.SET_COTIZACION_DOMHOST){
+        const cotizacion_domhost = action.cotizacion_domhost
+        return {
+            ... state,
+            cotizacion_domhost
+        }
+    }else  if (action.type === datatypes.SET_COTIZACION_WEB){
+        const cotizacion_web = action.cotizacion_web
+        return {
+            ... state,
+            cotizacion_web
+        }
+    }else  if (action.type === datatypes.SET_COTIZACION_APP){
+        const cotizacion_app = action.cotizacion_app
+        return {
+            ... state,
+            cotizacion_app
+        }
+    }else  if (action.type === datatypes.SET_COTIZACION_MARKETING){
+        const cotizacion_marketing = action.cotizacion_marketing
+        return {
+            ... state,
+            cotizacion_marketing
         }
     }
     return state

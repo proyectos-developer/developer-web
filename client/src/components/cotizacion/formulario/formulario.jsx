@@ -5,6 +5,8 @@ import DominioHosting from './dominiohosting.jsx'
 import PaginasWeb from './paginasweb.jsx'
 import AplicacionMovil from './aplicacionmovil.jsx'
 import MarketingDigital from './marketingdigital.jsx'
+import Software from './software.jsx'
+import CloudService from './cloudservice.jsx'
 
 export default function Formulario({proporcional}) {
 
@@ -27,7 +29,11 @@ export default function Formulario({proporcional}) {
                     <AplicacionMovil proporcional={proporcional}/>
                 ) : servicio === 'marketing-digital' ? (
                     <MarketingDigital proporcional={proporcional}/>
-                ) : null
+                )  : servicio === 'software' ? (
+                    <Software proporcional={proporcional}/>
+                ) : (
+                    <CloudService proporcional={proporcional}/>
+                )
             }
         </div>
     )
