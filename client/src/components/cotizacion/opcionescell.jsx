@@ -174,7 +174,7 @@ export default function OpcionesCell({proporcional}) {
                     </div>
                 </div>
                 <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
-                    <button className='btn' style={{width: boton_continuar ? '22%' : '20%', height: 50 / proporcional, border: '1px solid white', 
+                    <button className='btn' style={{width: boton_continuar ? '90%' : '92%', height: 50 / proporcional, border: '1px solid white', 
                             background: boton_continuar ? 'white' : 'transparent', fontSize: 18 / proporcional,
                             fontWeight: 600, color: boton_continuar ? 'rgba(23, 43, 222, 1)' : 'white'}}
                             onClick={() => continuar_cotizacion()}

@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom'
 
 import DominioHostingTablet from './dominiohostingtablet.jsx'
 import PaginasWebTablet from './paginaswebtablet.jsx'
+import AplicacionMovilTablet from './aplicacionmoviltablet.jsx'
+import MarketingDigitalTablet from './marketingdigitaltablet.jsx'
 
 export default function FormularioTablet({proporcional}) {
 
@@ -21,6 +23,10 @@ export default function FormularioTablet({proporcional}) {
                     <DominioHostingTablet proporcional={proporcional}/>
                 )  : servicio === 'paginas-web' ? (
                     <PaginasWebTablet proporcional={proporcional}/>
+                )  : servicio === 'aplicacion-movil' ? (
+                    <AplicacionMovilTablet proporcional={proporcional}/>
+                ) : servicio === 'marketing-digital' ? (
+                    <MarketingDigitalTablet proporcional={proporcional}/>
                 ) : null
             }
         </div>

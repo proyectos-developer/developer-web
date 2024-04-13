@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 
+import image_dominio from '../../../assets/images/image_cotizacion_dominio_600.png'
+import image_hosting from '../../../assets/images/image_cotizacion_hosting_600.png'
+
 export default function DominioHostingTablet({proporcional}) {
 
     const navigate = useNavigate()
@@ -73,6 +76,9 @@ export default function DominioHostingTablet({proporcional}) {
                         </div>
                         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                             <div style={{width: '100%', height: 'auto'}}>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <img src={image_dominio} style={{width: '30%', height: '30%'}}/>
+                                </div>
                                 <div style={{width: '100%', height: 'auto', marginTop: 20 / proporcional}}>
                                     <p style={{fontSize: 20 / proporcional, lineHeight: `${25 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
                                             textAlign: 'center', color: 'black', cursor: 'default', marginBottom: 20 / proporcional}}>
@@ -103,6 +109,9 @@ export default function DominioHostingTablet({proporcional}) {
                         </div>
                         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                             <div style={{width: '100%', height: 'auto'}}>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <img src={image_hosting} style={{width: '30%', height: '30%'}}/>
+                                </div>
                                 <div style={{width: '100%', height: 'auto', marginTop: 20 / proporcional}}>
                                     <p style={{fontSize: 20 / proporcional, lineHeight: `${25 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
                                             textAlign: 'center', color: 'black', cursor: 'default', marginBottom: 20 / proporcional}}>
@@ -297,7 +306,7 @@ export default function DominioHostingTablet({proporcional}) {
                                     ): null
                     
                                 }
-                                <div className='d-flex justify-content-between' style={{width: '100%', height: 50 / proporcional, marginBottom: 20 / proporcional}}>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional, marginBottom: 20 / proporcional}}>
                                     <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                         background: boton_anterior ? 'white' : 'rgb(23, 43, 222)', color: boton_anterior ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                         onMouseOver={() => setBotonAnterior(true)} onMouseLeave={() => setBotonAnterior(false)}
@@ -305,7 +314,7 @@ export default function DominioHostingTablet({proporcional}) {
                                         Anterior
                                     </button>
                                 </div>
-                                <div className='d-flex justify-content-between' style={{width: '100%', height: 50 / proporcional}}>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional}}>
                                     <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                         background: boton_finalizar ? 'white' : 'rgb(23, 43, 222)', color: boton_finalizar ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                         onMouseOver={() => setBotonFinalizar(true)} onMouseLeave={() => setBotonFinalizar(false)}

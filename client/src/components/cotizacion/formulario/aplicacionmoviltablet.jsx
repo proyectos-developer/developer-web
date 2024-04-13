@@ -5,35 +5,43 @@ import { useNavigate } from 'react-router-dom'
 import icono_box from '../../../assets/iconos/icono_box_96.png'
 import icono_check_box from '../../../assets/iconos/icono_check_box_96.png'
 
-import image_cotizacion_web from '../../../assets/images/image_cotizacion_web_600.png'
-import image_cotizacion_landing from '../../../assets/images/image_cotizacion_landing_600.png'
-import image_cotizacion_web_empresa from '../../../assets/images/image_cotizacion_web_empresa_600.jpg'
-import image_cotizacion_web_ecommerce from '../../../assets/images/image_cotizacion_web_ecommerce_600.png'
+import image_app_personal from '../../../assets/images/image_app_personal_600.png'
+import image_app_empresarial from '../../../assets/images/image_app_empresarial_600.png'
+import image_app_ecommerce from '../../../assets/images/image_app_ecommerce_600.png'
+import image_app_transporte from '../../../assets/images/image_app_transporte_600.png'
+import image_app_almacen from '../../../assets/images/image_app_almacen_600.png'
+import image_app_delivery from '../../../assets/images/image_app_delivery_600.png'
+import image_app_social from '../../../assets/images/image_app_social_600.png'
+import image_app_deportes from '../../../assets/images/image_app_deportes_600.png'
+import image_app_otro from '../../../assets/images/image_app_otro_600.png'
 
-export default function PaginasWeb({proporcional}) {
+export default function AplicacionMovilTablet({proporcional}) {
 
     const navigate = useNavigate()
 
-    const [tipo_pagina_web, setTipoPaginaWeb] = useState('')
-    const [seleccion_tipo_pagina, setSeleccionTipoPagina] = useState('')
+    const [tipo_aplicacion, setTipoAplicacion] = useState('')
+    const [seleccion_tipo_aplicacion, setSeleccionTipoAplicacion] = useState('')
 
-    const [pestania_nosotros, setPestaniaNosotros] = useState(false)
-    const [pestania_servicios, setPestaniaServicios] = useState(false)
-    const [pestania_productos, setPestaniaProductos] = useState(false)
-    const [pestania_fotos, setPestaniaFotos] = useState(false)
-    const [pestania_videos, setPestaniaVideos] = useState(false)
-    const [pestania_contacto, setPestaniaContacto] = useState(false)
-    const [pestania_cotizacion, setPestaniaCotizacion] = useState(false)
-    const [pestania_tienda, setPestaniaTienda] = useState(false)
-    const [pestania_carrito, setPestaniaCarrito] = useState(false)
-    const [pestania_pago, setPestaniaPago] = useState(false)
-    const [pestania_seguimiento, setPestaniaSeguimiento] = useState(false)
-    const [pestania_registro, setPestaniaRegistro] = useState(false)
-    const [pestania_login, setPestaniaLogin] = useState(false)
-    const [pestania_perfil, setPestaniaPerfil] = useState(false)
-    const [pestania_favoritos, setPestaniaFavoritos] = useState(false)
-    const [pestania_compras, setPestaniaCompras] = useState(false)
-    const [pestania_administrativa, setPestaniaAdministrativa] = useState(false)
+    const [pantalla_login, setPantallaLogin] = useState(false)
+    const [pantalla_registro, setPantallaRegistro] = useState(false)
+    const [pantalla_presentacion, setPantallaPresentacion] = useState(false)
+    const [pantalla_perfil, setPantallaPerfil] = useState(false)
+    const [pantalla_productos, setPantallaProductos] = useState(false)
+    const [pantalla_carrito, setPantallaCarrito] = useState(false)
+    const [pantalla_pago, setPantallaPago] = useState(false)
+    const [pantalla_ubicacion, setPantallaUbicacion] = useState(false)
+    const [pantalla_localizacion, setPantallaLocalizacion] = useState(false)
+    const [pantalla_categorias, setPantallaCategorias] = useState(false)
+    const [pantalla_comentarios, setPantallaComentarios] = useState(false)
+    const [pantalla_galeria, setPantallaGaleria] = useState(false)
+    const [pantalla_chat, setPantallaChat] = useState(false)
+    const [pantalla_estadisticas, setPantallaEstadisticas] = useState(false)
+    const [pantalla_anuncios, setPantallaAnuncios] = useState(false)
+    const [pantalla_informativa, setPantallaInformativa] = useState (false)
+    const [pantalla_calendario, setPantallaCalendario] = useState (false)
+    const [pantalla_agenda, setPantallaAgenda] = useState (false)
+    const [pantalla_favoritos, setPantallaFavoritos] = useState (false)
+    const [pantalla_otro, setPantallaOtro] = useState(false)
     
     const [tipo, setTipo] = useState('')
     const [nombre, setNombre] = useState('')
@@ -55,7 +63,7 @@ export default function PaginasWeb({proporcional}) {
     }
 
     const siguiente_paso = () => {
-        if (tipo_pagina_web === ''){
+        if (tipo_aplicacion === ''){
         }else{
             setPaso(paso + 1)
         }
@@ -78,7 +86,7 @@ export default function PaginasWeb({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 200 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -86,7 +94,7 @@ export default function PaginasWeb({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 200 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -96,65 +104,148 @@ export default function PaginasWeb({proporcional}) {
                             </div>
                         </div>
                         <div className='' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
-                                <div className='position-relative' style={{width: '22%', height: 'auto', cursor: 'pointer'}}
-                                    onMouseOver={() => setSeleccionTipoPagina('web')} onMouseLeave={() => setSeleccionTipoPagina('')}
-                                    onClick={() => setTipoPaginaWeb('web')}>
+                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionTipoAplicacion('personal')} onMouseLeave={() => setSeleccionTipoAplicacion('')}
+                                    onClick={() => setTipoAplicacion('personal')}>
                                     {
-                                        seleccion_tipo_pagina === 'web' || tipo_pagina_web === 'web' ? (
+                                        seleccion_tipo_aplicacion === 'personal' || tipo_aplicacion === 'personal' ? (
                                             <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
                                         ) : null
                                     }
-                                    <img className={`${seleccion_tipo_pagina === 'web' || tipo_pagina_web === 'web' ? 'rounded' : ''}`} 
-                                        src={image_cotizacion_web} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <img className={`${seleccion_tipo_aplicacion === 'personal' || tipo_aplicacion === 'personal' ? 'rounded' : ''}`} 
+                                        src={image_app_personal} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
                                             textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                        Página web <br/>simple
+                                        Aplicación móvil <br/>personal
                                     </p>
                                 </div>
-                                <div className='position-relative' style={{width: '22%', height: 'auto', cursor: 'pointer'}}
-                                    onMouseOver={() => setSeleccionTipoPagina('landing')} onMouseLeave={() => setSeleccionTipoPagina('')}
-                                    onClick={() => setTipoPaginaWeb('landing')}>
+                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionTipoAplicacion('empresa')} onMouseLeave={() => setSeleccionTipoAplicacion('')}
+                                    onClick={() => setTipoAplicacion('empresa')}>
                                     {
-                                        seleccion_tipo_pagina === 'landing' || tipo_pagina_web === 'landing' ? (
+                                        seleccion_tipo_aplicacion === 'empresa' || tipo_aplicacion === 'empresa' ? (
                                             <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
                                         ) : null
                                     }
-                                    <img className={`${seleccion_tipo_pagina === 'landing' || tipo_pagina_web === 'landing' ? 'rounded' : ''}`} 
-                                        src={image_cotizacion_landing} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <img className={`${seleccion_tipo_aplicacion === 'empresa' || tipo_aplicacion === 'empresa' ? 'rounded' : ''}`} 
+                                        src={image_app_empresarial} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
                                             textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                        Landing page
+                                        Aplicación móvil <br/>empresarial
                                     </p>
                                 </div>
-                                <div className='position-relative' style={{width: '22%', height: 'auto', cursor: 'pointer'}}
-                                    onMouseOver={() => setSeleccionTipoPagina('empresa')} onMouseLeave={() => setSeleccionTipoPagina('')}
-                                    onClick={() => setTipoPaginaWeb('empresa')}>
+                            </div>
+                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionTipoAplicacion('ecommerce')} onMouseLeave={() => setSeleccionTipoAplicacion('')}
+                                    onClick={() => setTipoAplicacion('ecommerce')}>
                                     {
-                                        seleccion_tipo_pagina === 'empresa' || tipo_pagina_web === 'empresa' ? (
+                                        seleccion_tipo_aplicacion === 'ecommerce' || tipo_aplicacion === 'ecommerce' ? (
                                             <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
                                         ) : null
                                     }
-                                    <img className={`${seleccion_tipo_pagina === 'empresa' || tipo_pagina_web === 'empresa' ? 'rounded' : ''}`} 
-                                        src={image_cotizacion_web_empresa} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <img className={`${seleccion_tipo_aplicacion === 'ecommerce' || tipo_aplicacion === 'ecommerce' ? 'rounded' : ''}`} 
+                                        src={image_app_ecommerce} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
                                             textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                        Página web <br/>empresarial
+                                        Aplicación móvil <br/>ecommerce
                                     </p>
                                 </div>
-                                <div className='position-relative' style={{width: '22%', height: 'auto', cursor: 'pointer'}}
-                                    onMouseOver={() => setSeleccionTipoPagina('ecommerce')} onMouseLeave={() => setSeleccionTipoPagina('')}
-                                    onClick={() => setTipoPaginaWeb('ecommerce')}>
+                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionTipoAplicacion('transporte')} onMouseLeave={() => setSeleccionTipoAplicacion('')}
+                                    onClick={() => setTipoAplicacion('transporte')}>
                                     {
-                                        seleccion_tipo_pagina === 'ecommerce' || tipo_pagina_web === 'ecommerce' ? (
+                                        seleccion_tipo_aplicacion === 'transporte' || tipo_aplicacion === 'transporte' ? (
                                             <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
                                         ) : null
                                     }
-                                    <img className={`${seleccion_tipo_pagina === 'ecommerce' || tipo_pagina_web === 'ecommerce' ? 'rounded-circle' : ''}`} 
-                                        src={image_cotizacion_web_ecommerce} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <img className={`${seleccion_tipo_aplicacion === 'transporte' || tipo_aplicacion === 'transporte' ? 'rounded-circle' : ''}`} 
+                                        src={image_app_transporte} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
                                             textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                        Página web <br/>e-commerce
+                                        Aplicación móvil <br/>transporte
+                                    </p>
+                                </div>
+                            </div>
+                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionTipoAplicacion('delivery')} onMouseLeave={() => setSeleccionTipoAplicacion('')}
+                                    onClick={() => setTipoAplicacion('delivery')}>
+                                    {
+                                        seleccion_tipo_aplicacion === 'delivery' || tipo_aplicacion === 'delivery' ? (
+                                            <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
+                                        ) : null
+                                    }
+                                    <img className={`${seleccion_tipo_aplicacion === 'delivery' || tipo_aplicacion === 'delivery' ? 'rounded-circle' : ''}`} 
+                                        src={image_app_delivery} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                            textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                        Aplicación móvil <br/>delivery
+                                    </p>
+                                </div>
+                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionTipoAplicacion('almacen')} onMouseLeave={() => setSeleccionTipoAplicacion('')}
+                                    onClick={() => setTipoAplicacion('almacen')}>
+                                    {
+                                        seleccion_tipo_aplicacion === 'almacen' || tipo_aplicacion === 'almacen' ? (
+                                            <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
+                                        ) : null
+                                    }
+                                    <img className={`${seleccion_tipo_aplicacion === 'almacen' || tipo_aplicacion === 'almacen' ? 'rounded-circle' : ''}`} 
+                                        src={image_app_almacen} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                            textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                        Aplicación móvil <br/>almacén
+                                    </p>
+                                </div>
+                            </div>
+                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionTipoAplicacion('social')} onMouseLeave={() => setSeleccionTipoAplicacion('')}
+                                    onClick={() => setTipoAplicacion('social')}>
+                                    {
+                                        seleccion_tipo_aplicacion === 'social' || tipo_aplicacion === 'social' ? (
+                                            <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
+                                        ) : null
+                                    }
+                                    <img className={`${seleccion_tipo_aplicacion === 'social' || tipo_aplicacion === 'social' ? 'rounded-circle' : ''}`} 
+                                        src={image_app_social} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                            textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                        Aplicación móvil <br/>social
+                                    </p>
+                                </div>
+                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionTipoAplicacion('delivery')} onMouseLeave={() => setSeleccionTipoAplicacion('')}
+                                    onClick={() => setTipoAplicacion('delivery')}>
+                                    {
+                                        seleccion_tipo_aplicacion === 'delivery' || tipo_aplicacion === 'delivery' ? (
+                                            <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
+                                        ) : null
+                                    }
+                                    <img className={`${seleccion_tipo_aplicacion === 'delivery' || tipo_aplicacion === 'delivery' ? 'rounded-circle' : ''}`} 
+                                        src={image_app_deportes} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                            textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                        Aplicación móvil <br/>deportes
+                                    </p>
+                                </div>
+                            </div>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionTipoAplicacion('otro')} onMouseLeave={() => setSeleccionTipoAplicacion('')}
+                                    onClick={() => setTipoAplicacion('otro')}>
+                                    {
+                                        seleccion_tipo_aplicacion === 'otro' || tipo_aplicacion === 'otro' ? (
+                                            <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
+                                        ) : null
+                                    }
+                                    <img className={`${seleccion_tipo_aplicacion === 'otro' || tipo_aplicacion === 'otro' ? 'rounded-circle' : ''}`} 
+                                        src={image_app_otro} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                            textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                        Aplicación móvil <br/>otro
                                     </p>
                                 </div>
                             </div>
@@ -184,7 +275,7 @@ export default function PaginasWeb({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 200 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -192,7 +283,7 @@ export default function PaginasWeb({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 200 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -203,187 +294,225 @@ export default function PaginasWeb({proporcional}) {
                         </div>
                         <div className='' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                             <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaNosotros(!pestania_nosotros)}>    
-                                    <img src={pestania_nosotros ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaLogin(!pantalla_login)}>    
+                                    <img src={pantalla_login ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Nosotros
+                                        Pantalla inicio sesión
                                     </p>
                                 </div>      
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaServicios(!pestania_servicios)}>    
-                                    <img src={pestania_servicios ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaRegistro(!pantalla_registro)}>    
+                                    <img src={pantalla_registro ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Servicios
+                                        Pantalla de registro
                                     </p>
-                                </div>      
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaProductos(!pestania_productos)}>    
-                                    <img src={pestania_productos ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
-                                        marginRight: 10 / proporcional}}/>
-
-                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
-                                            textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Productos
-                                    </p>
-                                </div>      
-                            </div>  
+                                </div>   
+                            </div>      
                             <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaFotos(!pestania_fotos)}>    
-                                    <img src={pestania_fotos ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaPerfil(!pantalla_perfil)}>    
+                                    <img src={pantalla_perfil ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Galería de fotos
-                                    </p>
-                                </div>    
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaVideos(!pestania_videos)}>    
-                                    <img src={pestania_videos ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
-                                        marginRight: 10 / proporcional}}/>
-
-                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
-                                            textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Galería de vídeos
+                                        Pantalla de perfil usuario
                                     </p>
                                 </div>      
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaContacto(!pestania_contacto)}>    
-                                    <img src={pestania_contacto ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaProductos(!pantalla_productos)}>    
+                                    <img src={pantalla_productos ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Contácto
+                                        Pantalla productos
+                                    </p>
+                                </div>     
+                            </div>      
+                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaCarrito(!pantalla_carrito)}>    
+                                    <img src={pantalla_carrito ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                        marginRight: 10 / proporcional}}/>
+
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
+                                            textAlign: 'left', color: 'black', cursor: 'default'}}>
+                                        Pantalla carrito compras
+                                    </p>
+                                </div>      
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaPago(!pantalla_pago)}>    
+                                    <img src={pantalla_pago ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                        marginRight: 10 / proporcional}}/>
+
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
+                                            textAlign: 'left', color: 'black', cursor: 'default'}}>
+                                        Pantalla de pago
                                     </p>
                                 </div>   
                             </div>  
                             <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaCotizacion(!pestania_cotizacion)}>    
-                                    <img src={pestania_cotizacion ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaUbicacion(!pantalla_ubicacion)}>    
+                                    <img src={pantalla_ubicacion ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Cotización
+                                        Pantalla de ubicación usuario
                                     </p>
                                 </div>                          
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaTienda(!pestania_tienda)}>    
-                                    <img src={pestania_tienda ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaLocalizacion(!pantalla_localizacion)}>    
+                                    <img src={pantalla_localizacion ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Tienda
+                                        Pantalla de geolocalización
                                     </p>
-                                </div>      
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaCarrito(!pestania_carrito)}>    
-                                    <img src={pestania_carrito ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                </div>    
+                            </div>      
+                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>   
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaCategorias(!pantalla_categorias)}>    
+                                    <img src={pantalla_categorias ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Carrito
+                                        Pantalla de categorías
+                                    </p>
+                                </div>  
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaComentarios(!pantalla_comentarios)}>    
+                                    <img src={pantalla_comentarios ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                        marginRight: 10 / proporcional}}/>
+
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
+                                            textAlign: 'left', color: 'black', cursor: 'default'}}>
+                                        Pantalla de comentarios
+                                    </p>
+                                </div>  
+                            </div>      
+                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>  
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaGaleria(!pantalla_galeria)}>    
+                                    <img src={pantalla_galeria ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                        marginRight: 10 / proporcional}}/>
+
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
+                                            textAlign: 'left', color: 'black', cursor: 'default'}}>
+                                        Pantalla de galería de fotos/vídeos
+                                    </p>
+                                </div>    
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaChat(!pantalla_chat)}>    
+                                    <img src={pantalla_chat ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                        marginRight: 10 / proporcional}}/>
+
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
+                                            textAlign: 'left', color: 'black', cursor: 'default'}}>
+                                        Pantalla de chat
                                     </p>
                                 </div>   
                             </div>  
                             <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaPago(!pestania_pago)}>    
-                                    <img src={pestania_pago ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaEstadisticas(!pantalla_estadisticas)}>    
+                                    <img src={pantalla_estadisticas ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Pasarela de pago
+                                        Pantalla de estadísticas
                                     </p>
                                 </div>    
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaSeguimiento(!pestania_seguimiento)}>    
-                                    <img src={pestania_seguimiento ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaAnuncios(!pantalla_anuncios)}>    
+                                    <img src={pantalla_anuncios ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Seguimiento del pedido
+                                        Pantalla de anuncios
                                     </p>
                                 </div>    
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaRegistro(!pestania_registro)}>    
-                                    <img src={pestania_registro ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                            </div>      
+                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}> 
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaFavoritos(!pantalla_favoritos)}>    
+                                    <img src={pantalla_favoritos ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Registro de usuario
+                                        Pantalla de favoritos
                                     </p>
                                 </div>   
-                            </div>  
-                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaLogin(!pestania_login)}>    
-                                    <img src={pestania_login ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaCalendario(!pantalla_calendario)}>    
+                                    <img src={pantalla_calendario ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Inicio de sesión de usuario
-                                    </p>
-                                </div>    
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaPerfil(!pestania_perfil)}>    
-                                    <img src={pestania_perfil ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
-                                        marginRight: 10 / proporcional}}/>
-
-                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
-                                            textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Perfil de usuario
-                                    </p>
-                                </div>    
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaFavoritos(!pestania_favoritos)}>    
-                                    <img src={pestania_favoritos ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
-                                        marginRight: 10 / proporcional}}/>
-
-                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
-                                            textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Lista de favoritos
+                                        Pantalla de calendario
                                     </p>
                                 </div>   
-                            </div>  
+                            </div>      
+                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>  
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaAgenda(!pantalla_agenda)}>    
+                                    <img src={pantalla_agenda ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                        marginRight: 10 / proporcional}}/>
+
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
+                                            textAlign: 'left', color: 'black', cursor: 'default'}}>
+                                        Pantalla agenda
+                                    </p>
+                                </div>     
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaInformativa(!pantalla_informativa)}>    
+                                    <img src={pantalla_informativa ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                        marginRight: 10 / proporcional}}/>
+
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
+                                            textAlign: 'left', color: 'black', cursor: 'default'}}>
+                                        Pantalla informativa
+                                    </p>
+                                </div>   
+                            </div>    
                             <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                <div className='d-flex' style={{width: '32%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaCompras(!pestania_compras)}>    
-                                    <img src={pestania_compras ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaPresentacion(!pantalla_presentacion)}>    
+                                    <img src={pantalla_presentacion ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        Compras realizadas
+                                        Pantalla presentación (principal)
                                     </p>
-                                </div>    
-                                <div className='d-flex' style={{width: '66%', height: 24 / proporcional, cursor: 'pointer'}}
-                                    onClick={() => setPestaniaAdministrativa(!pestania_administrativa)}>    
-                                    <img src={pestania_administrativa ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
+                                </div>   
+                                <div className='d-flex' style={{width: '48%', height: 24 / proporcional, cursor: 'pointer'}}
+                                    onClick={() => setPantallaOtro(!pantalla_otro)}>    
+                                    <img src={pantalla_otro ? icono_check_box : icono_box} style={{width: 20 / proporcional, height: 20 / proporcional, margin: 2 / proporcional,
                                         marginRight: 10 / proporcional}}/>
 
                                     <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, fontWeight: 600, fontFamily: '', marginBottom: 0 / proporcional,
                                             textAlign: 'left', color: 'black', cursor: 'default'}}>
-                                        ¿Desea contar con una página administrativa? (estadisticas, clientes, productos, compras)
+                                        Otra
                                     </p>
                                 </div>    
-                            </div>  
+                            </div>   
                         </div>
                         <div className='d-flex justify-content-between' style={{width: '100%', height: 50 / proporcional}}>
                             <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
@@ -410,7 +539,7 @@ export default function PaginasWeb({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 200 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -418,7 +547,7 @@ export default function PaginasWeb({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 200 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,

@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 
+import image_dominio from '../../../assets/images/image_cotizacion_dominio_600.png'
+import image_hosting from '../../../assets/images/image_cotizacion_hosting_600.png'
+
 export default function DominioHosting({proporcional}) {
 
     const navigate = useNavigate()
@@ -53,7 +56,7 @@ export default function DominioHosting({proporcional}) {
         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
             {
                 paso === 1 ? (
-                    <div style={{width: '80%', height: 'auto'}}>
+                    <div style={{width: '100%', height: 'auto'}}>
                         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 1 ? 'rgb(23, 43, 222)' :  'white'}}>
@@ -72,52 +75,68 @@ export default function DominioHosting({proporcional}) {
                             </div>
                         </div>
                         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
-                            <div className='' style={{width: '49%', height: 'auto'}}>
-                                <div style={{width: '100%', height: 'auto', marginTop: 20 / proporcional}}>
-                                    <p style={{fontSize: 20 / proporcional, lineHeight: `${25 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
-                                            textAlign: 'center', color: 'black', cursor: 'default', marginBottom: 20 / proporcional}}>
-                                        ¿QUÉ EXTENSIÓN DE <br/>DOMINIO DESEA TENER?
-                                    </p>
+                            <div className='d-flex' style={{width: '49%', height: 'auto'}}>
+                                <div className='' style={{width: '40%', height: 'auto'}}>
+                                    <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                        <img src={image_dominio} style={{width: '100%', height: '100%'}}/>
+                                    </div>
                                 </div>
-                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                    <select 
-                                        className='form-select'
-                                        style={{width: '80%',  height: 50 / proporcional, fontSize: 18 / proporcional,
-                                        border: etipo_dominio ? '2px solid red' : '1px solid #bdbdbd'}}
-                                        value={tipo_dominio}
-                                        onChange={(event) => {event.target.value !== '0' ? setTipoDominio(event.target.value) : setTipoDominio('')}}>
-                                        <option value='0'>{tipo_dominio === '' ? 'Seleccionar extensión' : tipo_dominio}</option>
-                                        <option value='.org'>.org</option>
-                                        <option value='.net'>.net</option>
-                                        <option value='.com'>.com</option>
-                                        <option value='.pe'>.pe</option>
-                                        <option value='.com'>.com</option>
-                                        <option value='.info'>.info</option>
-                                        <option value='.edu'>.edu</option>
-                                    </select>
+                                <div className='' style={{width: '60%', height: 'auto'}}>
+                                    <div style={{width: '100%', height: 'auto', marginTop: 20 / proporcional}}>
+                                        <p style={{fontSize: 20 / proporcional, lineHeight: `${25 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: 'black', cursor: 'default', marginBottom: 20 / proporcional}}>
+                                            ¿QUÉ EXTENSIÓN DE <br/>DOMINIO DESEA TENER?
+                                        </p>
+                                    </div>
+                                    <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                        <select 
+                                            className='form-select'
+                                            style={{width: '80%',  height: 50 / proporcional, fontSize: 18 / proporcional,
+                                            border: etipo_dominio ? '2px solid red' : '1px solid #bdbdbd'}}
+                                            value={tipo_dominio}
+                                            onChange={(event) => {event.target.value !== '0' ? setTipoDominio(event.target.value) : setTipoDominio('')}}>
+                                            <option value='0'>{tipo_dominio === '' ? 'Seleccionar extensión' : tipo_dominio}</option>
+                                            <option value='.org'>.org</option>
+                                            <option value='.net'>.net</option>
+                                            <option value='.com'>.com</option>
+                                            <option value='.pe'>.pe</option>
+                                            <option value='.com'>.com</option>
+                                            <option value='.info'>.info</option>
+                                            <option value='.edu'>.edu</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div className='d-flex justify-content-center' style={{width: '2%', height: 'auto'}}>
                                 <div style={{width: 2 / proporcional, height: 'auto', background: 'rgb(23, 44, 222)'}}/>
                             </div>
                             <div className='' style={{width: '49%', height: 'auto'}}>
-                                <div style={{width: '100%', height: 'auto', marginTop: 20 / proporcional}}>
-                                    <p style={{fontSize: 20 / proporcional, lineHeight: `${25 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
-                                            textAlign: 'center', color: 'black', cursor: 'default', marginBottom: 20 / proporcional}}>
-                                        ¿QUÉ TIPO DE <br/>HOSTING DESEA TENER?
-                                    </p>
-                                </div>
-                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}>
-                                    <select 
-                                        className='form-select'
-                                        style={{width: '80%',  height: 50 / proporcional, fontSize: 18 / proporcional,
-                                        border: etipo_hosting ? '2px solid red' : '1px solid #bdbdbd'}}
-                                        value={tipo_hosting}
-                                        onChange={(event) => {event.target.value !== '0' ? setTipoHosting(event.target.value) : setTipoHosting('')}}>
-                                        <option value='0'>{tipo_hosting === '' ? 'Seleccionar tipo hosting' : tipo_hosting}</option>
-                                        <option value='Dedicado'>Dedicado (Normal)</option>
-                                        <option value='VPS'>VPS</option>
-                                    </select>
+                                <div className='d-flex' style={{width: '100%', height: 'auto'}}>
+                                    <div className='' style={{width: '40%', height: 'auto'}}>
+                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                            <img src={image_hosting} style={{width: '100%', height: '100%'}}/>
+                                        </div>
+                                    </div>
+                                    <div className='' style={{width: '60%', height: 'auto'}}>
+                                        <div style={{width: '100%', height: 'auto', marginTop: 20 / proporcional}}>
+                                            <p style={{fontSize: 20 / proporcional, lineHeight: `${25 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                                    textAlign: 'center', color: 'black', cursor: 'default', marginBottom: 20 / proporcional}}>
+                                                ¿QUÉ TIPO DE <br/>HOSTING DESEA TENER?
+                                            </p>
+                                        </div>
+                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}>
+                                            <select 
+                                                className='form-select'
+                                                style={{width: '80%',  height: 50 / proporcional, fontSize: 18 / proporcional,
+                                                border: etipo_hosting ? '2px solid red' : '1px solid #bdbdbd'}}
+                                                value={tipo_hosting}
+                                                onChange={(event) => {event.target.value !== '0' ? setTipoHosting(event.target.value) : setTipoHosting('')}}>
+                                                <option value='0'>{tipo_hosting === '' ? 'Seleccionar tipo hosting' : tipo_hosting}</option>
+                                                <option value='Dedicado'>Dedicado (Normal)</option>
+                                                <option value='VPS'>VPS</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                                     <p style={{fontSize: 16 / proporcional, lineHeight: `${25 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,

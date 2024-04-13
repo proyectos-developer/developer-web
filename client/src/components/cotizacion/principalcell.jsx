@@ -9,7 +9,7 @@ export default function PrincipalCell ({proporcional}){
                 <div className='position-absolute top-0 start-0' 
                     style={{width: '100%', height: 600 / proporcional, background: 'rgba(23, 43, 222, 0.6)'}}/>
                 <div className='position-absolute start-50 top-50 translate-middle' style={{width: 459 / proporcional, height: 'auto'}}>
-                    <p style={{fontSize: 90 / proporcional, lineHeight: `${107 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
+                    <p style={{fontSize: 50 / proporcional, lineHeight: `${60 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
                             textAlign: 'center', color: 'white'}}>
                         Solicita una cotización
                     </p>

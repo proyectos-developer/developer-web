@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom'
 
 import DominioHosting from './dominiohosting.jsx'
 import PaginasWeb from './paginasweb.jsx'
+import AplicacionMovil from './aplicacionmovil.jsx'
+import MarketingDigital from './marketingdigital.jsx'
 
 export default function Formulario({proporcional}) {
 
@@ -21,6 +23,10 @@ export default function Formulario({proporcional}) {
                     <DominioHosting proporcional={proporcional}/>
                 ) : servicio === 'paginas-web' ? (
                     <PaginasWeb proporcional={proporcional}/>
+                ) : servicio === 'aplicacion-movil' ? (
+                    <AplicacionMovil proporcional={proporcional}/>
+                ) : servicio === 'marketing-digital' ? (
+                    <MarketingDigital proporcional={proporcional}/>
                 ) : null
             }
         </div>

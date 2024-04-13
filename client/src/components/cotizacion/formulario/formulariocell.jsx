@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom'
 
 import DominioHostingCell from './dominiohostingcell.jsx'
 import PaginasWebCell from './paginaswebcell.jsx'
+import AplicacionMovilCell from './aplicacionmovilcell.jsx'
+import MarketingDigitalCell from './marketingdigitalcell.jsx'
 
 export default function FormularioCell({proporcional}) {
 
@@ -21,6 +23,10 @@ export default function FormularioCell({proporcional}) {
                     <DominioHostingCell proporcional={proporcional}/>
                 )  : servicio === 'paginas-web' ? (
                     <PaginasWebCell proporcional={proporcional}/>
+                ) : servicio === 'paginas-web' ? (
+                    <AplicacionMovilCell proporcional={proporcional}/>
+                ) : servicio === 'marketing-digital' ? (
+                    <MarketingDigitalCell proporcional={proporcional}/>
                 ) : null
             }
         </div>

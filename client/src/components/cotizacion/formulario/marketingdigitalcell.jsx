@@ -2,14 +2,21 @@ import React, { useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 
-import image_dominio from '../../../assets/images/image_cotizacion_dominio_600.png'
-import image_hosting from '../../../assets/images/image_cotizacion_hosting_600.png'
+import image_busqueda_seo from '../../../assets/images/image_busqueda_seo_600.png'
+import image_busqueda_sem from '../../../assets/images/image_busqueda_sem_600.png'
+import image_marketing_contenido from '../../../assets/images/image_marketing_contenido_600.png'
+import image_redes_sociales from '../../../assets/images/image_redes_sociales_600.png'
+import image_email_marketing from '../../../assets/images/image_email_marketing_600.png'
+import image_analitica_seguimiento from '../../../assets/images/image_analitica_seguimiento_600.png'
 
-export default function DominioHostingTablet({proporcional}) {
+export default function MarketingDigitalCell({proporcional}) {
 
     const navigate = useNavigate()
 
-    const [tipo, setTipo] = useState ('')
+    const [tipo_marketing, setTipoMarketing] = useState('')
+    const [seleccion_marketing, setSeleccionMarketing] = useState('')
+
+    const [tipo, setTipo] = useState('')
     const [nombre, setNombre] = useState('')
     const [rubro, setRubro] = useState('')
     const [nro_ruc, setNroRuc] = useState('')
@@ -17,34 +24,21 @@ export default function DominioHostingTablet({proporcional}) {
     const [correo, setCorreo] = useState('')
     const [nombre_contacto, setNombreContacto] = useState ('')
 
+    const [boton_volver, setBotonVolver] = useState (false)
+    const [boton_siguiente, setBotonSiguiente] = useState (false)
     const [boton_anterior, setBotonAnterior] = useState (false)
     const [boton_finalizar, setBotonFinalizar] = useState (false)
 
     const [paso, setPaso] = useState (1)
 
-    const [tipo_dominio, setTipoDominio] = useState('')
-    const [tipo_hosting, setTipoHosting] = useState('')
-
-    const [etipo_dominio, setETipoDominio] = useState('')
-    const [etipo_hosting, setETipoHosting] = useState('')
-
-    const [boton_siguiente, setBotonSiguiente] = useState (false)
-    const [boton_volver, setBotonVolver] = useState (false)
-
     const paso_anterior = () => {
-        document.getElementById('tipo').value = '0'
-        setTipo('')
-        setPaso(1)
+        setPaso(paso - 1)
     }
 
     const siguiente_paso = () => {
-        if (tipo_dominio === '' || tipo_hosting === ''){
-            setETipoDominio(tipo_dominio === '' ? true : false)
-            setETipoHosting(tipo_hosting === '' ? true : false)
+        if (tipo_marketing === ''){
         }else{
-            setETipoDominio(false)
-            setETipoHosting(false)
-            setPaso(2)
+            setPaso(paso + 1)
         }
     }
 
@@ -57,7 +51,7 @@ export default function DominioHostingTablet({proporcional}) {
             {
                 paso === 1 ? (
                     <div style={{width: '100%', height: 'auto'}}>
-                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 1 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -74,78 +68,120 @@ export default function DominioHostingTablet({proporcional}) {
                                 </p>
                             </div>
                         </div>
-                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                            <div style={{width: '100%', height: 'auto'}}>
-                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
-                                    <img src={image_dominio} style={{width: '40%', height: '40%'}}/>
-                                </div>
-                                <div style={{width: '100%', height: 'auto', marginTop: 20 / proporcional}}>
-                                    <p style={{fontSize: 20 / proporcional, lineHeight: `${25 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
-                                            textAlign: 'center', color: 'black', cursor: 'default', marginBottom: 20 / proporcional}}>
-                                        ¿QUÉ EXTENSIÓN DE <br/>DOMINIO DESEA TENER?
-                                    </p>
-                                </div>
-                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                    <select 
-                                        className='form-select'
-                                        style={{width: '50%',  height: 50 / proporcional, fontSize: 18 / proporcional,
-                                        border: etipo_dominio ? '2px solid red' : '1px solid #bdbdbd'}}
-                                        value={tipo_dominio}
-                                        onChange={(event) => {event.target.value !== '0' ? setTipoDominio(event.target.value) : setTipoDominio('')}}>
-                                        <option value='0'>{tipo_dominio === '' ? 'Seleccionar extensión' : tipo_dominio}</option>
-                                        <option value='.org'>.org</option>
-                                        <option value='.net'>.net</option>
-                                        <option value='.com'>.com</option>
-                                        <option value='.pe'>.pe</option>
-                                        <option value='.com'>.com</option>
-                                        <option value='.info'>.info</option>
-                                        <option value='.edu'>.edu</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='d-flex justify-content-center' style={{width: '100%', height: 2 / proporcional, marginBottom: 20 / proporcional}}>
-                            <div style={{width: '100%', height: 2 / proporcional, background: 'rgb(23, 44, 222)'}}/>
-                        </div>
-                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                            <div style={{width: '100%', height: 'auto'}}>
-                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
-                                    <img src={image_hosting} style={{width: '40%', height: '40%'}}/>
-                                </div>
-                                <div style={{width: '100%', height: 'auto', marginTop: 20 / proporcional}}>
-                                    <p style={{fontSize: 20 / proporcional, lineHeight: `${25 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
-                                            textAlign: 'center', color: 'black', cursor: 'default', marginBottom: 20 / proporcional}}>
-                                        ¿QUÉ TIPO DE <br/>HOSTING DESEA TENER?
-                                    </p>
-                                </div>
-                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                    <select 
-                                        className='form-select'
-                                        style={{width: '50%',  height: 50 / proporcional, fontSize: 18 / proporcional,
-                                        border: etipo_hosting ? '2px solid red' : '1px solid #bdbdbd'}}
-                                        value={tipo_hosting}
-                                        onChange={(event) => {event.target.value !== '0' ? setTipoHosting(event.target.value) : setTipoHosting('')}}>
-                                        <option value='0'>{tipo_hosting === '' ? 'Seleccionar tipo hosting' : tipo_hosting}</option>
-                                        <option value='Dedicado'>Dedicado (Normal)</option>
-                                        <option value='VPS'>VPS</option>
-                                    </select>
-                                </div>
-                                <div style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                    <p style={{fontSize: 16 / proporcional, lineHeight: `${25 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
-                                            textAlign: 'left', color: 'black', cursor: 'default', marginBottom: 20 / proporcional}}>
-                                        (•) Ambos tipos cuentan con panel de control para crear correos, página web, wordpress, etc.
+                        <div className='' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: '90%', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionMarketing('sem')} onMouseLeave={() => setSeleccionMarketing('')}
+                                    onClick={() => setTipoMarketing('sem')}>
+                                    {
+                                        seleccion_marketing === 'sem' || tipo_marketing === 'sem' ? (
+                                            <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
+                                        ) : null
+                                    }
+                                    <img className={`${seleccion_marketing === 'sem' || tipo_marketing === 'sem' ? 'rounded' : ''}`} 
+                                        src={image_busqueda_sem} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                            textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                        Publicidad motores de búsqueda <br/> (SEM)
                                     </p>
                                 </div>
                             </div>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: '90%', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionMarketing('email')} onMouseLeave={() => setSeleccionMarketing('')}
+                                    onClick={() => setTipoMarketing('email')}>
+                                    {
+                                        seleccion_marketing === 'email' || tipo_marketing === 'email' ? (
+                                            <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
+                                        ) : null
+                                    }
+                                    <img className={`${seleccion_marketing === 'email' || tipo_marketing === 'email' ? 'rounded-circle' : ''}`} 
+                                        src={image_email_marketing} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                            textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                        Email marketing
+                                    </p>
+                                </div>
+                            </div>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: '90%', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionMarketing('contenido')} onMouseLeave={() => setSeleccionMarketing('')}
+                                    onClick={() => setTipoMarketing('contenido')}>
+                                    {
+                                        seleccion_marketing === 'contenido' || tipo_marketing === 'contenido' ? (
+                                            <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
+                                        ) : null
+                                    }
+                                    <img className={`${seleccion_marketing === 'contenido' || tipo_marketing === 'contenido' ? 'rounded' : ''}`} 
+                                        src={image_marketing_contenido} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                            textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                        Marketing de contenido
+                                    </p>
+                                </div>
+                            </div>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: '90%', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionMarketing('analitica')} onMouseLeave={() => setSeleccionMarketing('')}
+                                    onClick={() => setTipoMarketing('analitica')}>
+                                    {
+                                        seleccion_marketing === 'analitica' || tipo_marketing === 'analitica' ? (
+                                            <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
+                                        ) : null
+                                    }
+                                    <img className={`${seleccion_marketing === 'analitica' || tipo_marketing === 'analitica' ? 'rounded-circle' : ''}`} 
+                                        src={image_analitica_seguimiento} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                            textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                        Analítica y seguimiento
+                                    </p>
+                                </div>
+                            </div>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: '90%', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionMarketing('seo')} onMouseLeave={() => setSeleccionMarketing('')}
+                                    onClick={() => setTipoMarketing('seo')}>
+                                    {
+                                        seleccion_marketing === 'seo' || tipo_marketing === 'seo' ? (
+                                            <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
+                                        ) : null
+                                    }
+                                    <img className={`${seleccion_marketing === 'seo' || tipo_marketing === 'seo' ? 'rounded' : ''}`} 
+                                        src={image_busqueda_seo} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                            textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                        Optimizacion motores de búsqueda <br/> (SEO)
+                                    </p>
+                                </div>
+                            </div>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: '90%', cursor: 'pointer'}}
+                                    onMouseOver={() => setSeleccionMarketing('redes')} onMouseLeave={() => setSeleccionMarketing('')}
+                                    onClick={() => setTipoMarketing('redes')}>
+                                    {
+                                        seleccion_marketing === 'redes' || tipo_marketing === 'redes' ? (
+                                            <div className='rounded position-absolute top-0 start-0' style={{width: '100%', height: '100%', background: 'rgba(39, 39, 39, 0.6)'}}/>
+                                        ) : null
+                                    }
+                                    <img className={`${seleccion_marketing === 'redes' || tipo_marketing === 'redes' ? 'rounded-circle' : ''}`} 
+                                        src={image_redes_sociales} style={{width: '100%', height: '100%', marginBottom: 20 / proporcional}}/>
+                                    <p style={{fontSize: 18 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, marginBottom: 0 / proporcional,
+                                            textAlign: 'center', color: 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                        Redes sociales
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div className='d-flex justify-content-between' style={{width: '100%', height: 50 / proporcional}}>
-                            <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional, marginBottom: 20 / proporcional}}>
+                            <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                 background: boton_volver ? 'white' : 'rgb(23, 43, 222)', color: boton_volver ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                 onMouseOver={() => setBotonVolver(true)} onMouseLeave={() => setBotonVolver(false)}
                                 onClick={() => volver_opciones()}>
                                 Volver
                             </button>
-                            <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                        </div>
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional}}>
+                            <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                 background: boton_siguiente ? 'white' : 'rgb(23, 43, 222)', color: boton_siguiente ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                 onMouseOver={() => setBotonSiguiente(true)} onMouseLeave={() => setBotonSiguiente(false)}
                                 onClick={() => siguiente_paso()}>
@@ -172,9 +208,9 @@ export default function DominioHostingTablet({proporcional}) {
                                 </p>
                             </div>
                         </div>
-                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
                             <div style={{width: '100%', height: 'auto'}}>
-                                <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                                     <div style={{width: '49%', height: 50 / proporcional}}>
                                         <select
                                             id='tipo'
@@ -202,7 +238,7 @@ export default function DominioHostingTablet({proporcional}) {
                                 </div>
                                 {
                                     tipo !== 'Personal' && tipo !== '' && tipo !== '0' ? (
-                                        <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                                             <div style={{width: '49%', height: 50 / proporcional}}>
                                                 {
                                                     tipo !== 'Otro' ? (
@@ -255,7 +291,7 @@ export default function DominioHostingTablet({proporcional}) {
                                         </div>
                                     ) : null
                                 }
-                                <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                                     <div style={{width: '49%', height: 50 / proporcional}}>
                                         <input  
                                             disabled={(tipo !== '0' && tipo !== '') ? false : true}
@@ -296,7 +332,7 @@ export default function DominioHostingTablet({proporcional}) {
                                     ): null
                     
                                 }
-                                <div className='d-flex justify-content-between' style={{width: '100%', height: 50 / proporcional}}>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional}}>
                                     <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                         background: boton_anterior ? 'white' : 'rgb(23, 43, 222)', color: boton_anterior ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                         onMouseOver={() => setBotonAnterior(true)} onMouseLeave={() => setBotonAnterior(false)}
