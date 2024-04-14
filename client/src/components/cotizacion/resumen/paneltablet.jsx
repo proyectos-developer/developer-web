@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-import MenuSuperior from '../../comun/menusuperior.jsx'
+import MenuSuperiorTablet from '../../comun/menusuperiortablet.jsx'
+import ResumenTablet from './resumentablet.jsx'
 
 export default function ResumenCotizacionTablet ({proporcional}){
 
@@ -13,10 +14,11 @@ export default function ResumenCotizacionTablet ({proporcional}){
     return (
         <div style={{width: '100%', height: 'auto'}}>
             <div className='position-relative' style={{width: '100%', height: 'auto', background: 'rgb(23, 43, 222)'}}>
-                    <MenuSuperior proporcional={proporcional} position={position}/>
+                    <MenuSuperiorTablet proporcional={proporcional} position={position}/>
             </div>
             <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional,
                     paddingTop: 100 / proporcional, paddingBottom: 100 / proporcional}}>
+                    <ResumenTablet proporcional={proporcional}/>
             </div>
         </div>
     )
