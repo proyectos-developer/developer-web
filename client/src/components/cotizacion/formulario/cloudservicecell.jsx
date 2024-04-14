@@ -171,8 +171,8 @@ export default function CloudServiceCell({proporcional}) {
                             </p>
                         </div>
                         <div className='' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: 'auto', cursor: 'pointer'}}
                                     onMouseOver={() => setSeleccionTipoCloud('computing')} onMouseLeave={() => setSeleccionTipoCloud('')}
                                     onClick={() => setTipoCloud('computing')}>
                                     {
@@ -188,8 +188,8 @@ export default function CloudServiceCell({proporcional}) {
                                     </p>
                                 </div>
                             </div>
-                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: 'auto', cursor: 'pointer'}}
                                     onMouseOver={() => setSeleccionTipoCloud('almacenamiento')} onMouseLeave={() => setSeleccionTipoCloud('')}
                                     onClick={() => setTipoCloud('almacenamiento')}>
                                     {
@@ -205,8 +205,8 @@ export default function CloudServiceCell({proporcional}) {
                                     </p>
                                 </div>
                             </div>
-                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: 'auto', cursor: 'pointer'}}
                                     onMouseOver={() => setSeleccionTipoCloud('redes')} onMouseLeave={() => setSeleccionTipoCloud('')}
                                     onClick={() => setTipoCloud('redes')}>
                                     {
@@ -222,8 +222,8 @@ export default function CloudServiceCell({proporcional}) {
                                     </p>
                                 </div>
                             </div>
-                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: 'auto', cursor: 'pointer'}}
                                     onMouseOver={() => setSeleccionTipoCloud('basedatos')} onMouseLeave={() => setSeleccionTipoCloud('')}
                                     onClick={() => setTipoCloud('basedatos')}>
                                     {
@@ -239,8 +239,8 @@ export default function CloudServiceCell({proporcional}) {
                                     </p>
                                 </div>
                             </div>
-                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: 'auto', cursor: 'pointer'}}
                                     onMouseOver={() => setSeleccionTipoCloud('analisis')} onMouseLeave={() => setSeleccionTipoCloud('')}
                                     onClick={() => setTipoCloud('analisis')}>
                                     {
@@ -256,8 +256,8 @@ export default function CloudServiceCell({proporcional}) {
                                     </p>
                                 </div>
                             </div>
-                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: 'auto', cursor: 'pointer'}}
                                     onMouseOver={() => setSeleccionTipoCloud('inteligencia')} onMouseLeave={() => setSeleccionTipoCloud('')}
                                     onClick={() => setTipoCloud('inteligencia')}>
                                     {
@@ -273,8 +273,8 @@ export default function CloudServiceCell({proporcional}) {
                                     </p>
                                 </div>
                             </div>
-                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: 'auto', cursor: 'pointer'}}
                                     onMouseOver={() => setSeleccionTipoCloud('internet')} onMouseLeave={() => setSeleccionTipoCloud('')}
                                     onClick={() => setTipoCloud('internet')}>
                                     {
@@ -290,8 +290,8 @@ export default function CloudServiceCell({proporcional}) {
                                     </p>
                                 </div>
                             </div>
-                            <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
+                                <div className='position-relative' style={{width: '90%', height: 'auto', cursor: 'pointer'}}
                                     onMouseOver={() => setSeleccionTipoCloud('contenedor')} onMouseLeave={() => setSeleccionTipoCloud('')}
                                     onClick={() => setTipoCloud('contenedor')}>
                                     {
@@ -308,7 +308,7 @@ export default function CloudServiceCell({proporcional}) {
                                 </div>
                             </div>
                             <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 75 / proporcional}}>
-                                <div className='position-relative' style={{width: '48%', height: 'auto', cursor: 'pointer'}}
+                                <div className='position-relative' style={{width: '90%', height: 'auto', cursor: 'pointer'}}
                                     onMouseOver={() => setSeleccionTipoCloud('redes')} onMouseLeave={() => setSeleccionTipoCloud('')}
                                     onClick={() => setTipoCloud('redes')}>
                                     {
@@ -325,14 +325,16 @@ export default function CloudServiceCell({proporcional}) {
                                 </div>
                             </div>
                         </div>
-                        <div className='d-flex justify-content-between' style={{width: '100%', height: 50 / proporcional}}>
-                            <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional, marginBottom: 20 / proporcional}}>
+                            <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                 background: boton_volver ? 'white' : 'rgb(23, 43, 222)', color: boton_volver ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                 onMouseOver={() => setBotonVolver(true)} onMouseLeave={() => setBotonVolver(false)}
                                 onClick={() => volver_opciones()}>
                                 Volver
                             </button>
-                            <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                        </div>
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional}}>
+                            <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                 background: boton_siguiente ? 'white' : 'rgb(23, 43, 222)', color: boton_siguiente ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                 onMouseOver={() => setBotonSiguiente(true)} onMouseLeave={() => setBotonSiguiente(false)}
                                 onClick={() => siguiente_paso()}>
@@ -385,14 +387,16 @@ export default function CloudServiceCell({proporcional}) {
                                 placeholder='Información adicional'
                                 rows={4}/>
                         </div>
-                        <div className='d-flex justify-content-between' style={{width: '100%', height: 50 / proporcional}}>
-                            <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional, marginBottom: 20 / proporcional}}>
+                            <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                 background: boton_volver ? 'white' : 'rgb(23, 43, 222)', color: boton_volver ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                 onMouseOver={() => setBotonVolver(true)} onMouseLeave={() => setBotonVolver(false)}
                                 onClick={() => anterior_paso()}>
                                 Volver
                             </button>
-                            <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                        </div>
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional}}>
+                            <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                 background: boton_siguiente ? 'white' : 'rgb(23, 43, 222)', color: boton_siguiente ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                 onMouseOver={() => setBotonSiguiente(true)} onMouseLeave={() => setBotonSiguiente(false)}
                                 onClick={() => siguiente_paso()}>
@@ -401,243 +405,252 @@ export default function CloudServiceCell({proporcional}) {
                         </div>
                     </div>
                 )  : paso === 3 ? (
-                  <div style={{width: '100%', height: 'auto'}}>
-                      <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                          <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                              background: paso === 1 ? 'rgb(23, 43, 222)' :  'white'}}>
-                              <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                      textAlign: 'center', color: paso === 1 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                  1
-                              </p>
-                          </div>
-                          <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                          <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                              background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
-                              <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                      textAlign: 'center', color: paso === 2 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                  2
-                              </p>
-                          </div>
-                      </div>
-                      <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
-                          <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                              background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
-                              <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                      textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                  3
-                              </p>
-                          </div>
-                      </div>
-                      <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
-                          <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 700, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                  textAlign: 'center', color: '#212121', cursor: 'default'}}>
-                              DATOS DE CONTACTO
-                          </p>
-                      </div>
-                      <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
-                          <div style={{width: '100%', height: 'auto'}}>
-                              <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                  <div style={{width: '90%', height: 50 / proporcional}}>
-                                      <select
-                                          id='tipo'
-                                          className='form-select'
-                                          style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, color: '#212121', fontWeight: 600,
-                                          border: etipo ? '1px solid red' : '', borderRadius: 8 / proporcional}}
-                                          value={tipo}
-                                          onChange={(event) => {event.target.value !== '0' ? setTipo(event.target.value) : setTipo('')}}>
-                                          <option value='0'>{tipo === '' ? 'Seleccionar tipo' : tipo}</option>
-                                          <option value='Personal'>Personal</option>
-                                          <option value='Negocio'>Negocio</option>
-                                          <option value='Empresa'>Empresa</option>
-                                      </select>
-                                  </div>
-                              </div>
-                              <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                  <div style={{width: '90%', height: 50 / proporcional}}>
-                                      <input  
-                                          disabled={tipo === '' ? true : false}
-                                          className='form-control'
-                                          value={nombre}
-                                          onChange={(event) => setNombre(event.target.value)}
-                                          style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
-                                              border: enombre ? '1px solid red': ''}}
-                                          id='nombre'
-                                          type='default'
-                                          placeholder={tipo === 'Personal' ? 'Nombres y apellidos' : tipo === 'Negocio' ? 'Nombre de negocio' : tipo === 'Empresa' ? 'Nombre de la empresa' : ''}/>
-                                  </div>
-                              </div>
-                              {
-                                  tipo !== 'Personal' && tipo !== '' && tipo !== '0' ? (
-                                      <div style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                          <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                              <div style={{width: '90%', height: 50 / proporcional}}>
-                                                  {
-                                                      tipo !== 'Otro' ? (
-                                                          <select
-                                                              className='form-select'
-                                                              style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, color: '#212121', fontWeight: 600,
-                                                              border: erubro ? '1px solid red': ''}}
-                                                              value={rubro}
-                                                              onChange={(event) => {event.target.value !== '0' ? setRubro(event.target.value) : setRubro('')}}>
-                                                              <option value='0'>{rubro === '' ? 'Seleccionar rubro' : rubro}</option>
-                                                              <option value='Tecnología de la información'>Tecnología de la información</option>
-                                                              <option value='Servicios Financieros'>Servicios Financieros</option>
-                                                              <option value='Salud y Bienestar'>Salud y Bienestar</option>
-                                                              <option value='Comercio Minosrista'>Comercio Minosrista</option>
-                                                              <option value='Educación'>'Educación'</option>
-                                                              <option value='Aliminentos y Bebidas'>'Aliminentos y Bebidas'</option>
-                                                              <option value='Servicios Profesionales'>'Servicios Profesionales'</option>
-                                                              <option value='Turismo y Hospitalidad'>'Turismo y Hospitalidad'</option>
-                                                              <option value='Construcción y Bienes'>'Construcción y Bienes'</option>
-                                                              <option value='Medios de comuniación y entretenimiento'>'Medios de comuniación y entretenimiento'</option>
-                                                              <option value='Manufactura'>'Manufactura'</option>
-                                                              <option value='Energía y Medio Ambiente'>'Energía y Medio Ambiente'</option>
-                                                              <option value='Transporte y Logística'>'Transporte y Logística'</option>
-                                                              <option value='Moda y Textiles'>'Moda y Textiles'</option>
-                                                              <option value='Telecomunicaciones'>'Telecomunicaciones'</option>
-                                                              <option value='Otro'>Otro</option>
-                                                          </select>
-                                                      ) : (
-                                                          <input  
-                                                              disabled={rubro === '' ? true : false}
-                                                              className='form-control'
-                                                              value={rubro}
-                                                              onChange={(event) => setRubro(event.target.value)}
-                                                              style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
-                                                              border: erubro ? '1px solid red': ''}}
-                                                              id='rubro'
-                                                              type='default'
-                                                              placeholder='Rubro'/>
-                                                      )
-                                                  }
-                                              </div>
-                                          </div>
-                                          <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
-                                              <div style={{width: '90%', height: 50 / proporcional}}>
-                                                  <input  
-                                                      className='form-control'
-                                                      value={nro_ruc}
-                                                      onChange={(event) => setNroRuc(event.target.value)}
-                                                      style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
-                                                      border: enro_ruc ? '1px solid red': ''}}
-                                                      id='nro_ruc'
-                                                      type='number'
-                                                      placeholder='Número de R.U.C'/>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  ) : null
-                              }
-                              <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                  <div style={{width: '90%', height: 50 / proporcional}}>
-                                      <input  
-                                          disabled={(tipo !== '0' && tipo !== '') ? false : true}
-                                          className='form-control'
-                                          value={nro_telefono}
-                                          onChange={(event) => setNroTelefono(event.target.value)}
-                                          style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
-                                          border: enro_telefono ? '1px solid red': ''}}
-                                          id='nro_telefono'
-                                          type='number'
-                                          placeholder='Número de teléfono'/>
-                                  </div>
-                              </div>
-                              <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                  <div style={{width: '90%', height: 50 / proporcional}}>
-                                      <input  
-                                          disabled={(tipo !== '0' && tipo !== '') ? false : true}
-                                          className='form-control'
-                                          value={correo}
-                                          onChange={(event) => setCorreo(event.target.value)}
-                                          style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
-                                          border: ecorreo ? '1px solid red': ''}}
-                                          id='correo'
-                                          type='default'
-                                          placeholder='Correo electrónico'/>
-                                  </div>
-                              </div>
-                              {
-                                  tipo !== 'Personal' && tipo !== '' && tipo !== '0' ? (
-                                      <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
-                                          <div style={{width: '90%', height: 50 / proporcional}}>
-                                              <input  
-                                                  className='form-control'
-                                                  value={nombre_contacto}
-                                                  onChange={(event) => setNombreContacto(event.target.value)}
-                                                  style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
-                                                  border: enombre_contacto ? '1px solid red': ''}}
-                                                  id='nombre_contacto'
-                                                  type='default'
-                                                  placeholder='Nombre de la persona de contacto'/>
-                                          </div>
-                                      </div>
-                                  ): null
-                  
-                              }
-                              <input 
-                                  type='url'
-                                  className='form-control'
-                                  style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
-                                      fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
-                                  id='link_facebook'
-                                  value={link_facebook}
-                                  onChange={(event) => setLinkFacebook(event.target.value)}
-                                  placeholder='Link del facebook'/>
-                              <input 
-                                  type='url'
-                                  className='form-control'
-                                  style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
-                                      fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
-                                  id='link_instagram'
-                                  value={link_instagram}
-                                  onChange={(event) => setLinkInstagram(event.target.value)}
-                                  placeholder='Link del instagram'/>
-                              <input 
-                                  type='url'
-                                  className='form-control'
-                                  style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
-                                      fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
-                                  id='link_tiktok'
-                                  value={link_tiktok}
-                                  onChange={(event) => setLinkTiktok(event.target.value)}
-                                  placeholder='Link del tiktok'/>
-                              <input 
-                                  type='url'
-                                  className='form-control'
-                                  style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
-                                      fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
-                                  id='link_linkedin'
-                                  value={link_linkedin}
-                                  onChange={(event) => setLinkLinkedin(event.target.value)}
-                                  placeholder='Link del linkedin'/>
-                              <input 
-                                  type='url'
-                                  className='form-control'
-                                  style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
-                                      fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
-                                  id='link_twitter'
-                                  value={link_twitter}
-                                  onChange={(event) => setLinkTwitter(event.target.value)}
-                                  placeholder='Link del twitter (X)'/>
-                              <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional, marginBottom: 20 / proporcional}}>
-                                  <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
-                                      background: boton_anterior ? 'white' : 'rgb(23, 43, 222)', color: boton_anterior ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
-                                      onMouseOver={() => setBotonAnterior(true)} onMouseLeave={() => setBotonAnterior(false)}
-                                      onClick={() => paso_anterior()}>
-                                      Volver
-                                  </button>
-                              </div>
-                              <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional}}>
-                                  <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
-                                      background: boton_finalizar ? 'white' : 'rgb(23, 43, 222)', color: boton_finalizar ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
-                                      onMouseOver={() => setBotonFinalizar(true)} onMouseLeave={() => setBotonFinalizar(false)}
-                                      onClick={() => finalizar_pedido()}>
-                                      Finalizar
-                                  </button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                    <div style={{width: '100%', height: 'auto'}}>
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
+                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                background: paso === 1 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                        textAlign: 'center', color: paso === 1 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                    1
+                                </p>
+                            </div>
+                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                        textAlign: 'center', color: paso === 2 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                    2
+                                </p>
+                            </div>
+                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                        textAlign: 'center', color: paso === 2 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                    3
+                                </p>
+                            </div>
+                        </div>
+                        <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
+                            <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 700, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                    textAlign: 'center', color: '#212121', cursor: 'default'}}>
+                                DATOS DE CONTACTO
+                            </p>
+                        </div>
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
+                            <div style={{width: '100%', height: 'auto'}}>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                    <div style={{width: '90%', height: 50 / proporcional}}>
+                                        <select
+                                            id='tipo'
+                                            className='form-select'
+                                            style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, color: '#212121', fontWeight: 600,
+                                            border: etipo ? '1px solid red' : '', borderRadius: 8 / proporcional}}
+                                            value={tipo}
+                                            onChange={(event) => {event.target.value !== '0' ? setTipo(event.target.value) : setTipo('')}}>
+                                            <option value='0'>{tipo === '' ? 'Seleccionar tipo' : tipo}</option>
+                                            <option value='Personal'>Personal</option>
+                                            <option value='Negocio'>Negocio</option>
+                                            <option value='Empresa'>Empresa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                    <div style={{width: '90%', height: 50 / proporcional}}>
+                                        <input  
+                                            disabled={tipo === '' ? true : false}
+                                            className='form-control'
+                                            value={nombre}
+                                            onChange={(event) => setNombre(event.target.value)}
+                                            style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
+                                                border: enombre ? '1px solid red': ''}}
+                                            id='nombre'
+                                            type='default'
+                                            placeholder={tipo === 'Personal' ? 'Nombres y apellidos' : tipo === 'Negocio' ? 'Nombre de negocio' : tipo === 'Empresa' ? 'Nombre de la empresa' : ''}/>
+                                    </div>
+                                </div>
+                                {
+                                    tipo !== 'Personal' && tipo !== '' && tipo !== '0' ? (
+                                        <div style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                                <div style={{width: '90%', height: 50 / proporcional}}>
+                                                    {
+                                                        tipo !== 'Otro' ? (
+                                                            <select
+                                                                className='form-select'
+                                                                style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, color: '#212121', fontWeight: 600,
+                                                                border: erubro ? '1px solid red': ''}}
+                                                                value={rubro}
+                                                                onChange={(event) => {event.target.value !== '0' ? setRubro(event.target.value) : setRubro('')}}>
+                                                                <option value='0'>{rubro === '' ? 'Seleccionar rubro' : rubro}</option>
+                                                                <option value='Tecnología de la información'>Tecnología de la información</option>
+                                                                <option value='Servicios Financieros'>Servicios Financieros</option>
+                                                                <option value='Salud y Bienestar'>Salud y Bienestar</option>
+                                                                <option value='Comercio Minosrista'>Comercio Minosrista</option>
+                                                                <option value='Educación'>'Educación'</option>
+                                                                <option value='Aliminentos y Bebidas'>'Aliminentos y Bebidas'</option>
+                                                                <option value='Servicios Profesionales'>'Servicios Profesionales'</option>
+                                                                <option value='Turismo y Hospitalidad'>'Turismo y Hospitalidad'</option>
+                                                                <option value='Construcción y Bienes'>'Construcción y Bienes'</option>
+                                                                <option value='Medios de comuniación y entretenimiento'>'Medios de comuniación y entretenimiento'</option>
+                                                                <option value='Manufactura'>'Manufactura'</option>
+                                                                <option value='Energía y Medio Ambiente'>'Energía y Medio Ambiente'</option>
+                                                                <option value='Transporte y Logística'>'Transporte y Logística'</option>
+                                                                <option value='Moda y Textiles'>'Moda y Textiles'</option>
+                                                                <option value='Telecomunicaciones'>'Telecomunicaciones'</option>
+                                                                <option value='Otro'>Otro</option>
+                                                            </select>
+                                                        ) : (
+                                                            <input  
+                                                                disabled={rubro === '' ? true : false}
+                                                                className='form-control'
+                                                                value={rubro}
+                                                                onChange={(event) => setRubro(event.target.value)}
+                                                                style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
+                                                                border: erubro ? '1px solid red': ''}}
+                                                                id='rubro'
+                                                                type='default'
+                                                                placeholder='Rubro'/>
+                                                        )
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                                <div style={{width: '90%', height: 50 / proporcional}}>
+                                                    <input  
+                                                        className='form-control'
+                                                        value={nro_ruc}
+                                                        onChange={(event) => setNroRuc(event.target.value)}
+                                                        style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
+                                                        border: enro_ruc ? '1px solid red': ''}}
+                                                        id='nro_ruc'
+                                                        type='number'
+                                                        placeholder='Número de R.U.C'/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ) : null
+                                }
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                    <div style={{width: '90%', height: 50 / proporcional}}>
+                                        <input  
+                                            disabled={(tipo !== '0' && tipo !== '') ? false : true}
+                                            className='form-control'
+                                            value={nro_telefono}
+                                            onChange={(event) => setNroTelefono(event.target.value)}
+                                            style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
+                                            border: enro_telefono ? '1px solid red': ''}}
+                                            id='nro_telefono'
+                                            type='number'
+                                            placeholder='Número de teléfono'/>
+                                    </div>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                    <div style={{width: '90%', height: 50 / proporcional}}>
+                                        <input  
+                                            disabled={(tipo !== '0' && tipo !== '') ? false : true}
+                                            className='form-control'
+                                            value={correo}
+                                            onChange={(event) => setCorreo(event.target.value)}
+                                            style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
+                                            border: ecorreo ? '1px solid red': ''}}
+                                            id='correo'
+                                            type='default'
+                                            placeholder='Correo electrónico'/>
+                                    </div>
+                                </div>
+                                {
+                                    tipo !== 'Personal' && tipo !== '' && tipo !== '0' ? (
+                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                                            <div style={{width: '90%', height: 50 / proporcional}}>
+                                                <input  
+                                                    className='form-control'
+                                                    value={nombre_contacto}
+                                                    onChange={(event) => setNombreContacto(event.target.value)}
+                                                    style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, fontWeight: 600, color: '#212121',
+                                                    border: enombre_contacto ? '1px solid red': ''}}
+                                                    id='nombre_contacto'
+                                                    type='default'
+                                                    placeholder='Nombre de la persona de contacto'/>
+                                            </div>
+                                        </div>
+                                    ): null
+                    
+                                }
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <input 
+                                        type='url'
+                                        className='form-control'
+                                        style={{width: '90%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
+                                            fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
+                                        id='link_facebook'
+                                        value={link_facebook}
+                                        onChange={(event) => setLinkFacebook(event.target.value)}
+                                        placeholder='Link del facebook'/>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <input 
+                                        type='url'
+                                        className='form-control'
+                                        style={{width: '90%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
+                                            fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
+                                        id='link_instagram'
+                                        value={link_instagram}
+                                        onChange={(event) => setLinkInstagram(event.target.value)}
+                                        placeholder='Link del instagram'/>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <input 
+                                        type='url'
+                                        className='form-control'
+                                        style={{width: '90%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
+                                            fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
+                                        id='link_tiktok'
+                                        value={link_tiktok}
+                                        onChange={(event) => setLinkTiktok(event.target.value)}
+                                        placeholder='Link del tiktok'/>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <input 
+                                        type='url'
+                                        className='form-control'
+                                        style={{width: '90%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
+                                            fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
+                                        id='link_linkedin'
+                                        value={link_linkedin}
+                                        onChange={(event) => setLinkLinkedin(event.target.value)}
+                                        placeholder='Link del linkedin'/>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <input 
+                                        type='url'
+                                        className='form-control'
+                                        style={{width: '90%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
+                                            fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
+                                        id='link_twitter'
+                                        value={link_twitter}
+                                        onChange={(event) => setLinkTwitter(event.target.value)}
+                                        placeholder='Link del twitter (X)'/>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional, marginBottom: 20 / proporcional}}>
+                                    <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                                        background: boton_anterior ? 'white' : 'rgb(23, 43, 222)', color: boton_anterior ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
+                                        onMouseOver={() => setBotonAnterior(true)} onMouseLeave={() => setBotonAnterior(false)}
+                                        onClick={() => anterior_paso()}>
+                                        Volver
+                                    </button>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional}}>
+                                    <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                                        background: boton_finalizar ? 'white' : 'rgb(23, 43, 222)', color: boton_finalizar ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
+                                        onMouseOver={() => setBotonFinalizar(true)} onMouseLeave={() => setBotonFinalizar(false)}
+                                        onClick={() => finalizar_pedido()}>
+                                        Finalizar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 ) : null
             }
             {

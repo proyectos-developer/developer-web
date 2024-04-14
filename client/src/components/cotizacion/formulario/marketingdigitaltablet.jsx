@@ -331,7 +331,7 @@ export default function MarketingDigitalTablet({proporcional}) {
                             <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                 background: boton_volver ? 'white' : 'rgb(23, 43, 222)', color: boton_volver ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                 onMouseOver={() => setBotonVolver(true)} onMouseLeave={() => setBotonVolver(false)}
-                                onClick={() => paso_anterior()}>
+                                onClick={() => anterior_paso()}>
                                 Volver
                             </button>
                             <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,

@@ -630,14 +630,16 @@ export default function PaginasWebCell({proporcional}) {
                                 placeholder='Información adicional'
                                 rows={4}/>
                         </div>
-                        <div className='d-flex justify-content-between' style={{width: '100%', height: 50 / proporcional}}>
-                            <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional, marginBottom: 20 / proporcional}}>
+                            <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                 background: boton_volver ? 'white' : 'rgb(23, 43, 222)', color: boton_volver ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                 onMouseOver={() => setBotonVolver(true)} onMouseLeave={() => setBotonVolver(false)}
                                 onClick={() => paso_anterior()}>
                                 Volver
                             </button>
-                            <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
+                        </div>
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional}}>
+                            <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                 background: boton_siguiente ? 'white' : 'rgb(23, 43, 222)', color: boton_siguiente ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                 onMouseOver={() => setBotonSiguiente(true)} onMouseLeave={() => setBotonSiguiente(false)}
                                 onClick={() => siguiente_paso()}>
@@ -647,7 +649,7 @@ export default function PaginasWebCell({proporcional}) {
                     </div>
                 )  : paso === 4 ? (
                     <div style={{width: '100%', height: 'auto'}}>
-                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
+                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 1 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -663,21 +665,12 @@ export default function PaginasWebCell({proporcional}) {
                                     2
                                 </p>
                             </div>
-                        </div>
-                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    3
-                                </p>
-                            </div>
                             <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    4
+                                        textAlign: 'center', color: paso === 2 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                    3
                                 </p>
                             </div>
                         </div>
@@ -827,51 +820,61 @@ export default function PaginasWebCell({proporcional}) {
                                     ): null
                     
                                 }
-                                <input 
-                                    type='url'
-                                    className='form-control'
-                                    style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
-                                        fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
-                                    id='link_facebook'
-                                    value={link_facebook}
-                                    onChange={(event) => setLinkFacebook(event.target.value)}
-                                    placeholder='Link del facebook'/>
-                                <input 
-                                    type='url'
-                                    className='form-control'
-                                    style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
-                                        fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
-                                    id='link_instagram'
-                                    value={link_instagram}
-                                    onChange={(event) => setLinkInstagram(event.target.value)}
-                                    placeholder='Link del instagram'/>
-                                <input 
-                                    type='url'
-                                    className='form-control'
-                                    style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
-                                        fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
-                                    id='link_tiktok'
-                                    value={link_tiktok}
-                                    onChange={(event) => setLinkTiktok(event.target.value)}
-                                    placeholder='Link del tiktok'/>
-                                <input 
-                                    type='url'
-                                    className='form-control'
-                                    style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
-                                        fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
-                                    id='link_linkedin'
-                                    value={link_linkedin}
-                                    onChange={(event) => setLinkLinkedin(event.target.value)}
-                                    placeholder='Link del linkedin'/>
-                                <input 
-                                    type='url'
-                                    className='form-control'
-                                    style={{width: '100%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
-                                        fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
-                                    id='link_twitter'
-                                    value={link_twitter}
-                                    onChange={(event) => setLinkTwitter(event.target.value)}
-                                    placeholder='Link del twitter (X)'/>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <input 
+                                        type='url'
+                                        className='form-control'
+                                        style={{width: '90%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
+                                            fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
+                                        id='link_facebook'
+                                        value={link_facebook}
+                                        onChange={(event) => setLinkFacebook(event.target.value)}
+                                        placeholder='Link del facebook'/>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <input 
+                                        type='url'
+                                        className='form-control'
+                                        style={{width: '90%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
+                                            fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
+                                        id='link_instagram'
+                                        value={link_instagram}
+                                        onChange={(event) => setLinkInstagram(event.target.value)}
+                                        placeholder='Link del instagram'/>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <input 
+                                        type='url'
+                                        className='form-control'
+                                        style={{width: '90%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
+                                            fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
+                                        id='link_tiktok'
+                                        value={link_tiktok}
+                                        onChange={(event) => setLinkTiktok(event.target.value)}
+                                        placeholder='Link del tiktok'/>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <input 
+                                        type='url'
+                                        className='form-control'
+                                        style={{width: '90%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
+                                            fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
+                                        id='link_linkedin'
+                                        value={link_linkedin}
+                                        onChange={(event) => setLinkLinkedin(event.target.value)}
+                                        placeholder='Link del linkedin'/>
+                                </div>
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <input 
+                                        type='url'
+                                        className='form-control'
+                                        style={{width: '90%', height: 50 / proporcional, fontSize: 16 / proporcional, lineHeight: `${18 / proporcional}px`,
+                                            fontWeight: 500, color: '#212121', marginBottom: 20 / proporcional}}
+                                        id='link_twitter'
+                                        value={link_twitter}
+                                        onChange={(event) => setLinkTwitter(event.target.value)}
+                                        placeholder='Link del twitter (X)'/>
+                                </div>
                                 <div className='d-flex justify-content-center' style={{width: '100%', height: 50 / proporcional, marginBottom: 20 / proporcional}}>
                                     <button className='btn' style={{width: '90%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                         background: boton_anterior ? 'white' : 'rgb(23, 43, 222)', color: boton_anterior ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}

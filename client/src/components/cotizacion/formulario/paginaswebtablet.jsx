@@ -539,8 +539,8 @@ export default function PaginasWebTablet({proporcional}) {
                             <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                 background: boton_volver ? 'white' : 'rgb(23, 43, 222)', color: boton_volver ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
                                 onMouseOver={() => setBotonVolver(true)} onMouseLeave={() => setBotonVolver(false)}
-                                onClick={() => paso_anterior    ()}>
-                                Anterior
+                                onClick={() => paso_anterior()}>
+                                Volver
                             </button>
                             <button className='btn' style={{width: '20%', height: 50 / proporcional, border: '1px solid rgb(23, 43, 222)', fontWeight: 600,
                                 background: boton_siguiente ? 'white' : 'rgb(23, 43, 222)', color: boton_siguiente ? 'rgb(23, 43, 222)' : 'white', fontSize: 18 / proporcional}}
@@ -628,7 +628,7 @@ export default function PaginasWebTablet({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -636,12 +636,20 @@ export default function PaginasWebTablet({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
                                         textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
                                     3
+                                </p>
+                            </div>
+                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                        textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                    4
                                 </p>
                             </div>
                         </div>
