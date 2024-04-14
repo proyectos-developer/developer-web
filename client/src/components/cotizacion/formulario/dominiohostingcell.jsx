@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 import image_dominio from '../../../assets/images/image_cotizacion_dominio_600.png'
 import image_hosting from '../../../assets/images/image_cotizacion_hosting_600.png'
-import { set_cotizacion_app } from '../../../redux/actions/dataactions'
+import { set_cotizacion_domhost } from '../../../redux/actions/dataactions'
 import { useDispatch, useSelector } from 'react-redux'
 
 export default function DominioHostingCell({proporcional}) {
@@ -123,13 +123,11 @@ export default function DominioHostingCell({proporcional}) {
                 link_linkedin: link_linkedin,
                 link_tiktok: link_tiktok}
             ]
-            console.log ('opciones', opciones_cotizaciones)
-            dispatch (set_cotizacion_app(data_cotizacion))
+            dispatch (set_cotizacion_domhost(data_cotizacion))
             if(opciones_cotizaciones.web){
-                navigate ('/cotizacion/paginas-web')
+                navigate ('/cotizacion/servicio/paginas-web')
             }else{
-                console.log ('resumen', data_cotizacion)
-                //navigate ('/cotizacion/requerimientos/resumen')
+                navigate ('/cotizacion/resumen')
             }
             window.scrollTo(0, 0)
         }
@@ -329,7 +327,7 @@ export default function DominioHostingCell({proporcional}) {
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
                                         textAlign: 'center', color: paso === 2 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    2
+                                    3
                                 </p>
                             </div>
                         </div>

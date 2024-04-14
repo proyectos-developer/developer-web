@@ -169,10 +169,9 @@ export default function PaginasWebCell({proporcional}) {
             ]
             dispatch (set_cotizacion_web(data_cotizacion))
             if(opciones_cotizaciones.aplicacion){
-                navigate ('/cotizacion/aplicacion-movil')
+                navigate ('/cotizacion/servicio/aplicacion-movil')
             }else{
-                console.log ('resumen', data_cotizacion)
-                //navigate ('/cotizacion/requerimientos/resumen')
+                navigate ('/cotizacion/resumen')
             }
             window.scrollTo(0, 0)
         }

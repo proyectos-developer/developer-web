@@ -123,13 +123,11 @@ export default function DominioHosting({proporcional}) {
                 link_linkedin: link_linkedin,
                 link_tiktok: link_tiktok}
             ]
-            console.log ('opciones', opciones_cotizaciones)
             dispatch (set_cotizacion_domhost(data_cotizacion))
             if(opciones_cotizaciones.web){
-                navigate ('/cotizacion/paginas-web')
+                navigate ('/cotizacion/servicio/paginas-web')
             }else{
-                console.log ('resumen', data_cotizacion)
-                //navigate ('/cotizacion/requerimientos/resumen')
+                navigate ('/cotizacion/resumen')
             }
             window.scrollTo(0, 0)
         }

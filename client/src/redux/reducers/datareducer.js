@@ -9,7 +9,9 @@ const initialState = {
     cotizacion_domhost: [],
     cotizacion_web: [],
     cotizacion_app: [],
-    cotizacion_marketing: []
+    cotizacion_marketing: [],
+    cotizacion_software: [],
+    cotizacion_cloud: []
 }
 
 const datareducer = (state = initialState, action) => {
@@ -66,6 +68,18 @@ const datareducer = (state = initialState, action) => {
         return {
             ... state,
             cotizacion_marketing
+        }
+    }else  if (action.type === datatypes.SET_COTIZACION_SOFTWARE){
+        const cotizacion_software = action.cotizacion_software
+        return {
+            ... state,
+            cotizacion_software
+        }
+    }else  if (action.type === datatypes.SET_COTIZACION_CLOUD){
+        const cotizacion_cloud = action.cotizacion_cloud
+        return {
+            ... state,
+            cotizacion_cloud
         }
     }
     return state

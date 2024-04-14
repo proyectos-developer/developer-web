@@ -87,6 +87,10 @@ import FormularioCotizacion from './components/cotizacion/formulario/panel.jsx'
 import FormularioCotizacionTablet from './components/cotizacion/formulario/paneltablet.jsx'
 import FormularioCotizacionCell from './components/cotizacion/formulario/panelcell.jsx'
 
+import ResumenCotizacion from './components/cotizacion/resumen/panel.jsx'
+import ResumenCotizacionTablet from './components/cotizacion/resumen/paneltablet.jsx'
+import ResumenCotizacionCell from './components/cotizacion/resumen/panelcell.jsx'
+
 export default function App (){
   const [width, setWidth] = useState(window.outerWidth)
 
@@ -185,9 +189,13 @@ export default function App (){
                                               width < 991 ? <OpcionesCotizacionTablet proporcional={991 / width}/> :
                                                             <OpcionesCotizacion proporcional={1920/ width}/>}/>
 
-            <Route path='cotizacion/:servicio' element={width < 500 ? <FormularioCotizacionCell proporcional={499 / width}/> :
-                                                        width < 991 ? <FormularioCotizacionTablet proporcional={991 / width}/> :
-                                                                      <FormularioCotizacion proporcional={1920/ width}/>}/>
+            <Route path='cotizacion/servicio/:servicio' element={width < 500 ? <FormularioCotizacionCell proporcional={499 / width}/> :
+                                                                 width < 991 ? <FormularioCotizacionTablet proporcional={991 / width}/> :
+                                                                               <FormularioCotizacion proporcional={1920/ width}/>}/>
+
+            <Route path='cotizacion/resumen' element={width < 500 ? <ResumenCotizacionCell proporcional={499 / width}/> :
+                                                      width < 991 ? <ResumenCotizacionTablet proporcional={991 / width}/> :
+                                                                    <ResumenCotizacion proporcional={1920/ width}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

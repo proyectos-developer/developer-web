@@ -7,7 +7,9 @@ export const datatypes = {
     SET_COTIZACION_DOMHOST: 'SET_COTIZACION_DOMHOST',
     SET_COTIZACION_WEB: 'SET_COTIZACION_WEB',
     SET_COTIZACION_APP: 'SET_COTIZACION_APP',
-    SET_COTIZACION_MARKETING: 'SET_COTIZACION_MARKETING'
+    SET_COTIZACION_MARKETING: 'SET_COTIZACION_MARKETING',
+    SET_COTIZACION_SOFTWARE: 'SET_COTIZACION_SOFTWARE',
+    SET_COTIZACION_CLOUD: 'SET_COTIZACION_CLOUD'
 }
 
 export const set_open_screen_search = open_screen_search => {
@@ -70,5 +72,19 @@ export const set_cotizacion_marketing = cotizacion_marketing => {
     return {
         cotizacion_marketing,
         type: datatypes.SET_COTIZACION_MARKETING
+    }
+}
+
+export const set_cotizacion_software = cotizacion_software => {
+    return {
+        cotizacion_software,
+        type: datatypes.SET_COTIZACIO_SOFTWARE
+    }
+}
+
+export const set_cotizacion_cloud = cotizacion_cloud => {
+    return {
+        cotizacion_cloud,
+        type: datatypes.SET_COTIZACION_CLOUD
     }
 }

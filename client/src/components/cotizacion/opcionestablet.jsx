@@ -45,22 +45,22 @@ export default function OpcionesTablet({proporcional}) {
             }
             dispatch(set_opciones_cotizaciones(opciones))
             if (opcion_dominio){
-                navigate ('/cotizacion/dominio-hosting')
+                navigate ('/cotizacion/servicio/dominio-hosting')
                 window.scrollTo(0, 0)
             }else if (opcion_web){
-                navigate ('/cotizacion/paginas-web')
+                navigate ('/cotizacion/servicio/paginas-web')
                 window.scrollTo(0, 0)
             }else if (opcion_aplicacion){
-                navigate ('/cotizacion/aplicacion-movil')
+                navigate ('/cotizacion/servicio/aplicacion-movil')
                 window.scrollTo(0, 0)
             }else if (opcion_marketing){
-                navigate ('/cotizacion/marketing-digital')
+                navigate ('/cotizacion/servicio/marketing-digital')
                 window.scrollTo(0, 0)
             }else if (opcion_software){
-                navigate ('/cotizacion/software')
+                navigate ('/cotizacion/servicio/software')
                 window.scrollTo(0, 0)
             }else if (opcion_nube){
-                navigate ('/cotizacion/cloud-services')
+                navigate ('/cotizacion/servicio/cloud-services')
                 window.scrollTo(0, 0)
             }
         }
@@ -130,7 +130,7 @@ export default function OpcionesTablet({proporcional}) {
                         <div className='' style={{width: '100%', height: 'auto'}}>
                             <p style={{fontSize: 24 / proporcional, lineHeight: `${26 / proporcional}px`, fontWeight: 500, fontFamily: 'Hind', marginBottom: 0 / proporcional,
                                     textAlign: 'center', color: opcion_marketing ? '#212121' : 'white', cursor: 'default'}}>
-                                Cotiza un plan en <br/>redes sociales
+                                Cotiza un plan en <br/>marketing digital
                             </p>
                         </div>
                     </div>

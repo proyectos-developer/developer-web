@@ -15,9 +15,8 @@ export default function FormularioTablet({proporcional}) {
     const [servicio, setServicio] = useState('')
 
     useEffect(() => {
-        setServicio(location.pathname.split ('/')[2])
-    }, [location.pathname.split ('/')[2]])
-
+        setServicio(location.pathname.split ('/')[3])
+    }, [location.pathname.split ('/')[3]])
     return (
         <div style={{width: '100%', height: 'auto'}}>
             {

@@ -180,10 +180,9 @@ export default function AplicacionMovilCell({proporcional}) {
             ]
             dispatch (set_cotizacion_app(data_cotizacion))
             if(opciones_cotizaciones.marketing){
-                navigate ('/cotizacion/marketing-digital')
+                navigate ('/cotizacion/servicio/marketing-digital')
             }else{
-                console.log ('resumen', data_cotizacion)
-                //navigate ('/cotizacion/requerimientos/resumen')
+                navigate ('/cotizacion/resumen')
             }
             window.scrollTo(0, 0)
         }
