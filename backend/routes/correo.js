@@ -171,4 +171,14 @@ router.post('/api/correo/suscriptor', async (req, res) => {
     }       
 })
 
+router.post ('/api/correo/cotizacion/web', async (req, res) => {
+    const {opciones_cotizaciones, cotizacion_domhost, cotizacion_web, cotizacion_app, cotizacion_marketing, cotizacion_software, cotizacion_cloud} = req.body
+
+    try {
+        
+    } catch (error) {
+        
+    }
+})
+
 module.exports = router

@@ -168,9 +168,21 @@ app.get('/producto/cotizacion', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cotizacion', 'index'));
 });
 
-app.use(express.static(path.resolve(__dirname, './client/build/cotizacion')));
-app.get('/producto/cotizacion/:servicio', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/build/cotizacion', 'index'));
+app.use(express.static(path.resolve(__dirname, './client/build/cotizacion/servicio')));
+app.get('/producto/cotizacion/servicio/:servicio', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/cotizacion/servicio', 'index'));
+});
+
+
+app.use(express.static(path.resolve(__dirname, './client/build/cotizacion/resumen')));
+app.get('/producto/cotizacion/resumen', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/cotizacion/resumen', 'index'));
+});
+
+
+app.use(express.static(path.resolve(__dirname, './client/build/cotizacion/enviada')));
+app.get('/producto/cotizacion/enviada', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/cotizacion/enviada', 'index'));
 });
 
 //Iniciar el servidor

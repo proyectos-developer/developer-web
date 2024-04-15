@@ -65,9 +65,20 @@ export default function MarketingDigitalCell({proporcional}) {
     const siguiente_paso = () => {
         if (tipo_marketing === '' && paso === 1){
             setAdvertenciaSeleccion(true)
-            setMessage('Debe seleccionar un tipo de servicio de marketing digital')
-        }else if (paso === 2){
-            setPaso (paso + 1)
+            setMessage('Debe seleccionar el tipo de servicio de marketing.')
+        }else if (paso === 2 && (opciones_cotizaciones.software || opciones_cotizaciones.nube)){
+            const data_cotizacion = [
+                {tipo_marketing: tipo_marketing},
+
+                {informacion_adicional: informacion_adicional},
+            ]
+            dispatch (set_cotizacion_marketing(data_cotizacion))
+            if((opciones_cotizaciones.software || opciones_cotizaciones.nube)){
+                navigate (`/cotizacion/servicio/${opciones_cotizaciones.software ? 'software' : 'cloud-services'}`)
+            }else{
+                navigate ('/cotizacion/resumen')
+            }
+            window.scrollTo(0, 0)
         }else{
             setTipoMarketing(tipo_marketing)
             setPaso(paso + 1)
@@ -75,8 +86,15 @@ export default function MarketingDigitalCell({proporcional}) {
     }
 
     const volver_opciones = () => {
-        window.scrollTo(0, 0)
-        navigate ('/cotizacion')
+        if (opciones_cotizaciones.aplicacion){
+            navigate ('/cotizacion/servicio/aplicacion-movil')
+        }else{ if (opciones_cotizaciones.web){
+            navigate ('/cotizacion/servicio/pagina-web')
+        }else if (opciones_cotizaciones.dominio){
+            navigate ('/cotizacion/servicio/dominio-hosting')
+        }else
+            navigate ('/cotizacion')
+        }
     }
 
     const finalizar_pedido = () => {
@@ -105,6 +123,7 @@ export default function MarketingDigitalCell({proporcional}) {
             setENroTelefono(false)
             setECorreo(false)
             setENombreContacto(false)
+
             const data_cotizacion = [
                 {tipo_marketing: tipo_marketing},
 
@@ -124,11 +143,7 @@ export default function MarketingDigitalCell({proporcional}) {
                 link_tiktok: link_tiktok}
             ]
             dispatch (set_cotizacion_marketing(data_cotizacion))
-            if(opciones_cotizaciones.software){
-                navigate ('/cotizacion/servicio/software')
-            }else{
-                navigate ('/cotizacion/resumen')
-            }
+            navigate ('/cotizacion/resumen')
             window.scrollTo(0, 0)
         }
     }
@@ -154,14 +169,28 @@ export default function MarketingDigitalCell({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 2 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    3
-                                </p>
-                            </div>
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            3
+                                        </p>
+                                    </div>
+                                )
+                            }
                         </div>
                         <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 700, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -300,7 +329,7 @@ export default function MarketingDigitalCell({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 200 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -308,14 +337,28 @@ export default function MarketingDigitalCell({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 200 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    3
-                                </p>
-                            </div>
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            3
+                                        </p>
+                                    </div>
+                                )
+                            }
                         </div>
                         <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 700, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -352,6 +395,9 @@ export default function MarketingDigitalCell({proporcional}) {
                             </button>
                         </div>
                     </div>
+                ) : (
+                    opciones_cotizaciones.software || opciones_cotizaciones.nube) ? (
+                    null
                 )  : paso === 3 ? (
                     <div style={{width: '100%', height: 'auto'}}>
                         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
@@ -370,14 +416,28 @@ export default function MarketingDigitalCell({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 2 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    3
-                                </p>
-                            </div>
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            3
+                                        </p>
+                                    </div>
+                                )
+                            }
                         </div>
                         <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 700, fontFamily: 'Hind', marginBottom: 0 / proporcional,

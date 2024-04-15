@@ -68,19 +68,27 @@ export default function CloudServiceTablet({proporcional}) {
     const siguiente_paso = () => {
         if (tipo_cloud === '' && paso === 1){
             setAdvertenciaSeleccion(true)
-            setMessage('Debe seleccionar el tipo servicio en la nube que requiere')
-        }else if (paso === 2){
-            setPaso (paso + 1)
+            setMessage('Debe seleccionar el tipo de software que requiere.')
         }else{
-            window.scrollTo(0, 0)
             setTipoCloud(tipo_cloud)
             setPaso(paso + 1)
         }
     }
 
     const volver_opciones = () => {
-        window.scrollTo(0, 0)
-        navigate ('/cotizacion')
+        if (opciones_cotizaciones.software){
+            navigate ('/cotizacion/servicio/software')
+        }else if (opciones_cotizaciones.marketing){
+            navigate ('/cotizacion/servicio/marketing-digital')
+        }else if (opciones_cotizaciones.aplicacion){
+            navigate ('/cotizacion/servicio/aplicacion-movil')
+        }else{ if (opciones_cotizaciones.web){
+            navigate ('/cotizacion/servicio/pagina-web')
+        }else if (opciones_cotizaciones.dominio){
+            navigate ('/cotizacion/servicio/dominio-hosting')
+        }else
+            navigate ('/cotizacion')
+        }
     }
 
     const finalizar_pedido = () => {
@@ -109,6 +117,7 @@ export default function CloudServiceTablet({proporcional}) {
             setENroTelefono(false)
             setECorreo(false)
             setENombreContacto(false)
+
             const data_cotizacion = [
                 {tipo_cloud: tipo_cloud},
 
@@ -132,7 +141,6 @@ export default function CloudServiceTablet({proporcional}) {
             window.scrollTo(0, 0)
         }
     }
-
 
     return (
         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>

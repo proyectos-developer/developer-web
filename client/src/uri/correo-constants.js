@@ -9,5 +9,11 @@ export const correoConstants = (data = {}, reset = false) => {
             reset: reset,
             data: data
         }, 
+        send_cotizacion_web: {
+            path: 'correo/cotizacion/web',
+            stateType: 'send_cotizacion_web',
+            reset: reset,
+            data: data
+        }
     }
 }

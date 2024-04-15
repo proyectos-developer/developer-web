@@ -9,6 +9,7 @@ export const correodata = createAsyncThunk ('', async (params) => {
     stateType = params.stateType
     switch (stateType){
         case 'send_mensaje_web':
+        case 'send_cotizacion_web':
             if (params.reset){ 
                 return {success: false}
             }else{

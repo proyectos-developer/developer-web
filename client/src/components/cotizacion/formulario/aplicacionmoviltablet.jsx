@@ -85,6 +85,7 @@ export default function AplicacionMovilTablet({proporcional}) {
     const {opciones_cotizaciones} = useSelector(({data_reducer}) => data_reducer)
 
     const paso_anterior = () => {
+        window.scrollTo(0, 0)
         setPaso(paso - 1)
     }
 
@@ -102,6 +103,40 @@ export default function AplicacionMovilTablet({proporcional}) {
             }else{
                 setPaso (paso + 1)
             }
+        }else if (paso === 3 && (opciones_cotizaciones.software || opciones_cotizaciones.marketing || opciones_cotizaciones.nube)){
+            const data_cotizacion = [
+                {tipo_aplicacion: tipo_aplicacion},
+
+                {pantalla_login: pantalla_login, 
+                 pantalla_registro: pantalla_registro,
+                pantalla_presentacion: pantalla_presentacion,
+                pantalla_perfil: pantalla_perfil,
+                pantalla_productos: pantalla_productos,
+                pantalla_carrito: pantalla_carrito,
+                pantalla_pago: pantalla_pago,
+                pantalla_ubicacion: pantalla_ubicacion,
+                pantalla_localizacion: pantalla_localizacion,
+                pantalla_categorias: pantalla_categorias,
+                pantalla_comentarios: pantalla_comentarios,
+                pantalla_galeria: pantalla_galeria,
+                pantalla_chat: pantalla_chat,
+                pantalla_estadisticas: pantalla_estadisticas,
+                pantalla_anuncios: pantalla_anuncios,
+                pantalla_informativa: pantalla_informativa,
+                pantalla_calendario: pantalla_calendario,
+                pantalla_agenda: pantalla_agenda,
+                pantalla_favoritos: pantalla_favoritos,
+                pantalla_otro: pantalla_otro},
+
+                {informacion_adicional: informacion_adicional},
+            ]
+            dispatch (set_cotizacion_app(data_cotizacion))
+            if((opciones_cotizaciones.software || opciones_cotizaciones.marketing || opciones_cotizaciones.nube)){
+                navigate (`/cotizacion/servicio/${opciones_cotizaciones.marketing ? 'marketing-digital' : opciones_cotizaciones.software ? 'software' : 'cloud-services'}`)
+            }else{
+                navigate ('/cotizacion/resumen')
+            }
+            window.scrollTo(0, 0)
         }else{
             setTipoAplicacion(tipo_aplicacion)
             setPaso(paso + 1)
@@ -109,7 +144,13 @@ export default function AplicacionMovilTablet({proporcional}) {
     }
 
     const volver_opciones = () => {
-        navigate ('/cotizacion')
+        if (opciones_cotizaciones.web){
+            navigate ('/cotizacion/servicio/pagina-web')
+        }else if (opciones_cotizaciones.dominio){
+            navigate ('/cotizacion/servicio/dominio-hosting')
+        }else{
+            navigate ('/cotizacion')
+        }
     }
 
     const finalizar_pedido = () => {
@@ -144,24 +185,24 @@ export default function AplicacionMovilTablet({proporcional}) {
 
                 {pantalla_login: pantalla_login, 
                  pantalla_registro: pantalla_registro,
-                 pantalla_presentacion: pantalla_presentacion,
-                 pantalla_perfil: pantalla_perfil,
-                 pantalla_productos: pantalla_productos,
-                 pantalla_carrito: pantalla_carrito,
-                 pantalla_pago: pantalla_pago,
-                 pantalla_ubicacion: pantalla_ubicacion,
-                 pantalla_localizacion: pantalla_localizacion,
-                 pantalla_categorias: pantalla_categorias,
-                 pantallla_comentarios: pantalla_comentarios,
-                 pantalla_galeria: pantalla_galeria,
-                 pantalla_chat: pantalla_chat,
-                 pantalla_estadisticas: pantalla_estadisticas,
-                 pantalla_anuncios: pantalla_anuncios,
-                 pantalla_informativa: pantalla_informativa,
-                 pantalla_calendario: pantalla_calendario,
-                 pantalla_agenda: pantalla_agenda,
-                 pantalla_favoritos: pantalla_favoritos,
-                 pantalla_otro: pantalla_otro},
+                pantalla_presentacion: pantalla_presentacion,
+                pantalla_perfil: pantalla_perfil,
+                pantalla_productos: pantalla_productos,
+                pantalla_carrito: pantalla_carrito,
+                pantalla_pago: pantalla_pago,
+                pantalla_ubicacion: pantalla_ubicacion,
+                pantalla_localizacion: pantalla_localizacion,
+                pantalla_categorias: pantalla_categorias,
+                pantalla_comentarios: pantalla_comentarios,
+                pantalla_galeria: pantalla_galeria,
+                pantalla_chat: pantalla_chat,
+                pantalla_estadisticas: pantalla_estadisticas,
+                pantalla_anuncios: pantalla_anuncios,
+                pantalla_informativa: pantalla_informativa,
+                pantalla_calendario: pantalla_calendario,
+                pantalla_agenda: pantalla_agenda,
+                pantalla_favoritos: pantalla_favoritos,
+                pantalla_otro: pantalla_otro},
 
                 {informacion_adicional: informacion_adicional},
 
@@ -179,11 +220,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                 link_tiktok: link_tiktok}
             ]
             dispatch (set_cotizacion_app(data_cotizacion))
-            if(opciones_cotizaciones.marketing){
-                navigate ('/cotizacion/servicio/marketing-digital')
-            }else{
-                navigate ('/cotizacion/resumen')
-            }
+            navigate ('/cotizacion/resumen')
             window.scrollTo(0, 0)
         }
     }
@@ -201,7 +238,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -209,7 +246,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -217,14 +254,28 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     3
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    4
-                                </p>
-                            </div>
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.marketing || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 150 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.marketing || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            4
+                                        </p>
+                                    </div>
+                                )
+                            }
                         </div>
                         <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 700, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -404,7 +455,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -412,7 +463,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -420,14 +471,28 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     3
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    4
-                                </p>
-                            </div>
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.marketing || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 150 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.marketing || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            4
+                                        </p>
+                                    </div>
+                                )
+                            }
                         </div>
                         <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 700, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -682,7 +747,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -690,7 +755,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -698,14 +763,28 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     3
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    4
-                                </p>
-                            </div>
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.marketing || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 150 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (
+                                    opciones_cotizaciones.software || opciones_cotizaciones.marketing || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            4
+                                        </p>
+                                    </div>
+                                )
+                            }
                         </div>
                         <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 700, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -740,6 +819,9 @@ export default function AplicacionMovilTablet({proporcional}) {
                             </button>
                         </div>
                     </div>
+                ) : (
+                    opciones_cotizaciones.software || opciones_cotizaciones.marketing || opciones_cotizaciones.nube) ? (
+                    null
                 ) : paso === 4 ? (
                     <div style={{width: '100%', height: 'auto'}}>
                         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
@@ -750,7 +832,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -758,7 +840,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -766,7 +848,7 @@ export default function AplicacionMovilTablet({proporcional}) {
                                     3
                                 </p>
                             </div>
-                            <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                            <div style={{width: 100 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
                                 <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,

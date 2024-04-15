@@ -67,6 +67,23 @@ export default function DominioHostingCell({proporcional}) {
                 setPaso(paso + 1)
                 window.scrollTo(0, 0)
             }
+        }else if (paso === 2 && (opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                || opciones_cotizaciones.nube)){
+            const data_cotizacion = [
+                {tipo_domniio: tipo_dominio,
+                tipo_hosting: tipo_hosting},
+
+                {informacion_adicional: informacion_adicional},
+            ]
+            dispatch (set_cotizacion_domhost(data_cotizacion))
+            if((opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                    || opciones_cotizaciones.nube)){
+                navigate (`/cotizacion/servicio/${opciones_cotizaciones.web ? 'paginas-web' : opciones_cotizaciones.aplicacion ? 'aplicacion-movil' : opciones_cotizaciones.marketing ? 'marketing-digital' :
+                    opciones_cotizaciones.software ? 'software' : 'cloud-services'}`)
+            }else{
+                navigate ('/cotizacion/resumen')
+            }
+            window.scrollTo(0, 0)
         }else{
             setPaso(paso + 1)
             window.scrollTo(0, 0)
@@ -105,7 +122,7 @@ export default function DominioHostingCell({proporcional}) {
             setECorreo(false)
             setENombreContacto(false)
             const data_cotizacion = [
-                {tipo_domniio: tipo_dominio,
+                {tipo_dominio: tipo_dominio,
                 tipo_hosting: tipo_hosting},
 
                 {informacion_adicional: informacion_adicional},
@@ -124,15 +141,11 @@ export default function DominioHostingCell({proporcional}) {
                 link_tiktok: link_tiktok}
             ]
             dispatch (set_cotizacion_domhost(data_cotizacion))
-            if(opciones_cotizaciones.web){
-                navigate ('/cotizacion/servicio/paginas-web')
-            }else{
-                navigate ('/cotizacion/resumen')
-            }
+            navigate ('/cotizacion/resumen')
             window.scrollTo(0, 0)
         }
     }
-
+    
     return (
         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
             {
@@ -146,22 +159,50 @@ export default function DominioHostingCell({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 2 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    2
-                                </p>
-                            </div>
-                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 2 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    2
-                                </p>
-                            </div>
+                            {
+                                (opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            3
+                                        </p>
+                                    </div>
+                                )
+                            }
+                            {
+                                (opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            3
+                                        </p>
+                                    </div>
+                                )
+                            }
                         </div>
                         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
                             <div style={{width: '100%', height: 'auto'}}>
@@ -269,14 +310,28 @@ export default function DominioHostingCell({proporcional}) {
                                     2
                                 </p>
                             </div>
-                            <div style={{width: 200 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    3
-                                </p>
-                            </div>
+                            {
+                                (opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            3
+                                        </p>
+                                    </div>
+                                )
+                            }
                         </div>
                         <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <textarea
@@ -306,7 +361,10 @@ export default function DominioHostingCell({proporcional}) {
                             </button>
                         </div>
                     </div>
-                )  : paso === 3 ? (
+                ) : (opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                    || opciones_cotizaciones.nube) ? (
+                    null
+                ) : paso === 3 ? (
                     <div style={{width: '100%', height: 'auto'}}>
                         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
@@ -316,14 +374,28 @@ export default function DominioHostingCell({proporcional}) {
                                     1
                                 </p>
                             </div>
-                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 2 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    2
-                                </p>
-                            </div>
+                            {
+                                (opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 3 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 3 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            3
+                                        </p>
+                                    </div>
+                                )
+                            }
                             <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
                                 background: paso === 2 ? 'rgb(23, 43, 222)' :  'white'}}>

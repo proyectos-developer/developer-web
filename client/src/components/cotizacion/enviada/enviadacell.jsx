@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import image_exito from '../../../assets/images/registro_exitoso_600.jpg'
+import image_exito from '../../../assets/images/image_cotizacion_enviada.png'
 
 export default function Enviada({proporcional}) {
 

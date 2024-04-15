@@ -78,7 +78,7 @@ export const set_cotizacion_marketing = cotizacion_marketing => {
 export const set_cotizacion_software = cotizacion_software => {
     return {
         cotizacion_software,
-        type: datatypes.SET_COTIZACIO_SOFTWARE
+        type: datatypes.SET_COTIZACION_SOFTWARE
     }
 }
 

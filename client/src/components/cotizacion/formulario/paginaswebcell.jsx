@@ -77,6 +77,7 @@ export default function PaginasWebCell({proporcional}) {
     const [paso, setPaso] = useState (1)
 
     const paso_anterior = () => {
+        window.scrollTo(0, 0)
         setPaso(paso - 1)
     }
 
@@ -94,14 +95,53 @@ export default function PaginasWebCell({proporcional}) {
             }else{
                 setPaso (paso + 1)
             }
+        }else if (paso === 3 && (opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                || opciones_cotizaciones.nube)){
+            const data_cotizacion = [
+                {tipo_pagina_web: tipo_pagina_web},
+
+                {pestania_nosotros: pestania_nosotros, 
+                 pestania_servicios: pestania_servicios,
+                pestania_productos: pestania_productos,
+                pestania_fotos: pestania_fotos,
+                pestania_videos: pestania_videos,
+                pestania_contacto: pestania_contacto,
+                pestania_cotizacion: pestania_cotizacion,
+                pestania_tienda: pestania_tienda,
+                pestania_carrito: pestania_carrito,
+                pestania_pago: pestania_pago,
+                pestania_seguimiento: pestania_seguimiento,
+                pestania_registro: pestania_registro,
+                pestania_login: pestania_login,
+                pestania_perfil: pestania_perfil,
+                pestania_favoritos: pestania_favoritos,
+                pestania_compras: pestania_compras,
+                pestania_administrativa: pestania_administrativa},
+
+                {informacion_adicional: informacion_adicional},
+            ]
+            dispatch (set_cotizacion_web(data_cotizacion))
+            if((opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                    || opciones_cotizaciones.nube)){
+                navigate (`/cotizacion/servicio/${opciones_cotizaciones.aplicacion ? 'aplicacion-movil' : opciones_cotizaciones.marketing ? 'marketing-digital' :
+                    opciones_cotizaciones.software ? 'software' : 'cloud-services'}`)
+            }else{
+                navigate ('/cotizacion/resumen')
+            }
+            window.scrollTo(0, 0)
         }else{
             setTipoPaginaWeb(tipo_pagina_web)
             setPaso(paso + 1)
+            window.scrollTo(0, 0)
         }
     }
 
     const volver_opciones = () => {
-        navigate ('/cotizacion')
+        if (opciones_cotizaciones.dominio){
+            navigate ('/cotizacion/servicio/dominio-hosting')
+        }else{
+            navigate ('/cotizacion')
+        }
     }
 
     const finalizar_pedido = () => {
@@ -168,11 +208,7 @@ export default function PaginasWebCell({proporcional}) {
                 link_tiktok: link_tiktok}
             ]
             dispatch (set_cotizacion_web(data_cotizacion))
-            if(opciones_cotizaciones.aplicacion){
-                navigate ('/cotizacion/servicio/aplicacion-movil')
-            }else{
-                navigate ('/cotizacion/resumen')
-            }
+            navigate ('/cotizacion/resumen')
             window.scrollTo(0, 0)
         }
     }
@@ -207,14 +243,30 @@ export default function PaginasWebCell({proporcional}) {
                                     3
                                 </p>
                             </div>
-                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    4
-                                </p>
-                            </div>
+                            {
+                                (
+                                    opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (
+                                    opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            4
+                                        </p>
+                                    </div>
+                                )
+                            }
                         </div>
                         <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 700, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -336,14 +388,30 @@ export default function PaginasWebCell({proporcional}) {
                                     3
                                 </p>
                             </div>
-                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    4
-                                </p>
-                            </div>
+                            {
+                                (
+                                    opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (
+                                    opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            4
+                                        </p>
+                                    </div>
+                                )
+                            }
                         </div>
                         <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 700, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -603,14 +671,30 @@ export default function PaginasWebCell({proporcional}) {
                                     3
                                 </p>
                             </div>
-                            <div style={{width: 50 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
-                            <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
-                                background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
-                                <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
-                                        textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
-                                    4
-                                </p>
-                            </div>
+                            {
+                                (
+                                    opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div style={{width: 75 / proporcional, height: 4 / proporcional, background: 'rgb(23, 43, 222)', marginTop: 60 / proporcional, marginBottom: 60 / proporcional}}/>
+                                )
+                            }
+                            {
+                                (
+                                    opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                                        || opciones_cotizaciones.nube) ? (
+                                    null
+                                ) : (
+                                    <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
+                                        background: paso === 4 ? 'rgb(23, 43, 222)' :  'white'}}>
+                                        <p style={{fontSize: 80 / proporcional, lineHeight: `${116 / proporcional}px`, fontWeight: 800, fontFamily: 'Hind', marginBottom: 0 / proporcional,
+                                                textAlign: 'center', color: paso === 4 ? 'white' : 'rgb(23, 43, 222)', cursor: 'default'}}>
+                                            4
+                                        </p>
+                                    </div>
+                                )
+                            }
                         </div>
                         <div style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, fontWeight: 700, fontFamily: 'Hind', marginBottom: 0 / proporcional,
@@ -647,7 +731,11 @@ export default function PaginasWebCell({proporcional}) {
                             </button>
                         </div>
                     </div>
-                )  : paso === 4 ? (
+                )  : (
+                    opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
+                    || opciones_cotizaciones.nube) ? (
+                    null
+                ) : paso === 4 ? (
                     <div style={{width: '100%', height: 'auto'}}>
                         <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
                             <div className='rounded-circle' style={{width: 120 / proporcional, height: 120 / proporcional, border: '4px solid rgb(23, 43, 222)',
