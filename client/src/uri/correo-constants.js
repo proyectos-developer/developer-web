@@ -10,7 +10,7 @@ export const correoConstants = (data = {}, reset = false) => {
             data: data
         }, 
         send_cotizacion_web: {
-            path: 'correo/cotizacion/web',
+            path: 'correo/cotizacion',
             stateType: 'send_cotizacion_web',
             reset: reset,
             data: data

@@ -10,6 +10,8 @@ import CloudService from './cloudservice.jsx'
 import { useNavigate } from 'react-router-dom'
 import {correodata} from '../../../redux/slice/correodata.js'
 import { correoConstants } from '../../../uri/correo-constants.js'
+import {cotizaciondata} from '../../../redux/slice/cotizaciondata.js'
+import { cotizacionConstants } from '../../../uri/cotizacion-constants.js'
 
 export default function Resumen({proporcional}) {
 
@@ -18,12 +20,23 @@ export default function Resumen({proporcional}) {
 
     const [fecha, setFecha] = useState('')
     const [cliente, setCliente] = useState ({})
+    const [nro_cotizacion, setNroCotizacion] = useState ('')
 
     const {opciones_cotizaciones, cotizacion_domhost, cotizacion_web, cotizacion_app, cotizacion_marketing, cotizacion_software, cotizacion_cloud} = useSelector(({data_reducer}) => data_reducer)
     const {send_cotizacion_web} = useSelector(({correo_data}) => correo_data)
+    const {get_nro_cotizaciones} = useSelector(({cotizacion_data}) => cotizacion_data)
+
+    useEffect (() => {
+        if (get_nro_cotizaciones && get_nro_cotizaciones.nro_cotizaciones && get_nro_cotizaciones.success === true){
+            let nro_cotizaciones = get_nro_cotizaciones.nro_cotizaciones + 1
+            setNroCotizacion(`${nro_cotizaciones < 10 ? `0000${nro_cotizaciones}` : nro_cotizaciones < 100 ? `000${nro_cotizaciones}` : nro_cotizaciones < 1000 ? `00${nro_cotizaciones}` :
+                    nro_cotizaciones < 10000 ? `0${nro_cotizaciones}` : `${nro_cotizaciones}`}`)
+        }
+    }, [get_nro_cotizaciones])
     
     useEffect(() => {
-        if (send_cotizacion_web && send_cotizacion_web.success === true && send_cotizacion_web.message){
+        if (send_cotizacion_web && send_cotizacion_web.success === true && send_cotizacion_web.message && send_cotizacion_web.cotizacion){
+            dispatch (correodata(correoConstants({}, true).send_cotizacion_web))
             navigate ('/cotizacion/enviada')
         }
     }, [send_cotizacion_web])
@@ -43,6 +56,7 @@ export default function Resumen({proporcional}) {
         }else{
             setCliente (cotizacion_cloud[2])
         }
+        dispatch(cotizaciondata(cotizacionConstants({}, false, 0, 0).get_nro_cotizaciones))
     }, [])
 
     const volver = () => {
@@ -63,13 +77,79 @@ export default function Resumen({proporcional}) {
 
     const enviar_cotizacion = () => {
         const data_cotizacion = {
-            opciones_cotizaciones: opciones_cotizaciones,
-            cotizacion_domhost: cotizacion_domhost,
-            cotizacion_web: cotizacion_web,
-            cotizacion_app: cotizacion_app,
-            cotizacion_marketing: cotizacion_marketing,
-            cotizacion_software: cotizacion_software,
-            cotizacion_cloud: cotizacion_cloud    
+            nro_cotizacion: nro_cotizacion,
+            fecha: fecha,
+
+            cotizacion_domhost: opciones_cotizaciones.dominio,
+            cotizacion_web: opciones_cotizaciones.web,
+            cotizacion_app: opciones_cotizaciones.aplicacion,
+            cotizacion_marketing: opciones_cotizaciones.marketing,
+            cotizacion_software: opciones_cotizaciones.software,
+            cotizacion_cloud: opciones_cotizaciones.nube,
+
+            tipo_negocio: cliente.tipo,
+            nombres: cliente.nombre,
+            rubro: cliente.rubro,
+            nro_ruc: cliente.nro_ruc,
+            nro_telefono: cliente.nro_telefono,
+            correo: cliente.correo,
+            nombre_contacto: cliente.nombre_contacto,
+
+            tipo_dominio: cotizacion_domhost[0] ? cotizacion_domhost[0].tipo_dominio : '',
+            tipo_hosting: cotizacion_domhost[0] ? cotizacion_domhost[0].tipo_hosting : '',
+            informacion_domhost: cotizacion_domhost[1] ? cotizacion_domhost[1].informacion_adicional : '',
+
+            tipo_web: cotizacion_web[0] ? cotizacion_web[0].tipo_web : '',
+            pestania_nosotros: cotizacion_web[1] ? cotizacion_web[1].pestania_nosotros : '',
+            pestania_servicios: cotizacion_web[1] ? cotizacion_web[1].pestania_servicios : '',
+            pestania_productos: cotizacion_web[1] ? cotizacion_web[1].pestania_productos : '',
+            pestania_fotos: cotizacion_web[1] ? cotizacion_web[1].pestania_fotos : '',
+            pestania_videos: cotizacion_web[1] ? cotizacion_web[1].pestania_videos : '',
+            pestania_contacto: cotizacion_web[1] ? cotizacion_web[1].pestania_contacto : '',
+            pestania_cotizacion: cotizacion_web[1] ? cotizacion_web[1].pestania_cotizacion : '',
+            pestania_tienda: cotizacion_web[1] ? cotizacion_web[1].pestania_tienda : '',
+            pestania_carrito: cotizacion_web[1] ? cotizacion_web[1].pestania_carrito : '',
+            pestania_pago: cotizacion_web[1] ? cotizacion_web[1].pestania_pago : '',
+            pestania_seguimiento: cotizacion_web[1] ? cotizacion_web[1].pestania_seguimiento : '',
+            pestania_registro: cotizacion_web[1] ? cotizacion_web[1].pestania_registro : '',
+            pestania_login: cotizacion_web[1] ? cotizacion_web[1].pestania_login : '',
+            pestania_perfil: cotizacion_web[1] ? cotizacion_web[1].pestania_perfil : '',
+            pestania_favoritos: cotizacion_web[1] ? cotizacion_web[1].pestania_favoritos : '',
+            pestania_compras: cotizacion_web[1] ? cotizacion_web[1].pestania_compras : '',
+            pestania_administracion: cotizacion_web[1] ? cotizacion_web[1].pestania_administracion : '',
+            informacion_web: cotizacion_web[2] ? cotizacion_web[1].informacion_adicional : '',
+
+            tipo_aplicacion: cotizacion_app[0] ? cotizacion_app[0].tipo_aplicacion : '',
+            pantalla_productos: cotizacion_app[1] ? cotizacion_app[1].pantalla_productos : '',
+            pantalla_calendario: cotizacion_app[1] ? cotizacion_app[1].pantalla_calendario : '',
+            pantalla_agenda: cotizacion_app[1] ? cotizacion_app[1].pantalla_agenda : '',
+            pantalla_favoritos: cotizacion_app[1] ? cotizacion_app[1].pantalla_favoritos : '',
+            pantalla_otro: cotizacion_app[1] ? cotizacion_app[1].pantalla_otro : '',
+            pantalla_carrito: cotizacion_app[1] ? cotizacion_app[1].pantalla_carrito : '',
+            pantalla_pago: cotizacion_app[1] ? cotizacion_app[1].pantalla_pago : '',
+            pantalla_informativa: cotizacion_app[1] ? cotizacion_app[1].pantalla_informativa : '',
+            pantalla_anuncios: cotizacion_app[1] ? cotizacion_app[1].pantalla_anuncios : '',
+            pantalla_registro: cotizacion_app[1] ? cotizacion_app[1].pantalla_registro : '',
+            pantalla_login: cotizacion_app[1] ? cotizacion_app[1].pantalla_login : '',
+            pantalla_perfil: cotizacion_app[1] ? cotizacion_app[1].pantalla_perfil : '',
+            pantalla_estadisticas: cotizacion_app[1] ? cotizacion_app[1].pantalla_estadisticas : '',
+            pantalla_presentacion: cotizacion_app[1] ? cotizacion_app[1].pantalla_presentacion : '',
+            pantalla_ubicacion: cotizacion_app[1] ? cotizacion_app[1].pantalla_ubicacion : '',
+            pantalla_localizacion: cotizacion_app[1] ? cotizacion_app[1].pantalla_localizacion : '',
+            pantalla_categorias: cotizacion_app[1] ? cotizacion_app[1].pantalla_categorias : '',
+            pantalla_comentarios: cotizacion_app[1] ? cotizacion_app[1].pantalla_comentarios : '',
+            pantalla_galeria: cotizacion_app[1] ? cotizacion_app[1].pantalla_galeria : '',
+            pantalla_chat: cotizacion_app[1] ? cotizacion_app[1].pantalla_chat : '',
+            informacion_aplicacion: cotizacion_app[1] ? cotizacion_app[1].informacion_adicional : '',
+
+            tipo_marketing: cotizacion_marketing[0] ? cotizacion_marketing[0].tipo_marketing : '',
+            informacion_marketing: cotizacion_marketing[2] ? cotizacion_marketing[1].informacion_adicional : '',
+
+            tipo_software: cotizacion_software[0] ? cotizacion_software[0].tipo_software : '',
+            informacion_software: cotizacion_software[1] ? cotizacion_software[1].informacion_adicional : '',
+
+            tipo_cloud: cotizacion_cloud[0] ? cotizacion_cloud[0].tipo_cloud : '',
+            informacion_cloud: cotizacion_cloud[1] ? cotizacion_cloud[1].informacion_adicional : ''
         }
         dispatch (correodata(correoConstants(data_cotizacion, false).send_cotizacion_web))
     }
@@ -84,11 +164,19 @@ export default function Resumen({proporcional}) {
                     </p>
                 </div>
                 <div style={{width: '100%', height: 'auto', padding: 10 / proporcional, border: '1px solid #bdbdbd', borderTop: ''}}>
-                    <div className='d-flex justify-content-end' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}>
-                        <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 0, color: 'black', cursor: 'default', fontWeight: 500, 
-                                fontFamily: 'Hind, sans-serif'}}>
-                            Fecha: <span style={{fontWeight: 700}}>{fecha ? fecha.toDateString() : ''}</span>
-                        </p>
+                    <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}>
+                        <div className='d-flex justify-content-start' style={{width: '50%', height: 'auto'}}>
+                            <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 0, color: 'black', cursor: 'default', fontWeight: 500, 
+                                    fontFamily: 'Hind, sans-serif'}}>
+                                Nro cotización: <span style={{fontWeight: 700}}>{nro_cotizacion}</span>
+                            </p>
+                        </div>
+                        <div className='d-flex justify-content-end' style={{width: '50%', height: 'auto'}}>
+                            <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 0, color: 'black', cursor: 'default', fontWeight: 500, 
+                                    fontFamily: 'Hind, sans-serif'}}>
+                                Fecha: <span style={{fontWeight: 700}}>{fecha ? fecha.toDateString() : ''}</span>
+                            </p>
+                        </div>
                     </div>
                     {
                         cliente.tipo === 'Personal' ? (

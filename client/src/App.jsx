@@ -95,6 +95,10 @@ import CotizacionEnviada from './components/cotizacion/enviada/panel.jsx'
 import CotizacionEnviadaTablet from './components/cotizacion/enviada/paneltablet.jsx'
 import CotizacionEnviadaCell from './components/cotizacion/enviada/panelcell.jsx'
 
+import DetallesCotizacion from './components/cotizacion/detalles/panel.jsx'
+import DetallesCotizacionTablet from './components/cotizacion/detalles/paneltablet.jsx'
+import DetallesCotizacionCell from './components/cotizacion/detalles/panelcell.jsx'
+
 export default function App (){
   const [width, setWidth] = useState(window.outerWidth)
 
@@ -204,6 +208,10 @@ export default function App (){
             <Route path='cotizacion/enviada' element={width < 500 ? <CotizacionEnviadaCell proporcional={499 / width}/> :
                                                       width < 991 ? <CotizacionEnviadaTablet proporcional={991 / width}/> :
                                                                     <CotizacionEnviada proporcional={1920/ width}/>}/>
+
+            <Route path='cotizacion/detalles/:id_cotizacion/:nro_cotizacion' element={width < 500 ? <DetallesCotizacionCell proporcional={499 / width}/> :
+                                                                                      width < 991 ? <DetallesCotizacionTablet proporcional={991 / width}/> :
+                                                                                                    <DetallesCotizacion proporcional={1920/ width}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -60,7 +60,7 @@ app.use(require('./backend/routes/authentication.js'))
 app.use(require('./backend/routes/proyectos.js'))
 app.use(require('./backend/routes/correo.js'))
 app.use(require('./backend/routes/clientes.js'))
-//app.use(require('./backend/routes/tokens.js'))
+app.use(require('./backend/routes/cotizacion.js'))
 //app.use(require('./backend/routes/conductores.js'))
 //app.use(require('./backend/routes/viajeros.js'))
 //app.use(require('./backend/routes/viajes.js'))
@@ -149,40 +149,44 @@ app.get('/nuestra-tienda', (req, res) => {
 });
 
 app.use(express.static(path.resolve(__dirname, './client/build/carrito-compras')));
-app.get('/producto/carrito-compras', (req, res) => {
+app.get('/carrito-compras', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/carrito-compras', 'index'));
 });
 
 app.use(express.static(path.resolve(__dirname, './client/build/producto')));
-app.get('/producto/producto/:producto/:sku', (req, res) => {
+app.get('/producto/:producto/:sku', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/producto', 'index'));
 });
 
 app.use(express.static(path.resolve(__dirname, './client/build/suscripcion')));
-app.get('/producto/suscripcion', (req, res) => {
+app.get('/suscripcion', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/suscripcion', 'index'));
 });
 
 app.use(express.static(path.resolve(__dirname, './client/build/cotizacion')));
-app.get('/producto/cotizacion', (req, res) => {
+app.get('/cotizacion', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cotizacion', 'index'));
 });
 
 app.use(express.static(path.resolve(__dirname, './client/build/cotizacion/servicio')));
-app.get('/producto/cotizacion/servicio/:servicio', (req, res) => {
+app.get('/cotizacion/servicio/:servicio', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cotizacion/servicio', 'index'));
 });
 
 
 app.use(express.static(path.resolve(__dirname, './client/build/cotizacion/resumen')));
-app.get('/producto/cotizacion/resumen', (req, res) => {
+app.get('/cotizacion/resumen', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cotizacion/resumen', 'index'));
 });
 
-
 app.use(express.static(path.resolve(__dirname, './client/build/cotizacion/enviada')));
-app.get('/producto/cotizacion/enviada', (req, res) => {
+app.get('/cotizacion/enviada', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cotizacion/enviada', 'index'));
+});
+
+app.use(express.static(path.resolve(__dirname, './client/build/cotizacion/detalles')));
+app.get('/cotizacion/detalles/:id_cotizacion/:nro_cotizacion', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build/cotizacion/detalles', 'index'));
 });
 
 //Iniciar el servidor
