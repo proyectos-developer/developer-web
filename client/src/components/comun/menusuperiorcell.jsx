@@ -276,7 +276,7 @@ export default function MenuSuperiorCell ({proporcional, position}){
                                             </div>
                                             <div style={{width: '100%', height: 1 / proporcional, background: '#efefef', marginBottom: 10 / proporcional}}/>
                                             <div className='d-flex justify-content-end' style={{width: '100%', height: 'auto', marginBottom: 10 / proporcional}}
-                                                onClick={() => {navigate('/nuestros-servicios/desarollo-ecommerce'); window.scrollTo (0, 0)}}>
+                                                onClick={() => {navigate('/nuestros-servicios/desarrollo-ecommerce'); window.scrollTo (0, 0)}}>
                                                 <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: 'white', 
                                                     fontFamily: 'Hind, sans-serif', fontWeight: 500}}>
                                                     Desarrollo e-commerce

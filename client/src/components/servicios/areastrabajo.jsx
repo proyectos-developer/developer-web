@@ -10,12 +10,43 @@ import servicios_ecommerce from '../../assets/images/servicios_ecommerce_280.png
 import servicios_soporte from '../../assets/images/servicios_soporte_280.png'
 import servicios_marketing from '../../assets/images/servicios_marketing_280.png'
 import servicios_cloud from '../../assets/images/servicios_cloud_280.png'
+import { useDispatch } from 'react-redux'
+import { set_opciones_cotizaciones } from '../../redux/actions/dataactions'
 
 export default function AreasTrabajo ({proporcional}){
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const [seleccion_servicio, setSeleccionServicio] = useState ('')
+
+    const cotiza_aqui = (servicio) => {
+        const opciones = {
+            dominio: false,
+            web: servicio === 'web' ? true : false,
+            aplicacion: servicio === 'app' ? true : false,
+            marketing: servicio === 'marketing' ? true : false,
+            software: servicio === 'software' ? true : false,
+            nube: servicio === 'nube' ? true : false
+        }
+        dispatch(set_opciones_cotizaciones(opciones))
+        if (opciones.web){
+            navigate ('/cotizacion/servicio/paginas-web')
+            window.scrollTo(0, 0)
+        }else if (opciones.aplicacion){
+            navigate ('/cotizacion/servicio/aplicacion-movil')
+            window.scrollTo(0, 0)
+        }else if (opciones.marketing){
+            navigate ('/cotizacion/servicio/marketing-digital')
+            window.scrollTo(0, 0)
+        }else if (opciones.software){
+            navigate ('/cotizacion/servicio/software')
+            window.scrollTo(0, 0)
+        }else if (opciones.nube){
+            navigate ('/cotizacion/servicio/cloud-services')
+            window.scrollTo(0, 0)
+        }
+    }
 
     return (
         <div style={{width: '100%', height: 'auto', paddingTop: 170 / proporcional, paddingBottom: 120 / proporcional, paddingLeft: 300 / proporcional, paddingRight: 300 / proporcional,
@@ -99,11 +130,19 @@ export default function AreasTrabajo ({proporcional}){
                                         </p>
                                         <div style={{width: '100%', height: 'auto'}}>
                                             <button className='btn border-0' style={{width: '30%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
-                                                background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                background: 'transparent', fontWeight: 600, marginBottom: 10 / proporcional, textAlign: 'left'}}
                                                 onClick={() => {navigate ('/nuestros-servicios/desarrollo-web'); window.scrollTo(0, 0)}}>Ver más</button>
                                             <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
-                                        </div>  
-                                </div>  
+                                        </div>   
+                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                            <div style={{width: 'auto', height: 'auto'}}>
+                                                <button className='btn border-0' style={{width: '100%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                    background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                    onClick={() => {cotiza_aqui('web')}}>Cotiza aquí</button>
+                                                <div className='rounded' style={{width: '100%', height: 2 / proporcional, background: 'white'}}/>
+                                            </div>
+                                        </div>
+                                    </div>  
                                 </div>  
                             </div>  
                         ) : null
@@ -146,6 +185,14 @@ export default function AreasTrabajo ({proporcional}){
                                                 background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
                                                 onClick={() => {navigate ('/nuestros-servicios/desarrollo-ecommerce'); window.scrollTo(0, 0)}}>Ver más</button>
                                             <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
+                                        </div>
+                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                            <div style={{width: 'auto', height: 'auto'}}>
+                                                <button className='btn border-0' style={{width: '100%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                    background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                    onClick={() => {cotiza_aqui('web')}}>Cotiza aquí</button>
+                                                <div className='rounded' style={{width: '100%', height: 2 / proporcional, background: 'white'}}/>
+                                            </div>
                                         </div>
                                     </div>  
                                 </div>  
@@ -193,6 +240,14 @@ export default function AreasTrabajo ({proporcional}){
                                                 onClick={() => {navigate ('/nuestros-servicios/aplicacion-movil'); window.scrollTo(0, 0)}}>Ver más</button>
                                             <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
                                         </div> 
+                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                            <div style={{width: 'auto', height: 'auto'}}>
+                                                <button className='btn border-0' style={{width: '100%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                    background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                    onClick={() => {cotiza_aqui('app')}}>Cotiza aquí</button>
+                                                <div className='rounded' style={{width: '100%', height: 2 / proporcional, background: 'white'}}/>
+                                            </div>
+                                        </div>
                                     </div>  
                                 </div>  
                             </div>  
@@ -237,6 +292,14 @@ export default function AreasTrabajo ({proporcional}){
                                                 onClick={() => {navigate ('/nuestros-servicios/desarrollo-software'); window.scrollTo(0, 0)}}>Ver más</button>
                                             <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
                                         </div> 
+                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                            <div style={{width: 'auto', height: 'auto'}}>
+                                                <button className='btn border-0' style={{width: '100%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                    background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                    onClick={() => {cotiza_aqui('software')}}>Cotiza aquí</button>
+                                                <div className='rounded' style={{width: '100%', height: 2 / proporcional, background: 'white'}}/>
+                                            </div>
+                                        </div>
                                     </div>  
                                 </div>  
                             </div>  
@@ -281,6 +344,14 @@ export default function AreasTrabajo ({proporcional}){
                                                 onClick={() => {navigate ('/nuestros-servicios/marketing-digital'); window.scrollTo(0, 0)}}>Ver más</button>
                                             <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
                                         </div> 
+                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                            <div style={{width: 'auto', height: 'auto'}}>
+                                                <button className='btn border-0' style={{width: '100%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                    background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                    onClick={() => {cotiza_aqui('marketing')}}>Cotiza aquí</button>
+                                                <div className='rounded' style={{width: '100%', height: 2 / proporcional, background: 'white'}}/>
+                                            </div>
+                                        </div>
                                     </div>  
                                 </div>  
                             </div>  
@@ -371,6 +442,14 @@ export default function AreasTrabajo ({proporcional}){
                                                 onClick={() => {navigate ('/nuestros-servicios/servicios-nube'); window.scrollTo(0, 0)}}>Ver más</button>
                                             <div className='rounded' style={{width: '20%', height: 2 / proporcional, background: 'white'}}/>
                                         </div> 
+                                        <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                            <div style={{width: 'auto', height: 'auto'}}>
+                                                <button className='btn border-0' style={{width: '100%', height: 30 / proporcional, fontSize: 16 / proporcional, color: 'white',
+                                                    background: 'transparent', fontWeight: 600, marginBottom: 5 / proporcional, textAlign: 'left'}}
+                                                    onClick={() => {cotiza_aqui('nube')}}>Cotiza aquí</button>
+                                                <div className='rounded' style={{width: '100%', height: 2 / proporcional, background: 'white'}}/>
+                                            </div>
+                                        </div>
                                     </div>  
                                 </div>  
                             </div>  

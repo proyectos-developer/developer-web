@@ -70,7 +70,7 @@ export default function DominioHostingTablet({proporcional}) {
         }else if (paso === 2 && (opciones_cotizaciones.web || opciones_cotizaciones.aplicacion || opciones_cotizaciones.software || opciones_cotizaciones.marketing 
                 || opciones_cotizaciones.nube)){
             const data_cotizacion = [
-                {tipo_domniio: tipo_dominio,
+                {tipo_dominio: tipo_dominio,
                 tipo_hosting: tipo_hosting},
 
                 {informacion_adicional: informacion_adicional},

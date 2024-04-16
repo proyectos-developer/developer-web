@@ -99,7 +99,7 @@ export default function Resumen({proporcional}) {
             tipo_hosting: cotizacion_domhost[0] ? cotizacion_domhost[0].tipo_hosting : '',
             informacion_domhost: cotizacion_domhost[1] ? cotizacion_domhost[1].informacion_adicional : '',
 
-            tipo_web: cotizacion_web[0] ? cotizacion_web[0].tipo_web : '',
+            tipo_web: cotizacion_web[0] ? cotizacion_web[0].tipo_pagina_web : '',
             pestania_nosotros: cotizacion_web[1] ? cotizacion_web[1].pestania_nosotros : '',
             pestania_servicios: cotizacion_web[1] ? cotizacion_web[1].pestania_servicios : '',
             pestania_productos: cotizacion_web[1] ? cotizacion_web[1].pestania_productos : '',
@@ -116,8 +116,8 @@ export default function Resumen({proporcional}) {
             pestania_perfil: cotizacion_web[1] ? cotizacion_web[1].pestania_perfil : '',
             pestania_favoritos: cotizacion_web[1] ? cotizacion_web[1].pestania_favoritos : '',
             pestania_compras: cotizacion_web[1] ? cotizacion_web[1].pestania_compras : '',
-            pestania_administracion: cotizacion_web[1] ? cotizacion_web[1].pestania_administracion : '',
-            informacion_web: cotizacion_web[2] ? cotizacion_web[1].informacion_adicional : '',
+            pestania_administracion: cotizacion_web[1] ? cotizacion_web[1].pestania_administrativa : '',
+            informacion_web: cotizacion_web[2] ? cotizacion_web[2].informacion_adicional : '',
 
             tipo_aplicacion: cotizacion_app[0] ? cotizacion_app[0].tipo_aplicacion : '',
             pantalla_productos: cotizacion_app[1] ? cotizacion_app[1].pantalla_productos : '',
@@ -140,10 +140,10 @@ export default function Resumen({proporcional}) {
             pantalla_comentarios: cotizacion_app[1] ? cotizacion_app[1].pantalla_comentarios : '',
             pantalla_galeria: cotizacion_app[1] ? cotizacion_app[1].pantalla_galeria : '',
             pantalla_chat: cotizacion_app[1] ? cotizacion_app[1].pantalla_chat : '',
-            informacion_aplicacion: cotizacion_app[1] ? cotizacion_app[1].informacion_adicional : '',
+            informacion_aplicacion: cotizacion_app[2] ? cotizacion_app[2].informacion_adicional : '',
 
             tipo_marketing: cotizacion_marketing[0] ? cotizacion_marketing[0].tipo_marketing : '',
-            informacion_marketing: cotizacion_marketing[2] ? cotizacion_marketing[1].informacion_adicional : '',
+            informacion_marketing: cotizacion_marketing[1] ? cotizacion_marketing[1].informacion_adicional : '',
 
             tipo_software: cotizacion_software[0] ? cotizacion_software[0].tipo_software : '',
             informacion_software: cotizacion_software[1] ? cotizacion_software[1].informacion_adicional : '',

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 import FooterPrincipalTablet from './comun/footerprincipaltablet.jsx'
 import ModalCargando from './modal/cargando.jsx'
@@ -8,16 +8,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import icono_search_white from '../assets/iconos/icono_search_white_96.png'
 import icono_cross_white from '../assets/iconos/icono_cross_white_96.png'
 import icono_up from '../assets/iconos/icono_page_up_96.png'
+import icono_cotiza from '../assets/iconos/icono_cotiza_aqui_96.png'
 import { set_authenticated, set_open_screen_search } from '../redux/actions/dataactions.js'
 
 export default function GlobalPanelTablet ({proporcional}){
 
+    const navigate = useNavigate()
     const dispatch = useDispatch()
 
+    const [boton_cotiza, setBotonCotiza] = useState (false)
     const [search, setSearch] = useState('')
     
     const begin_data = useSelector(({begin_data}) => begin_data)
-    const {open_screen_search} = useSelector(({data_reducer}) => data_reducer)
+    const {open_screen_search} = useSelector(({begin_data}) => begin_data)
 
     useEffect(() => {
         if (window.localStorage.getItem ('session_id')){
@@ -56,6 +59,21 @@ export default function GlobalPanelTablet ({proporcional}){
                     </div>
                 ) : null
             }
+            <div className='position-fixed top-50 shadow-lg rounded-circle' style={{width: 'auto', height: 'auto', background: 'transparent',
+              right: 36 / proporcional, cursor: 'pointer', zIndex: 99999}} onClick={() => {navigate('/cotizacion'); window.scrollTo(0, 0)}}
+              onMouseOver={() => setBotonCotiza(true)} onMouseLeave={() => setBotonCotiza(false)}>
+              <img src={icono_cotiza} style={{width: boton_cotiza ? 72  / proporcional : 96 / proporcional, 
+              height: boton_cotiza ? 72  / proporcional : 96 / proporcional, marginBottom: 5 / proporcional}}/>
+              {
+                boton_cotiza ? (
+                    <div className='rounded-pill shadow' style={{width: 'auto', height: 30 / proporcional, background: 'white', padding: 5 / proporcional}}>
+                      <p style={{fontSize: 14 / proporcional, lineHeight: `${20 / proporcional}px`, fontWeight: 600, textAlign: 'center', color: 'black', cursor: 'pointer'}}>
+                          Cotiza aquí
+                      </p>
+                    </div>
+                ) : null
+              }
+            </div>
             <div className='position-fixed' style={{width: 64 / proporcional, height: 64 / proporcional, bottom: 36 / proporcional,
               left: 36 / proporcional, cursor: 'pointer', zIndex: 99999}} onClick={() => window.scrollTo(0, 0)}>
               <img src={icono_up} style={{width: 64 / proporcional, height: 64 / proporcional}}/>

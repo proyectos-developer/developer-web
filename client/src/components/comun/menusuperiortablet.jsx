@@ -256,7 +256,7 @@ export default function MenuSuperiorTablet ({proporcional, position}){
                                         </div>
                                         <div style={{width: '100%', height: 2 / proporcional, background: '#efefef', marginBottom: 10 / proporcional}}/>
                                         <div className='d-flex' style={{width: 240 / proporcional, height: 'auto', marginBottom: 10 / proporcional}}
-                                            onClick={() => {navigate('/nuestros-servicios/desarollo-ecommerce'); window.scrollTo (0, 0)}}>
+                                            onClick={() => {navigate('/nuestros-servicios/desarrollo-ecommerce'); window.scrollTo (0, 0)}}>
                                             <p style={{fontSize: 16 / proporcional, lineHeight: `${20 / proporcional}px`, marginBottom: 0, color: '#212121', 
                                                 fontFamily: 'Hind, sans-serif', fontWeight: 600}}>
                                                 Desarrollo e-commerce

@@ -22,7 +22,7 @@ export default function Servicio({proporcional}) {
     }, [location.pathname.split('/')[2]])
 
     return (
-        <div style={{width: '100%', height: 'auto', paddingTop: 120 / proporcional, paddingBottom: 120 / proporcional, paddingLeft: 350 / proporcional,
+        <div style={{width: '100%', height: 'auto', paddingTop: 120 / proporcional, paddingBottom: 20 / proporcional, paddingLeft: 350 / proporcional,
                 paddingRight: 350 / proporcional}}>
             <div style={{width: '100%', height: 'auto'}}>
                 {

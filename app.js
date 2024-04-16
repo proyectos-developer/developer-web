@@ -173,7 +173,6 @@ app.get('/cotizacion/servicio/:servicio', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cotizacion/servicio', 'index'));
 });
 
-
 app.use(express.static(path.resolve(__dirname, './client/build/cotizacion/resumen')));
 app.get('/cotizacion/resumen', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/cotizacion/resumen', 'index'));
