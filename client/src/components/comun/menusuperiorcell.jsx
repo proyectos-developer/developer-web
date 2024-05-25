@@ -340,6 +340,19 @@ export default function MenuSuperiorCell ({proporcional, position}){
                                 </p>
                             </div>
                             <div className='d-flex justify-content-end' style={{width: '100%', height: 48  / proporcional, cursor: 'pointer'}}
+                                onMouseOver={() => setMenuSuperior('galeria')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/galeria'); window.scrollTo(0, 0);
+                                    dispatch(set_open_menu_principal(false))}}>
+                                {
+                                    location.pathname.split('/')[1] === 'galeria' ? (
+                                        <img src={position > 600 ? icono_dot_green : icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 4}}/>
+                                    ) : null
+                                }
+                                <p style={{fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, marginBottom: 0, fontWeight: 700, fontFamily: 'Montserrat, sans-serif',
+                                            color: position > 600 / proporcional ? 'black' : 'white', textAlign: 'center'}}>
+                                    Galería
+                                </p>
+                            </div>
+                            <div className='d-flex justify-content-end' style={{width: '100%', height: 48  / proporcional, cursor: 'pointer'}}
                                 onMouseOver={() => setMenuSuperior('blog')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/nuestro-blog'); window.scrollTo(0, 0);
                                     dispatch(set_open_menu_principal(false))}}>
                                 {

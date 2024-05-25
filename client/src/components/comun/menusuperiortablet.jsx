@@ -196,7 +196,7 @@ export default function MenuSuperiorTablet ({proporcional, position}){
                 </div>
             </div>
             <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
-                <div className='d-flex justify-content-center' style={{width: '14%', height: 'auto', cursor: 'pointer'}}
+                <div className='d-flex justify-content-center' style={{width: '10%', height: 'auto', cursor: 'pointer'}}
                     onMouseOver={() => setMenuSuperior('inicio')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/'); window.scrollTo(0, 0)}}>
                     {
                         location.pathname.split('/')[1] === '' ? (
@@ -208,7 +208,7 @@ export default function MenuSuperiorTablet ({proporcional, position}){
                         Inicio
                     </p>
                 </div>
-                <div className='d-flex justify-content-center' style={{width: '14%', height: 'auto', cursor: 'pointer'}}
+                <div className='d-flex justify-content-center' style={{width: '10%', height: 'auto', cursor: 'pointer'}}
                     onMouseOver={() => setMenuSuperior('nosotros')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/sobre-nosotros'); window.scrollTo(0, 0)}}>
                     {
                         location.pathname.split('/')[1] === 'sobre-nosotros' ? (
@@ -220,7 +220,7 @@ export default function MenuSuperiorTablet ({proporcional, position}){
                         Nosotros
                     </p>
                 </div>
-                <div className='position-relative ' style={{width: '14%', height: 'auto', cursor: 'pointer'}}
+                <div className='position-relative ' style={{width: '10%', height: 'auto', cursor: 'pointer'}}
                         onMouseOver={() => {setMenuSuperior('servicios'); setMenuServicios(true)}} onMouseLeave={() => {setMenuSuperior(''); setMenuServicios(false)}}>
                     <div className='d-flex justify-content-center' style={{width: location.pathname.split('/') === 'nuestros-servicios' ? '100%' : '90%', height: 32  / proporcional}}
                         onClick={() => {navigate ('/nuestros-servicios'); window.scrollTo(0, 0)}}>
@@ -307,7 +307,7 @@ export default function MenuSuperiorTablet ({proporcional, position}){
                             ) : null
                         }
                 </div>
-                <div className='d-flex justify-content-center' style={{width: '14%', height: 'auto', cursor: 'pointer'}}
+                <div className='d-flex justify-content-center' style={{width: '10%', height: 'auto', cursor: 'pointer'}}
                     onMouseOver={() => setMenuSuperior('portafolio')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/nuestro-portafolio'); window.scrollTo(0, 0)}}>
                     {
                         location.pathname.split('/')[1] === 'nuestro-portafolio' ? (
@@ -319,7 +319,19 @@ export default function MenuSuperiorTablet ({proporcional, position}){
                         Portafolio
                     </p>
                 </div>
-                <div className='d-flex justify-content-center' style={{width: '14%', height: 'auto', cursor: 'pointer'}}
+                <div className='d-flex justify-content-center' style={{width: '10%', height: 'auto', cursor: 'pointer'}}
+                    onMouseOver={() => setMenuSuperior('galeria')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/galeria'); window.scrollTo(0, 0)}}>
+                    {
+                        location.pathname.split('/')[1] === 'galeria' ? (
+                            <img src={position > 800 ? icono_dot_green : icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 4}}/>
+                        ) : null
+                    }
+                    <p style={{fontSize: 16 / proporcional, lineHeight: `${32 / proporcional}px`, marginBottom: 0, fontWeight: 700, fontFamily: 'Montserrat, sans-serif',
+                                color: position > 800 / proporcional ? 'black' : 'white', textAlign: 'center'}}>
+                        Galería
+                    </p>
+                </div>
+                <div className='d-flex justify-content-center' style={{width: '10%', height: 'auto', cursor: 'pointer'}}
                     onMouseOver={() => setMenuSuperior('blog')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/nuestro-blog'); window.scrollTo(0, 0)}}>
                     {
                         location.pathname.split('/')[1] === 'nuestro-blog' ? (
@@ -331,7 +343,7 @@ export default function MenuSuperiorTablet ({proporcional, position}){
                         Blog
                     </p>
                 </div>
-                <div className='d-flex justify-content-center' style={{width: '14%', height: 'auto', cursor: 'pointer'}}
+                <div className='d-flex justify-content-center' style={{width: '10%', height: 'auto', cursor: 'pointer'}}
                     onMouseOver={() => setMenuSuperior('tienda')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/nuestra-tienda'); window.scrollTo(0, 0)}}>
                     {
                         location.pathname.split('/')[1] === 'nuestra-tienda' ? (
@@ -343,7 +355,7 @@ export default function MenuSuperiorTablet ({proporcional, position}){
                         Tienda
                     </p>
                 </div>
-                <div className='d-flex justify-content-center' style={{width: '14%', height: 'auto', cursor: 'pointer'}}
+                <div className='d-flex justify-content-center' style={{width: '10%', height: 'auto', cursor: 'pointer'}}
                     onMouseOver={() => setMenuSuperior('contacto')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/contactanos'); window.scrollTo(0, 0)}}>
                     {
                         location.pathname.split('/')[1] === 'contactanos' ? (

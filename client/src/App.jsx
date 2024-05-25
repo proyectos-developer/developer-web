@@ -27,6 +27,10 @@ import NuestroPortafolio from './components/portafolio/panel.jsx'
 import NuestroPortafolioTablet from './components/portafolio/paneltablet.jsx'
 import NuestroPortafolioCell from './components/portafolio/panelcell.jsx'
 
+import Galeria from './components/galeria/panel.jsx'
+import GaleriaTablet from './components/galeria/paneltablet.jsx'
+import GaleriaCell from './components/galeria/panelcell.jsx'
+
 import Contactanos from './components/contactanos/panel.jsx'
 import ContactanosTablet from './components/contactanos/paneltablet.jsx'
 import ContactanosCell from './components/contactanos/panelcell.jsx'
@@ -140,6 +144,10 @@ export default function App (){
             <Route path='nuestro-portafolio' element={width < 500 ? <NuestroPortafolioCell proporcional={499 / width}/> :
                                                       width < 991 ? <NuestroPortafolioTablet proporcional={991 / width}/> :
                                                                     <NuestroPortafolio proporcional={1920/ width}/>}/>
+
+            <Route path='galeria' element={width < 500 ? <GaleriaCell proporcional={499 / width}/> :
+                                           width < 991 ? <GaleriaTablet proporcional={991 / width}/> :
+                                                         <Galeria proporcional={1920/ width}/>}/>
 
             <Route path='nuestro-blog' element={width < 500 ? <BlogCell proporcional={499 / width}/> :
                                                 width < 991 ? <BlogTablet proporcional={991 / width}/> :

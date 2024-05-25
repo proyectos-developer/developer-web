@@ -29,7 +29,7 @@ export default function SliderHomeTablet ({proporcional}){
                                     style={{width: '100%', height: 800 / proporcional, background: 'rgba(23, 43, 222, 0.6'}}/>
                             <div className='position-absolute top-50 start-50 translate-middle' style={{width: '80%', height: 'auto'}}>
                                 <div className='animate__animated animate__jackInTheBox' style={{width: '100%', height: 'auto'}}>
-                                    <p style={{fontSize: 70 / proporcional, lineHeight: `${80 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
+                                    <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
                                             textAlign: 'center', color: 'white'}}>
                                         "Descubre la transformación digital: <br/>Transformando el  Mundo con innovación"
                                     </p>
@@ -55,7 +55,7 @@ export default function SliderHomeTablet ({proporcional}){
                                     style={{width: '100%', height: 800 / proporcional, background: 'rgba(23, 43, 222, 0.6'}}/>
                             <div className='position-absolute top-50 start-50 translate-middle' style={{width: '80%', height: 'auto'}}>
                                 <div className='animate__animated animate__slideInDown' style={{width: '100%', height: 'auto'}}>
-                                    <p style={{fontSize: 70 / proporcional, lineHeight: `${80 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
+                                    <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
                                             textAlign: 'center', color: 'white'}}>
                                         "Conectando el Mundo: <br/>La era digital en tu pantalla"
                                     </p>
@@ -81,7 +81,7 @@ export default function SliderHomeTablet ({proporcional}){
                                     style={{width: '100%', height: 800 / proporcional, background: 'rgba(23, 43, 222, 0.6'}}/>
                             <div className='position-absolute top-50 start-50 translate-middle' style={{width: '80%', height: 'auto'}}>
                                 <div className='animate__animated animate__slideInUp' style={{width: '100%', height: 'auto'}}>
-                                    <p style={{fontSize: 70 / proporcional, lineHeight: `${80 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
+                                    <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
                                             textAlign: 'center', color: 'white'}}>
                                         "Innovación sin límites: <br/>navegando la revolución digital"
                                     </p>
@@ -107,7 +107,7 @@ export default function SliderHomeTablet ({proporcional}){
                                     style={{width: '100%', height: 800 / proporcional, background: 'rgba(23, 43, 222, 0.6'}}/>
                             <div className='position-absolute top-50 start-50 translate-middle' style={{width: '80%', height: 'auto'}}>
                                 <div className='animate__animated animate__flipInY' style={{width: '100%', height: 'auto'}}>
-                                    <p style={{fontSize: 70 / proporcional, lineHeight: `${80 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
+                                    <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
                                             textAlign: 'center', color: 'white'}}>
                                         "Desccubre el futuro hoy: <br/>revolución digital en tiempo real"
                                     </p>
@@ -133,7 +133,7 @@ export default function SliderHomeTablet ({proporcional}){
                                     style={{width: '100%', height: 800 / proporcional, background: 'rgba(23, 43, 222, 0.6'}}/>
                             <div className='position-absolute top-50 start-50 translate-middle' style={{width: '80%', height: 'auto'}}>
                                 <div className='animate__animated animate__lightSpeedInLeft' style={{width: '100%', height: 'auto'}}>
-                                    <p style={{fontSize: 70 / proporcional, lineHeight: `${80 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
+                                    <p style={{fontSize: 60 / proporcional, lineHeight: `${70 / proporcional}px`, fontWeight: 800, fontFamily: 'Montserrat', marginBottom: 30 / proporcional,
                                             textAlign: 'center', color: 'white'}}>
                                         "Transformando el mundo: <br/>la revolución digital a tu alance"
                                     </p>
