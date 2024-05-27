@@ -6,7 +6,7 @@ import icono_vision from '../../assets/iconos/icono_vision_96.png'
 export default function MisionVisionTablet ({proporcional}){
     
     return (
-        <div style={{width: '100%', height: 'auto'}}>
+        <div style={{width: '100%', height: 'auto', paddingTop: 50 / proporcional, paddingBottom: 50 / proporcional}}>
             <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
                 <div style={{width: '80%', height: 'auto', background: 'rgba(219, 228, 235, 0.8)', paddingTop: 50 / proporcional, paddingBottom: 50 / proporcional, 
                         paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional}}>

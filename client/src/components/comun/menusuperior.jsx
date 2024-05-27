@@ -321,7 +321,7 @@ export default function MenuSuperior ({proporcional, position}){
                     <div className='d-flex justify-content-center' style={{width: location.pathname.split('/')[1] === 'galeria' ? '10%' : '10%', height: 32  / proporcional, cursor: 'pointer'}}
                         onMouseOver={() => setMenuSuperior('galeria')} onMouseLeave={() => setMenuSuperior('')} onClick={() => {navigate ('/galeria'); window.scrollTo(0, 0)}}>
                         {
-                            location.pathname.split('/')[1] === '' ? (
+                            location.pathname.split('/')[1] === 'galeria' ? (
                                 <img src={position > 800 ? icono_dot_green : icono_dot_white} style={{width: 16 / proporcional, height: 16 / proporcional, margin: 4}}/>
                             ) : null
                         }

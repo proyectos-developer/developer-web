@@ -18,7 +18,7 @@ export default function SobreNosotrosTablet ({proporcional}){
     return (
         <div style={{width: '100%', height: 'auto'}}>
             <div className='position-relative' style={{width: '100%', height: 800 / proporcional}}>
-                <div className={`position-fixed top-0 start-0 ${position > 800 / proporcional ? 'shadow' : ''}`} style={{width: '100%', height: '100%', zIndex: 99999,
+                <div className={`position-fixed top-0 start-0 ${position > 800 / proporcional ? 'shadow' : ''}`} style={{width: '100%', height: 100 / proporcional, zIndex: 99999,
                         background: position > 800 / proporcional ? 'white' : 'transparent'}}>
                     <MenuSuperiorTablet proporcional={proporcional} position={position}/>
                 </div>
