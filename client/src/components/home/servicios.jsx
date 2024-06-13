@@ -27,7 +27,7 @@ export default function Servicios ({proporcional}){
                     <div style={{width: '100%', height: 'auto', marginBottom: 32 / proporcional}}>
                         <p style={{fontSize: 18 / proporcional, lineHeight:  `${26 / proporcional}px`, marginBottom: 0, fontFamily: 'Hind, sans-serif', color: 'rgb(136, 136, 136)',
                             fontWeight: 400}}>
-                            Somos tu socio tecnológico para llevar tus ideas al mundo digital. en Developer Ideas nos especializamos en el desarrollo de aplicaciones móviles, sitios web y plataformas de comercio electrónico, brindando soluciones personalizadas que impulsan el crecimiento de tu negocio.
+                            Somos tu socio tecnológico para llevar tus ideas al mundo digital. En Developer Ideas nos especializamos en el desarrollo de aplicaciones móviles, sitios web y plataformas de comercio electrónico, brindando soluciones personalizadas que impulsan el crecimiento de tu negocio.
                         </p>
                     </div>
                     <button className='btn' style={{width: 170 / proporcional, height: 60 / proporcional, background: '#172bde', color: 'white', fontSize: 20 / proporcional,

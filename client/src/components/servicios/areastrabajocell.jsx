@@ -329,7 +329,7 @@ export default function AreasTrabajoCell ({proporcional}){
                             </p>
                             <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 400,
                                     color: 'rgb(117, 117, 117)', textAlign: 'center'}}>
-                                En un mundo cada vez más digitalizado, tener una estrategia de marketing efectiva es fundamental para el éxito de tu negocio. En [Nombre de la Empresa], entendemos la importancia de llegar a tu audiencia objetivo de manera efectiva y maximizar el retorno de tu inversión en marketing.
+                                En un mundo cada vez más digitalizado, tener una estrategia de marketing efectiva es fundamental para el éxito de tu negocio. En Developer Ideas, entendemos la importancia de llegar a tu audiencia objetivo de manera efectiva y maximizar el retorno de tu inversión en marketing.
                             </p>
                         </div>
                     </div>
@@ -429,7 +429,7 @@ export default function AreasTrabajoCell ({proporcional}){
                             </p>
                             <p style={{fontSize: 18 / proporcional, lineHeight: `${24 / proporcional}px`, marginBottom: 0 / proporcional, fontWeight: 400,
                                     color: 'rgb(117, 117, 117)', textAlign: 'center'}}>
-                                En un mundo cada vez más conectado y dinámico, la tecnología en la nube se ha convertido en un pilar fundamental para empresas de todos los tamaños y sectores. En [Nombre de la Empresa], entendemos la importancia de aprovechar al máximo el potencial de la nube para impulsar la innovación, mejorar la eficiencia y aumentar la escalabilidad de tu negocio.
+                                En un mundo cada vez más conectado y dinámico, la tecnología en la nube se ha convertido en un pilar fundamental para empresas de todos los tamaños y sectores. En Developer Ideas, entendemos la importancia de aprovechar al máximo el potencial de la nube para impulsar la innovación, mejorar la eficiencia y aumentar la escalabilidad de tu negocio.
                             </p>
                         </div>
                     </div>
