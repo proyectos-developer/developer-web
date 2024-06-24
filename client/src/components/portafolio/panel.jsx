@@ -24,7 +24,7 @@ export default function NuestroPortafolio ({proporcional}){
                 </div>
             </div>
             <div style={{width: '100%', height: 'auto'}}>
-                <Proyectos proporcional={proporcional}/>
+                <Proyectos proporcional={proporcional} position={position}/>
             </div>
         </div>
     )

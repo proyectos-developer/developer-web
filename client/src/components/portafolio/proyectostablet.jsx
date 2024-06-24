@@ -36,9 +36,9 @@ export default function ProyectosTablet ({proporcional}){
     const [seleccion_menu, setSeleccionMenu] = useState('todo')
 
     return (
-        <div style={{width: '100%', height: 'auto', paddingTop: 50 / proporcional, paddingBottom: 50 / proporcional, paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional}}>
+        <div style={{width: '100%', height: 'auto', paddingTop: 50 / proporcional, paddingBottom: 50 / proporcional}}>
             <div style={{width: '100%', height: 'auto'}}>
-                <div className='d-flex justify-content-center' style={{width: '100%', height: 36 / proporcional, marginBottom: 25 / proporcional}}>
+                <div className='d-flex justify-content-center' style={{width: '100%', height: 36 / proporcional, marginBottom: 25 / proporcional, paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional}}>
                     <div style={{width: '25%', height: 28 / proporcional}}>
                         <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 5 / proporcional, 
                             fontWeight: seleccion_menu === 'todo' ? 700 : 500,
@@ -58,7 +58,7 @@ export default function ProyectosTablet ({proporcional}){
                         <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 5 / proporcional,  
                             fontWeight: seleccion_menu === 'web' ? 700 : 500,
                              color: seleccion_menu === 'web' ? '#2d572c': 'rgb(136, 136, 136, 136)',
-                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(2, 0, false).get_proyectos)); setSeleccionMenu('web')}}>
+                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(1, 0, false).get_proyectos)); setSeleccionMenu('web')}}>
                             Web
                         </p>
                         {
@@ -73,7 +73,7 @@ export default function ProyectosTablet ({proporcional}){
                         <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 5 / proporcional, fontWeight: 800, 
                             fontWeight: seleccion_menu === 'apps' ? 700 : 500,
                              color: seleccion_menu === 'apps' ? '#2d572c': 'rgb(136, 136, 136, 136)',
-                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(1, 0, false).get_proyectos)); setSeleccionMenu('apps')}}>
+                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(2, 0, false).get_proyectos)); setSeleccionMenu('apps')}}>
                             Apps
                         </p>
                         {
@@ -84,11 +84,43 @@ export default function ProyectosTablet ({proporcional}){
                             ) : null
                         }
                     </div>
+                </div>
+                <div className='d-flex justify-content-center' style={{width: '100%', height: 36 / proporcional, marginBottom: 25 / proporcional, paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional}}>
+                    <div style={{width: '25%', height: 28 / proporcional}}>
+                        <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 5 / proporcional, fontWeight: 800,
+                            fontWeight: seleccion_menu === 'software' ? 700 : 500,
+                             color: seleccion_menu === 'software' ? '#2d572c': 'rgb(136, 136, 136, 136)',
+                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(4, 0, false).get_proyectos)); setSeleccionMenu('software')}}>
+                            Software
+                        </p>
+                        {
+                            seleccion_menu === 'software' ? (
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <div style={{width: '20%', height: 2 / proporcional, background: '#2d572c'}}/>
+                                </div>
+                            ) : null
+                        }
+                    </div>
+                    <div style={{width: '25%', height: 28 / proporcional}}>
+                        <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 5 / proporcional, fontWeight: 800,
+                            fontWeight: seleccion_menu === 'marketing' ? 700 : 500,
+                             color: seleccion_menu === 'marketing' ? '#2d572c': 'rgb(136, 136, 136, 136)',
+                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(3, 0, false).get_proyectos)); setSeleccionMenu('marketing')}}>
+                            Marketing
+                        </p>
+                        {
+                            seleccion_menu === 'marketing' ? (
+                                <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                    <div style={{width: '20%', height: 2 / proporcional, background: '#2d572c'}}/>
+                                </div>
+                            ) : null
+                        }
+                    </div>
                     <div style={{width: '25%', height: 28 / proporcional}}>
                         <p style={{fontSize: 18 / proporcional, lineHeight: `${26 / proporcional}px`, marginBottom: 5 / proporcional, fontWeight: 800,
                             fontWeight: seleccion_menu === 'otros' ? 700 : 500,
                              color: seleccion_menu === 'otros' ? '#2d572c': 'rgb(136, 136, 136, 136)',
-                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(3, 0, false).get_proyectos)); setSeleccionMenu('otros')}}>
+                            textAlign: 'center', cursor: 'pointer'}} onClick={() => {dispatch(proyectosdata(proyectosConstants(5, 0, false).get_proyectos)); setSeleccionMenu('otros')}}>
                             Otros
                         </p>
                         {
@@ -100,7 +132,7 @@ export default function ProyectosTablet ({proporcional}){
                         }
                     </div>
                 </div>
-                <div className='rounded-pill' style={{width: '100%', height: 2 / proporcional, background: '#ececec', marginBottom: 60 / proporcional}}/>
+                <div className='rounded-pill' style={{width: '100%', height: 2 / proporcional, background: '#ececec', marginBottom: 25 / proporcional}}/>
                 {
                     lista_proyectos && lista_proyectos.length > 0 ? ( 
                         lista_proyectos.map ((proyecto, numproy) => {
@@ -109,12 +141,16 @@ export default function ProyectosTablet ({proporcional}){
                                 {
                                     proyectos[(2 *  numproy)] ? ( 
                                         <CardProyectoTablet proyecto={proyectos[(2 *  numproy)]} key={(2 *  numproy)} index={(2 *  numproy)} proporcional={proporcional}/>
-                                    ) : null
+                                    ) : (
+                                        <div style={{width: '48%', height: 'auto'}}/>
+                                    )
                                 }
                                 {
                                     proyectos[(2 *  numproy) + 1] ? ( 
                                         <CardProyectoTablet proyecto={proyectos[(2 *  numproy) + 1]} key={(2 *  numproy) + 1} index={(2 *  numproy) + 1} proporcional={proporcional}/>
-                                    ) : null
+                                    ) : (
+                                        <div style={{width: '48%', height: 'auto'}}/>
+                                    )
                                 }
                                 </div>
                             )

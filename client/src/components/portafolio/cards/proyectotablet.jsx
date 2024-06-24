@@ -5,9 +5,9 @@ export default function CardProyectoTablet({proporcional, proyecto, key, index})
     const [seleccion_proyecto, setSeleccionProyecto] = useState('')
 
     return (
-        <div style={{width: '48%',  height: 'auto', cursor: 'pointer'}} onMouseOver={() => setSeleccionProyecto (proyecto.id)} 
+        <div style={{width: '50%',  height: 'auto', cursor: 'pointer'}} onMouseOver={() => setSeleccionProyecto (proyecto.id)} 
             onMouseLeave={() => setSeleccionProyecto('')}>
-            <div className='position-relative' style={{width: '100%', height: 'auto', marginBottom: 30 / proporcional, background: '#dbe4eb'}}>
+            <div className='position-relative' style={{width: '100%', height: 'auto', background: '#dbe4eb'}}>
                 <img className='rounded' src={proyecto.url_imagen} style={{width: '100%', height: '100%'}}/>
                 {
                     seleccion_proyecto === proyecto.id ? (
