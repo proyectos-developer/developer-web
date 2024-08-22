@@ -1,20 +1,22 @@
 import React from 'react'
 
-import logo_00 from '../../assets/clientes/logo_taxi_350.png'
-import logo_01 from '../../assets/clientes/logo_comfisa_350.png'
-import logo_02 from '../../assets/clientes/logo_fare_350.png'
-import logo_03 from '../../assets/clientes/logo_farcon_350.png'
-import logo_04 from '../../assets/clientes/logo_micargapp_350.png'
-import logo_05 from '../../assets/clientes/logo_herco_kart_350.png'
-import logo_06 from '../../assets/clientes/logo_el_huarike_350.png'
-import logo_07 from '../../assets/clientes/logo_la_cabrera_350.png'
-import logo_08 from '../../assets/clientes/logo_inmoterra_350.png'
-import logo_09 from '../../assets/clientes/logo_delyfreshstore_350.png'
-import logo_10 from '../../assets/clientes/logo_enp_350.png'
-import logo_11 from '../../assets/clientes/logo_market_andre_350.png'
-import logo_12 from '../../assets/clientes/logo_yapa_delivery_350.png'
-import logo_13 from '../../assets/clientes/logo_radio_maxima_350.png'
-import logo_14 from '../../assets/clientes/logo_vh_lavanderia_350.png'
+import logo_00 from '../../assets/clientes/logo_caral_350.png'
+import logo_01 from '../../assets/clientes/logo_qhatu_350.png'
+import logo_02 from '../../assets/clientes/logo_taxi_350.png'
+import logo_03 from '../../assets/clientes/logo_comfisa_350.png'
+import logo_04 from '../../assets/clientes/logo_fare_350.png'
+import logo_05 from '../../assets/clientes/logo_farcon_350.png'
+import logo_06 from '../../assets/clientes/logo_micargapp_350.png'
+import logo_07 from '../../assets/clientes/logo_herco_kart_350.png'
+import logo_08 from '../../assets/clientes/logo_el_huarike_350.png'
+import logo_09 from '../../assets/clientes/logo_la_cabrera_350.png'
+import logo_10 from '../../assets/clientes/logo_inmoterra_350.png'
+import logo_11 from '../../assets/clientes/logo_delyfreshstore_350.png'
+import logo_12 from '../../assets/clientes/logo_enp_350.png'
+import logo_13 from '../../assets/clientes/logo_market_andre_350.png'
+import logo_14 from '../../assets/clientes/logo_yapa_delivery_350.png'
+import logo_15 from '../../assets/clientes/logo_radio_maxima_350.png'
+import logo_16 from '../../assets/clientes/logo_vh_lavanderia_350.png'
 
 export default function ClientesCell ({proporcional}){
     return (
@@ -121,10 +123,24 @@ export default function ClientesCell ({proporcional}){
                             </div>
                         </div>
                         <div className='carousel-item' style={{width: '100%', height: 'auto'}} data-bs-interval='3000'>
-                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                            <div className='d-flex' style={{width: '100%', height: 'auto'}}>
                                 <div className='' style={{width: '50%', height: 'auto'}}>
                                     <div className='d-flex justitfy-content-center' style={{width: '100%', height: '100%'}}>
                                         <img className='rounded-circle border-2' src={logo_14} style={{width: '80%', height: '80%', margin: '10%'}}/>
+                                    </div>
+                                </div>
+                                <div className='' style={{width: '50%', height: 'auto'}}>
+                                    <div className='d-flex justitfy-content-center' style={{width: '100%', height: '100%'}}>
+                                        <img className='rounded-circle border-2' src={logo_15} style={{width: '80%', height: '80%', margin: '10%'}}/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='carousel-item' style={{width: '100%', height: 'auto'}} data-bs-interval='3000'>
+                            <div className='d-flex justify-content-center' style={{width: '100%', height: 'auto'}}>
+                                <div className='' style={{width: '50%', height: 'auto'}}>
+                                    <div className='d-flex justitfy-content-center' style={{width: '100%', height: '100%'}}>
+                                        <img className='rounded-circle border-2' src={logo_16} style={{width: '80%', height: '80%', margin: '10%'}}/>
                                     </div>
                                 </div>
                             </div>

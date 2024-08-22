@@ -16,7 +16,7 @@ export default function ProyectosCell ({proporcional}){
     const {get_proyectos} = useSelector(({proyectos_data}) => proyectos_data)
 
     useEffect (() => {
-        dispatch(proyectosdata(proyectosConstants(0, 0, false).get_proyectos))
+        dispatch(proyectosdata(proyectosConstants(0, 0, 0, 0, 0, 100, false).get_proyectos))
     }, [])
 
     useEffect (() => {
